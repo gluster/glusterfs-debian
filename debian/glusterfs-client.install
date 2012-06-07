@@ -1,0 +1,2 @@
+debian/tmp/sbin/mount.glusterfs
+debian/tmp/usr/sbin/glusterfs

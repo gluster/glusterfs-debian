@@ -1,0 +1,6 @@
+glusterfs for Debian
+--------------------
+
+The glusterfs client program can pull its configuration from the glusterfs
+server installation. Check the manual pages for more information.
+

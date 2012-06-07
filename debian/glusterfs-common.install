@@ -1,0 +1,15 @@
+debian/tmp/usr/sbin/glusterfsd
+debian/tmp/usr/lib/glusterfs/*
+debian/tmp/usr/lib/libglusterfs.so.*
+debian/tmp/usr/lib/libgfrpc.so.*
+debian/tmp/usr/lib/libgfxdr.so.*
+debian/tmp/usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
+libglusterfs/src/*.h /usr/include/glusterfs/
+usr/lib/libglusterfs.a
+usr/lib/libglusterfs.la
+usr/lib/libglusterfs.so
+usr/lib/libgfrpc.la
+usr/lib/libgfrpc.so
+usr/lib/libgfxdr.a
+usr/lib/libgfxdr.la
+usr/lib/libgfxdr.so

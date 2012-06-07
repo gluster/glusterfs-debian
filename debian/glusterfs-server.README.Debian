@@ -1,0 +1,5 @@
+glusterfs for Debian
+--------------------
+
+The glusterfs server installs the glusterd management daemon as well
+as the 'gluster' command line cluster management utility command.
