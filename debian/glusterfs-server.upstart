@@ -1,0 +1,10 @@
+author "Louis Zuckerman <me@louiszuckerman.com>"
+description "GlusterFS Management Daemon"
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+expect fork
+
+exec /usr/sbin/glusterd -p /var/run/glusterd.pid
+

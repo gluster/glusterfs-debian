@@ -1,0 +1,2 @@
+sbin/mount.glusterfs
+usr/sbin/glusterfs
