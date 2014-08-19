@@ -1,0 +1,844 @@
+glusterfs (3.5.2-2) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * Add glfs.h (libgfapi)
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Mon, 18 Aug 2014 08:12:24 -0400
+
+glusterfs (3.5.2-1) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Wed, 6 Aug 2014 00:10:28 -0400
+
+glusterfs (3.5.1-1) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Sat, 28 Jun 2014 00:10:28 -0400
+
+glusterfs (3.5.0-1) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Wed, 23 Apr 2014 23:23:51 -0400
+
+glusterfs (3.5.0-1beta5) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New QA release
+  * Logrotate config for -server package
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Thu, 10 Apr 2014 19:53:01 -0400
+
+glusterfs (3.5.0-1beta2) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream QA release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Tue, 28 Jan 2014 20:09:41 -0500
+
+glusterfs (3.5.0-1beta1) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream QA release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Wed, 15 Jan 2014 22:11:28 -0500
+
+glusterfs (3.5.0-00qa3) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream QA release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Fri, 06 Dec 2013 20:41:42 -0500
+
+glusterfs (3.5.0-00qa1) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream QA release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Thu, 15 Nov 2013 21:08:42 -0500
+
+glusterfs (3.4.1-2) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * Moved log dir creation from -server to -common package
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Thu, 04 Nov 2013 21:34:42 -0500
+
+glusterfs (3.4.1-1) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Thu, 27 Sep 2013 22:54:12 +0400
+
+glusterfs (3.4.0-2) wheezy; urgency=low
+
+  [ Louis Zuckerman ]
+  * Forked from debian unstable for download.gluster.org
+  * Added new dependencies
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Thu, 18 Jul 2013 22:54:12 +0400
+
+glusterfs (3.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Add patch 01-spelling-error to fix an spelling error.
+  * Build with dh-autoreconf.
+  * Overwrite false positive spelling-error-in-binary lintian warnings.
+  * Fix lintian warning init.d-script-call-internal-API.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 18 Jul 2013 14:16:06 +0200
+
+glusterfs (3.4.0~qa9realybeta3-1) unstable; urgency=low
+
+  * New upstream beta release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 12 Jun 2013 12:11:36 +0200
+
+glusterfs (3.4.0~qa9realybeta2-1) unstable; urgency=low
+
+  * New upstream beta release.
+  * Uploading to unstable.
+    Closes: #710074
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 29 May 2013 09:55:03 +0200
+
+glusterfs (3.4.0~qa9realyalpha3-1) experimental; urgency=low
+
+  [ Louis Zuckerman ]
+  * Added libxml2 dependencies to support --xml CLI option.
+
+  [ Patrick Matthäi ]
+  * New upstream alpha release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 18 Apr 2013 12:54:04 +0200
+
+glusterfs (3.4.0~qa9realyalpha2-1) experimental; urgency=low
+
+  * New upstream alpha release.
+    - Adjust file paths in debian/rules.
+  * Overwrite unused-shlib-entry-in-control-file lintian warnings.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 07 Mar 2013 09:46:37 +0100
+
+glusterfs (3.4.0~qa9realyalpha1-1) experimental; urgency=low
+
+  * New upstream alpha release, but keeping the qa in the version to avoid
+    adding an epoch.
+    - Adjust lintian overrides.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 08 Feb 2013 15:58:04 +0100
+
+glusterfs (3.4.0~qa8-1) experimental; urgency=low
+
+  * New upstream QA release.
+  * Overwrite false positive lintian warning about an spelling error.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 02 Feb 2013 12:15:17 +0100
+
+glusterfs (3.4.0~qa7-1) experimental; urgency=low
+
+  * New upstream QA release.
+    - Drop merged patch 01-format-security.
+    - Drop merged patch 02-spelling-error.
+    - Remove some fixed shlib-with-executable-stack overrides.
+  * Merge 3.2.7-4 and 3.2.7-5 changelog.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 25 Jan 2013 09:30:49 +0100
+
+glusterfs (3.4.0~qa6-2) experimental; urgency=low
+
+  * Set homepage to www.gluster.org.
+  * Migrate package from cdbs to minimal debhelper.
+  * Switch to xz compression and add a Pre-Depends on dpkg.
+  * Depend on fuse instead of fuse-utils package.
+    Closes: #698125
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 14 Jan 2013 19:54:10 +0100
+
+glusterfs (3.4.0~qa6-1) experimental; urgency=low
+
+  * New upstream QA release.
+  * Use wildcards in lintian overrides.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 20 Dec 2012 10:07:50 +0100
+
+glusterfs (3.4.0~qa5-1) experimental; urgency=low
+
+  * New upstream QA release.
+    - Fixes insecure temporary file creation as described in CVE-2012-4417.
+    - Add patch 01-format-security to fix some FTBFS.
+    - Add patch 02-spelling-error to fix an spelling error.
+  * Reload glusterd after logrotate.
+  * Move all libraries to the glusterfs-common package.
+  * Adjust lintian overrides.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 14 Dec 2012 10:54:32 +0100
+
+glusterfs (3.3.1-2) experimental; urgency=low
+
+  * Recommend nfs-common instead of suggesting it. glusterfs tries to register
+    the shares per default at portmapper.
+  * Merge changes from 3.2.7-3.
+    Closes: #691595
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 12 Nov 2012 20:40:54 +0100
+
+glusterfs (3.3.1-1) experimental; urgency=low
+
+  * New upstream release.
+    - Remove lintian overrides about fixed spelling-error-in-binary warnings.
+  * Merge 3.2.7-2~bpo60+1 changelog.
+  * Use wildcards in lintian overrides.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+  * Update debian/watch to the new download server location.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 15 Oct 2012 09:46:25 +0200
+
+glusterfs (3.3.0-2) experimental; urgency=low
+
+  * Merge 3.2.7-1 and 3.2.7-2 changelog.
+  * Move /var/log/glusterfs directory creation completely to the
+    glusterfs-server package.
+    Closes: #682732
+  * Add all missing manpages.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 31 Jul 2012 21:42:12 +0200
+
+glusterfs (3.3.0-1) experimental; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream release.
+    - Added build dependency libssl-dev
+    - Removed debian/patches
+    - Removed glusterfs-examples package, manual configuration is not supported.
+      Since 3.1 all configuration is done via CLI manager application
+    - Disabled packaging of manpages since they are excluded from source code
+      until 3.3.1+ (GlusterFS Bug #825906)
+  * Updated Debian packaging copyright file
+    - New upstream licenses: GPLv2 and LGPLv3+
+
+  [ Patrick Matthäi ]
+  * Merge 3.2.7~qa2-1 changelog.
+  * Drop useless Debian READMEs from the -client and -server package.
+  * Uploading to experimental.
+  * Overwrite false positive lintian error
+    possible-gpl-code-linked-with-openssl. The components of glusterfs using
+    openssl are licensed under the terms of the LGPL.
+  * Remove RPATH from usr/lib/glusterfs/glusterfs/gsyncd.
+  * Overwrite spelling-error-in-binary lintian warnings.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 10 Jun 2012 12:01:09 +0200
+
+glusterfs (3.2.7-5) unstable; urgency=medium
+
+  * Updated broken patch 04-CVE-2012-4417. Added missing calls to
+    gf_proc_dump_* functions.
+    Closes: #693112
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 25 Jan 2013 09:00:53 +0100
+
+glusterfs (3.2.7-4) unstable; urgency=medium
+
+  * Add backported upstream patch 04-CVE-2012-4417 to fix CVE-2012-4417:
+    glusterfs allows local users to overwrite arbitrary files via a symlink
+    attack on temporary files with predictable names.
+    Closes: #693112
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 19 Jan 2013 13:53:18 +0100
+
+glusterfs (3.2.7-3) unstable; urgency=low
+
+  * Remove duplicated and faulty call of the glusterd daemon from the init
+    script.
+    Closes: #691595
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 12 Nov 2012 20:23:32 +0100
+
+glusterfs (3.2.7-2~bpo60+1) squeeze-backports; urgency=low
+
+  * Rebuild for squeeze-backports.
+    - Build the package with python-support to avoid a FTBFS.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 03 Aug 2012 23:57:05 +0200
+
+glusterfs (3.2.7-2) unstable; urgency=low
+
+  * Add upstream patch 03-glusterd-crash-gcc-optimizations, which fixes a crash
+    of glusterd on submitting a command like create/delete volume to it. This
+    happens with GCC 4.7 and -O2, where GCC optimizes out rsp statements.
+    Closes: #679767
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 22 Jul 2012 14:08:56 +0200
+
+glusterfs (3.2.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 10 Jun 2012 19:54:17 +0200
+
+glusterfs (3.2.7~qa2-1) unstable; urgency=low
+
+  * New upstream pre release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 10 Jun 2012 11:02:18 +0200
+
+glusterfs (3.2.7~qa1-1) unstable; urgency=low
+
+  [ Louis Zuckerman ]
+  * Updated debian packaging copyright file
+    - Fixed upstream project URLs and information
+
+  [ Patrick Matthäi ]
+  * Correct e-mail address from Matthias.
+  * New upstream pre release.
+    - Refresh hunky patch 02-spelling-error.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 05 Jun 2012 19:47:47 +0200
+
+glusterfs (3.2.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop merged patch 03-hardened-gf-log.
+    - Refresh hunky patch 02-spelling-error.
+  * Wrap all debian/control fields.
+  * Remove unused lintian overrides.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 21 Mar 2012 18:34:34 +0100
+
+glusterfs (3.2.5-3) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.3 (no changes needed).
+  * Override lintian warnings about shlibs-calls-exit.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 25 Feb 2012 22:02:05 +0100
+
+glusterfs (3.2.5-2) unstable; urgency=low
+
+  * Fix lintian warning vim-addon-within-vim-runtime-path by installing
+    glusterfs.vim as example file now.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 25 Jan 2012 16:18:21 +0100
+
+glusterfs (3.2.5-1) unstable; urgency=low
+
+  [ Louis Zuckerman ]
+  * Add patch (03) to fix build errors
+
+  [ Patrick Matthäi ]
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 07 Jan 2012 14:19:57 +0100
+
+glusterfs (3.2.4-2) unstable; urgency=low
+
+  * Merge 3.2.4-1~bpo60+1 changelog.
+  * Add libncurses5-dev build dependency.
+    Closes: #646737
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 05 Nov 2011 11:33:56 +0100
+
+glusterfs (3.2.4-1~bpo60+1) squeeze-backports; urgency=low
+
+  * Rebuild for squeeze-backports.
+    - Build the package with python-support to avoid a FTBFS.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 24 Oct 2011 11:09:18 +0200
+
+glusterfs (3.2.4-1) unstable; urgency=low
+
+  [ Louis Zuckerman ]
+  * Add dependency: glusterfs-server requires glusterfs-client
+    Necessary for gluster NFS server (volume start warns unsuccessful
+    without glusterfs-client).
+
+  [ Patrick Matthäi ]
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 06 Oct 2011 12:10:34 +0200
+
+glusterfs (3.2.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - Refresh patch 02-spelling-error.diff.
+  * Fix lintian warning: brace-expansion-in-debhelper-config-file.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 26 Aug 2011 21:50:55 +0200
+
+glusterfs (3.2.1-1) unstable; urgency=high
+
+  * New upstream release.
+    - Refresh patch 02-spelling-error.
+  * Wrap dependencies.
+  * Merge libglusterfs0 and libglusterfs-dev package to glusterfs-common.
+    Closes: #630147
+  * Use python-module.mk and remove useless python bytecode files.
+    Closes: #630146
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 26 Jun 2011 21:00:42 +0200
+
+glusterfs (3.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop merged patch 01-remove-argp-m64-option.diff.
+    - Drop merged patch 02-fix-spelling-errors.diff.
+    - Add lintian overrides for package-installs-python-bytecode.
+  * Adjust lintian overrides.
+  * Include /usr/share/cdbs/1/class/python-distutils.mk to handle with Python
+    bytecode.
+  * Add patch 01-manpage-errors.diff to fix some errors in the manpages.
+  * Add patch 02-spelling-error.diff to fix some spelling errors in the source
+    code.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 29 May 2011 10:47:28 +0200
+
+glusterfs (3.1.4-1) unstable; urgency=low
+
+  [ Louis Zuckerman ]
+  * New upstream release.
+    - Add patch 01-remove-argp-m64-option.diff to allow 32bit builds.
+  * Enabled pure-server or pure-client installation.
+    - Moved glusterfsd binary to libglusterfs0.
+    - Added dependency on libglusterfs0 to -server and -client packages.
+    - Removed dependency on glusterfs-client from glusterfs-server.
+    - Moved manpages for binaries into their respective packages
+  * Updated default configuration files to 3.1-series versions
+    - Added glusterd.vol to glusterfs-server, required for Elastic Volume Mgr.
+    - Removed unnecessary 3.0-series sample volume-files from glusterfs-server
+    Closes: #615166
+  * Replaced init-script for glusterfs-server with new 3.1-series version.
+    Closes: #615859
+
+  [ Patrick Matthäi ]
+  * Bump Standards-Version to 3.9.2 (no changes needed).
+  * Build with hardening-wrapper.
+  * Comment out all dependency_libs lines in .la files.
+    Closes: #621169
+  * Add logrotate script to the libglusterfs0 package.
+    Closes: #623234
+  * Remove rpath from all libs and binaries.
+  * Add patch 02-fix-spelling-errors.diff, which fixes multiple spelling errors
+    in the source code.
+  * Add lintian overrides for the libglusterfs0 package.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 01 May 2011 14:41:05 +0200
+
+glusterfs (3.1.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - glusterfs-volgen and glusterfs-defrag have been removed.
+  * Suggest nfs-common with the glusterfs-server for native NFS support.
+    Closes: #614988
+  * Migrate to dh_python2.
+    Closes: #616826
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 15 Mar 2011 21:14:50 +0100
+
+glusterfs (3.1.2-3) unstable; urgency=low
+
+  * Install missing gluster command console with the glusterfs-client package.
+    Closes: #614777
+  * Link glusterfsd manpage to the glusterfs one.
+  * Fix glusterfs-server.init to return with the correct exit code and also to
+    print error messages on start every time.
+    Closes: #611733
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 23 Feb 2011 20:34:41 +0100
+
+glusterfs (3.1.2-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 06 Feb 2011 20:40:30 +0100
+
+glusterfs (3.1.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update debian/watch to show the most recent version.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 15 Jan 2011 18:53:59 +0100
+
+glusterfs (3.1.1-1) experimental; urgency=low
+
+  * New upstream release.
+    Closes: #608404
+    - Adjust debian/watch to match with the 3.1 releases.
+    - Add new build dependency libreadline-dev.
+    - Many packaging changes required.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 02 Jan 2011 15:17:06 +0100
+
+glusterfs (3.0.7-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 14 Dec 2010 18:03:51 +0100
+
+glusterfs (3.0.6-1) experimental; urgency=low
+
+  * New upstream release.
+  * Merge 3.0.5-1~bpo50+1 changelog.
+  * Bump Standards-Version to 3.9.1 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 01 Nov 2010 11:46:25 +0100
+
+glusterfs (3.0.5-1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+  * Switch back to the 1.0 format.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 24 Jul 2010 21:48:38 +0200
+
+glusterfs (3.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Merge 3.0.4-1~bpo50+1 changelog.
+  * Bump Standards-Version to 3.9.0 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 13 Jul 2010 18:40:26 +0200
+
+glusterfs (3.0.4-1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+  * Switch back to the 1.0 format.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 11 May 2010 13:15:13 +0200
+
+glusterfs (3.0.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 15 Apr 2010 20:23:01 +0200
+
+glusterfs (3.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 16 Mar 2010 19:06:47 +0100
+
+glusterfs (3.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Uploading to unstable.
+  * Bump Standards-Version to 3.8.4 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 09 Feb 2010 18:53:10 +0100
+
+glusterfs (3.0.0-1) experimental; urgency=low
+
+  * New upstream release.
+    Closes: #564649
+    - Strip io-stats.so.0.0.0.
+    - Drop patch 01-compile-with-db4.8.diff, it is not necessary anymore.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 14 Jan 2010 22:01:23 +0100
+
+glusterfs (2.0.9-3) unstable; urgency=high
+
+  * Set /var/log/glusterfs/glusterfsd.vol.log as logfile in the init script.
+    Closes: #561774
+  * Change debian/watch, so that it monitors the 3.0 releases now.
+  * Bumping urgency to high, because of the fixed RC bugs in the 2.0.9-1 and
+    2.0.9-2 release.
+  * Add manpage for glusterfs-volgen.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 13 Jan 2010 18:47:19 +0100
+
+glusterfs (2.0.9-2) unstable; urgency=high
+
+  * Create the logdir in postinst and remove it on purge.
+    Closes: #544433
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 12 Jan 2010 18:01:41 +0100
+
+glusterfs (2.0.9-1) unstable; urgency=high
+
+  [ Matthias Albert ]
+  * New upstream release.
+    Closes: #544434
+  * Added CreateBooster.py, CreateVolfile.py, glusterfs.vol and glusterfs
+    directory to the glusterfs-client package.
+  * Added python dependency for glusterfs-client.
+  * Added patch for berkely DB 4.8.
+    Closes: #549886, #549854
+  * Fixed introduced dependency problems
+    Closes: #537832
+  * debian/glusterfs-server.install:
+    - Removed glusterfsd entry.
+  * debian/glusterfs-server.links:
+    - Added links file.
+  * debian/rules:
+    - Added mv entry so that glusterfs is the binary package.
+  * debian/glusterfs-client.install:
+    - Added glusterfs-volgen.
+  * debian/glusterfs-server.init:
+    - Replaced --exec with --name in stop and status section.
+      Closes: #538877
+  * debian/control:
+    - Build depends on fuse-utils (>= 2.7.4).
+    - Bump Standards-Version to 3.8.3.
+  * Patched glusterfs-volgen script to accept --sysconfdir from configure run.
+  * debian/glusterfs-server.init: provides glusterfs-server.
+
+  [ Patrick Matthäi ]
+  * Remove useless whitespaces at EOL.
+  * Add myself as maintainer with the acknowledge of LI Daobing.
+  * Remove all uploaders, except of Matthias Albert.
+  * Remove VCS fields, the packaging is not located on git.debian.org, anymore.
+  * Convert package to the 3.0 (quilt) format.
+  * Add missing $remote_fs dependencies for the glusterfs-server.init.
+  * Fix lintian warning init.d-script-has-bad-lsb-line.
+  * Fix lintian warning copyright-with-old-dh-make-debian-copyright.
+  * Fix lintian warning copyright-refers-to-symlink-license.
+  * Fix lintian warning duplicate-short-description.
+  * Add build dependency on python-central.
+  * Build against libdb4.8.
+  * Add some missing ${shlibs:Depends}.
+  * Remove hardcoded dependency on libc-dev at the libglusterfs-dev package.
+  * Wrap dependency lines in debian/control.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 12 Jan 2010 17:30:41 +0100
+
+glusterfs (2.0.4-2) unstable; urgency=low
+
+  * Fix "circular dependency with glusterfs-server" (Closes: #537787)
+    - debian/control: glusterfs-server no longer depends on glusterfs-client.
+
+ -- LI Daobing <lidaobing@debian.org>  Tue, 21 Jul 2009 19:37:49 +0800
+
+glusterfs (2.0.4-1) unstable; urgency=low
+
+  * new upstream release.
+  * Fix "/usr/sbin/glusterfs is a symlink to glusterfsd which is in
+    glusterfs-server", change depends in debian/control (Closes: #535262)
+  * mount.glusterfs should be a bash script:
+    - debian/control: build depends on dpatch
+    - debian/rules: add dpatch.mk
+    - debian/patches/00list: added
+    - debian/patches/01_bashism.dpatch: added.
+
+ -- LI Daobing <lidaobing@debian.org>  Sun, 19 Jul 2009 11:02:01 +0800
+
+glusterfs (2.0.2-1) unstable; urgency=low
+
+  * new upstream release.
+  * debian/control:
+    - bump standards version to 3.8.2
+
+ -- LI Daobing <lidaobing@debian.org>  Sat, 27 Jun 2009 01:37:03 +0800
+
+glusterfs (2.0.1-1) unstable; urgency=low
+
+  [ Matthias Albert ]
+  * new upstream relase, closes: #529334, #525476
+
+  [ LI Daobing ]
+  * debian/watch: updated.
+  * debian/control:
+    - update my email address.
+    - bump standards version to 3.8.1
+    - update Vcs-* field, change from svn to git.
+    - depends: add ${misc:Depends}
+    - change glusterfs-dbg's section to debug.
+    - depends of glusterfs-server: add ${shlibs:Depends}
+    - build depends on debhelper >= 7
+  * debian/libglusterfs0.install:
+    - install libglusterfsclient.so.*
+  * debian/libglusterfs-dev.install:
+    - install libglusterfsclient.so.*
+  * debian/compat: change to 7.
+  * debian/rules: call dh clean.
+  * debian/clean: added.
+
+ -- LI Daobing <lidaobing@debian.org>  Tue, 26 May 2009 20:55:31 +0800
+
+glusterfs (1.3.12-1) unstable; urgency=low
+
+  * new upstream release, closes: #495312
+  * include upstream changelog extracted from tla
+
+ -- Matthias Albert <matthias@linux4experts.de>  Fri, 12 Sep 2008 17:32:47 +0200
+
+glusterfs (1.3.10-1) unstable; urgency=low
+
+  * first upload to Debian archive, thanks to the hard work of Leonardo
+    Rodrigues de Mello, Matthias Albert, Li Daobing and Neil Wilson,
+    closes: #419924
+  * extend init script with status function, remove boilerplate
+    do_reload function and fix whitespace typo
+  * remove mount patch which is included in upstream sources
+  * include copyright text in debian/copyright, include author list,
+    include more specific homepage
+  * switch from Ubuntu universe back to standard Debian sections
+
+ -- Christian Meder <chris@absolutegiganten.org>  Wed, 23 Jul 2008 08:01:21 +0200
+
+glusterfs (1.3.10-0ubunut1) intrepid; urgency=low
+
+  * New Upstream Version
+
+ -- Neil Wilson <neil@brightbox.co.uk>  Thu, 17 Jul 2008 09:20:07 +0100
+
+glusterfs (1.3.9-0ubuntu1) intrepid; urgency=low
+
+  * public release (closes LP#246715)
+  * debian/rules: Add get-orig-source target
+  * debian/control: Alter section to point at universe
+  * debian/copyright: Update to GPL-3
+  * debian/watch: Add
+  * Patch server volume file so that it shares to localhost automatically.
+  * debian/glusterfs-server.init: Add a new init script that doesn't
+    hang on stop.
+  * debian/control: Split client and server packages out.
+  * debian/rules: Change sample configs to real ones. Remove --no-start
+  * debian/rules: Make alterations at install time
+  * debian/rules: Install daemon manpages in server.
+  * debian/glusterfs-server.manpages: Add
+  * Make separate README entries for client and server
+  * new upstream release 1.3.9.
+
+ -- Neil Wilson <neil@brightbox.co.uk>  Tue, 08 Jul 2008 20:47:15 +0100
+
+glusterfs (1.3.8~pre5-1) unstable; urgency=low
+
+  * new upstream release 1.3.8pre5.
+
+ -- LI Daobing <lidaobing@gmail.com>  Mon, 07 Apr 2008 22:20:23 +0800
+
+glusterfs (1.3.8~pre4-1) unstable; urgency=low
+
+  * new upstream release 1.3.8pre4.
+
+ -- LI Daobing <lidaobing@gmail.com>  Tue, 01 Apr 2008 21:54:01 +0800
+
+glusterfs (1.3.8~pre3-1) unstable; urgency=low
+
+  * new upstream release 1.3.8pre3.
+
+ -- LI Daobing <lidaobing@gmail.com>  Mon, 17 Mar 2008 23:19:21 +0800
+
+glusterfs (1.3.8~pre2-1) unstable; urgency=low
+
+  * new upstream release 1.3.8pre2.
+    - debian/patches/01mount.glusterfs.patch: updated
+    - debian/rules: only glusterfs is left and moved to a new place, update
+    the help2man part.
+  * merge glusterfs-client and glusterfs-server to glusterfs, in this version,
+    glusterfsd is symlink to glusterfs:
+    - debian/control: updated
+    - debian/glusterfs-{client,server}.dirs -> debian/glusterfs.dirs
+    - debian/glusterfs-{client,server}.install -> debian/glusterfs.install
+    - debian/glusterfs.links: add manpage symlink
+    - debian/rules: updated
+  * debian/control: glusterfs-dbg depends on glusterfs.
+  * debian/control: improve glusterfs' short description.
+  * debian/control: build depends on libdb-dev.
+
+ -- LI Daobing <lidaobing@gmail.com>  Mon, 10 Mar 2008 18:00:16 +0800
+
+glusterfs (1.3.8~pre1-1) unstable; urgency=low
+
+  [ Leonardo Rodrigues de Mello ]
+  * New upstream release.
+  * Patched mount.glusterfs to detect multiple mounts
+
+  [ LI Daobing ]
+  * add me as uploader.
+  * debian/rules:
+    - fix init problems.
+    - strip debug/trace.so.
+    - install mount.glusterfs(8).
+    - manpage for glusterfs and glusterfsd should belong section 8.
+  * debian/control:
+    - fix package description.
+    - add homepage and vcs-* fields.
+    - don't build on -1-revision.
+    - add glusterfs-dbg.
+  * debian/mount.glusterfs.8: added.
+
+ -- LI Daobing <lidaobing@gmail.com>  Fri, 29 Feb 2008 15:24:22 +0800
+
+glusterfs (1.3.7-1) unstable; urgency=low
+
+  * Implement Changes proposed by Jeremy Laine
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Wed,  2 Jan 2008 10:58:35 -0200
+
+glusterfs (1.3.7-0) unstable; urgency=low
+
+  * New Upstream Release 1.3.7
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Fri, 30 Nov 2007 10:36:42 -0200
+
+glusterfs (1.3.2) unstable; urgency=low
+
+  * New Upstream Release 1.3.2
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Thu, 27 Sep 2007 09:04:47 -0300
+
+glusterfs (1.3.1) unstable; urgency=low
+
+  *  New Upstream Release 1.3.1
+  *  Fix in init script.
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Thu, 30 Aug 2007 15:56:40 -0300
+
+glusterfs (1.3.0.1-1) unstable; urgency=low
+
+  * New Upstrem Release 1.3.0
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Wed, 22 Aug 2007 14:51:31 -0300
+
+glusterfs (1.3.0-pre7+patch451-1) unstable; urgency=low
+
+  * Updated the init script
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Fri, 10 Aug 2007 10:59:06 -0300
+
+glusterfs (1.3.0-pre7+patch451) unstable; urgency=low
+
+  * Version -1.3.0-pre7+patch451 from TLA
+  * Fixes bugs in hardlink and solves performance issues.
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Fri, 10 Aug 2007 09:21:28 -0300
+
+glusterfs (1.3.0-pre7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Mon,  6 Aug 2007 12:02:46 -0300
+
+glusterfs (1.3.0-pre6-2.1) unstable; urgency=low
+
+  * NMU upload
+  * Add libibverbs-dev to Build-Depends
+  * Changed some of the 'all' Architectures to 'any'
+  * Added an init script and defaults script
+  * Updated package descriptions
+
+ -- Chris AtLee <chris@atlee.ca>  Thu, 02 Aug 2007 11:06:13 -0400
+
+glusterfs (1.3.0-pre6-2) feisty; urgency=low
+
+  * Fix bugs in glusterfs-server, and glusterfs-client executable path.
+  * Now the package create the dir /var/log/glusterfs
+
+ -- Leonardo Rodrigues de Mello  <l@lmello.eu.org>  Wed, 26 Jul 2007 11:55:02 -0300
+
+glusterfs (1.3.0-pre6-1) feisty; urgency=low
+
+  * New upstream release
+
+ -- Leonardo Rodrigues de Mello  <l@lmello.eu.org>  Wed, 25 Jul 2007 16:26:02 -0300
+
+glusterfs (1.3.0-pre5.4-1lmello1) unstable; urgency=low
+
+  * Initial debian package release
+
+ -- Leonardo Rodrigues de Mello <l@lmello.eu.org>  Mon, 23 Jul 2007 15:23:32 -0300
+
