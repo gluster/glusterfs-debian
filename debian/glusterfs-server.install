@@ -1,0 +1,3 @@
+usr/sbin/gluster
+usr/sbin/glusterd
+etc/glusterfs/glusterd.vol

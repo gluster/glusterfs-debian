@@ -1,0 +1,120 @@
+Source: glusterfs
+Section: admin
+Priority: optional
+Maintainer: Louis Zuckerman <me@louiszuckerman.com>
+Build-Depends: bison,
+ flex,
+ libfuse-dev (>= 2.6.5),
+ libibverbs-dev (>= 1.0.4),
+ librdmacm-dev,
+ libdb-dev,
+ libaio-dev,
+ liblvm2-dev,
+ attr,
+ libreadline-dev,
+ libncurses5-dev,
+ libssl-dev,
+ libxml2-dev,
+ pkg-config,
+ python-all-dev (>= 2.6.6-3~),
+ chrpath,
+ debhelper (>= 9),
+ autotools-dev,
+ cdbs,
+ hardening-wrapper
+Standards-Version: 3.9.3
+Homepage: http://www.gluster.org/
+
+Package: glusterfs-client
+Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends},
+ ${shlibs:Depends},
+ python,
+ glusterfs-common (>= ${binary:Version})
+Breaks: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5)
+Replaces: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5)
+Description: clustered file-system (client package)
+ GlusterFS is a clustered file-system capable of scaling to several
+ peta-bytes. It aggregates various storage bricks over Infiniband RDMA
+ or TCP/IP interconnect into one large parallel network file
+ system. GlusterFS is one of the most sophisticated file system in
+ terms of features and extensibility. It borrows a powerful concept
+ called Translators from GNU Hurd kernel. Much of the code in GlusterFS
+ is in userspace and easily manageable.
+ .
+ This package provides the FUSE based GlusterFS tool.
+
+Package: glusterfs-server
+Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends},
+ ${shlibs:Depends},
+ lsb-base (>= 3.0-6),
+ glusterfs-common (>= ${binary:Version}),
+ glusterfs-client (>= ${binary:Version}),
+ nfs-common,
+ libxml2
+Breaks: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5)
+Replaces: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5)
+Description: clustered file-system (server package)
+ GlusterFS is a clustered file-system capable of scaling to several
+ peta-bytes. It aggregates various storage bricks over Infiniband RDMA
+ or TCP/IP interconnect into one large parallel network file
+ system. GlusterFS is one of the most sophisticated file system in
+ terms of features and extensibility. It borrows a powerful concept
+ called Translators from GNU Hurd kernel. Much of the code in GlusterFS
+ is in userspace and easily manageable.
+ .
+ This package installs init scripts and configuration files to turn
+ GlusterFS into a fully fledged file server.
+
+Package: glusterfs-common
+Section: libs
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends},
+ dpkg (>= 1.15.6~)
+Depends: ${misc:Depends},
+ ${shlibs:Depends}
+Conflicts: libglusterfs0,
+ libglusterfs-dev
+Breaks: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5)
+Replaces: glusterfs-server (<< 3.4.0~qa5),
+ glusterfs (<< 3.4.0~qa5),
+ libglusterfs0,
+ libglusterfs-dev
+Description: GlusterFS common libraries and translator modules
+ GlusterFS is a clustered file-system capable of scaling to several
+ petabytes. It aggregates various storage bricks over Infiniband RDMA
+ or TCP/IP interconnect into one large parallel network file
+ system. GlusterFS is one of the most sophisticated file system in
+ terms of features and extensibility. It borrows a powerful concept
+ called Translators from GNU Hurd kernel. Much of the code in GlusterFS
+ is in userspace and easily manageable.
+ .
+ This package includes libglusterfs and glusterfs translator modules
+ common to both GlusterFS server and client framework.
+
+Package: glusterfs-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ glusterfs-client (= ${binary:Version})
+Description: GlusterFS debugging symbols
+ GlusterFS is a clustered file-system capable of scaling to several
+ peta-bytes. It aggregates various storage bricks over Infiniband RDMA
+ or TCP/IP interconnect into one large parallel network file
+ system. GlusterFS is one of the most sophisticated file system in
+ terms of features and extensibility.  It borrows a powerful concept
+ called Translators from GNU Hurd kernel. Much of the code in GlusterFS
+ is in userspace and easily manageable.
+ .
+ This package includes the debugging symbols.
