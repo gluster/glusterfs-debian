@@ -1,0 +1,5 @@
+usr/sbin/glusterfsd
+usr/lib/*
+usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
+libglusterfs/src/*.h usr/include/glusterfs/
+api/src/glfs.h usr/include/glusterfs/api/
