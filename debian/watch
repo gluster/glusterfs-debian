@@ -1,0 +1,2 @@
+version=3
+http://bits.gluster.com/pub/gluster/glusterfs/src/glusterfs-([\d.]+)\.tar\.gz
