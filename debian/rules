@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_HARDENING=1
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+#include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/class/autotools.mk
+#include /usr/share/cdbs/1/class/python-module.mk
+
+%:
+	dh $@ --with python2
+
+override_dh_install:
+	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
+		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/trace.so
+	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
+		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/error-gen.so
+	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
+		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
+	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
+	dh_install
+	mv debian/glusterfs-common/usr/lib/*/pkgconfig/ \
+		debian/glusterfs-common/usr/lib/
+
+override_dh_installinit:
+	dh_installinit -pglusterfs-client --upstart-only --no-start --name=mounting-glusterfs
+	dh_installinit -pglusterfs-server --upstart-only
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+override_dh_strip:
+	dh_strip --dbg-package=glusterfs-dbg
