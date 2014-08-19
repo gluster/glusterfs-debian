@@ -1,3 +1,0 @@
-debian/tmp/usr/sbin/gluster
-debian/tmp/usr/sbin/glusterd
-debian/tmp/etc/glusterfs/glusterd.vol
