@@ -1,3 +1,10 @@
+glusterfs (3.5.2-3) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * Add glfsheal
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Wed, 27 Aug 2014 20:48:51 -0400
+
 glusterfs (3.5.2-2) wheezy; urgency=low
 
   [ Gluster Packager ]
