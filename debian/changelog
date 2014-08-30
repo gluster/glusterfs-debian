@@ -1,3 +1,12 @@
+glusterfs (3.5.2-ubuntu1~trusty2) trusty; urgency=low
+
+  [ Nathan R. Hruby ]
+  * glusterfs-common: Install usr/share/glusterfs
+  * glusterfs-server: Install geo-rep-create-post hook
+  * Both from BZ: 1132766
+
+ -- Louis Zuckerman <me@louiszuckerman.com>  Fri, 29 Aug 2014 21:12:40 -0400
+
 glusterfs (3.5.2-ubuntu1~trusty1) trusty; urgency=low
 
   * New upstream release
