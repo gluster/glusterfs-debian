@@ -1,3 +1,12 @@
+glusterfs (3.5.2-4) jessie; urgency=low
+
+  [ Nathan R. Hruby ]
+  * glusterfs-common: Install usr/share/glusterfs
+  * glusterfs-server: Install geo-rep-create-post hook
+  * Both from BZ: 1132766
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Fri, 29 Aug 2014 21:12:40 -0400
+
 glusterfs (3.5.2-3) wheezy; urgency=low
 
   [ Gluster Packager ]
