@@ -1,4 +1,3 @@
 usr/sbin/gluster
 usr/sbin/glusterd
-usr/sbin/glfsheal
 etc/glusterfs/glusterd.vol
