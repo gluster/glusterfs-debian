@@ -1,3 +1,15 @@
+glusterfs (3.5.2-ubuntu1~utopic3) utopic; urgency=low
+
+  [ Louis Zuckerman ]
+  * For building ganesha, now including *.h from api/src (prev. only glfs.h)
+
+  [ Nathan R. Hruby ]
+  * glusterfs-common: Install usr/share/glusterfs
+  * glusterfs-server: Install geo-rep-create-post hook
+  * Both from BZ: 1132766
+
+ -- Louis Zuckerman <me@louiszuckerman.com>  Sat, 25 Oct 2014 19:16:58 -0400
+
 glusterfs (3.5.2-ubuntu1~utopic1) utopic; urgency=low
 
   * New upstream release
