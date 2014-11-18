@@ -1,3 +1,9 @@
+glusterfs (3.4.6-1) wheezy; urgency=low
+
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Mon, 17 Nov 2014 22:25:14 -0400
+
 glusterfs (3.4.6beta1-1) wheezy; urgency=low
 
   * New beta release
