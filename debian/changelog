@@ -1,3 +1,9 @@
+glusterfs (3.6.1-ubuntu1~trusty1) trusty; urgency=low
+
+  * New release
+
+ -- Louis Zuckerman <me@louiszuckerman.com>  Mon, 17 Nov 2014 22:51:45 -0400
+
 glusterfs (3.6.0beta3-ubuntu1~trusty1) trusty; urgency=low
 
   * New beta release
