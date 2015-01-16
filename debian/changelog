@@ -1,3 +1,10 @@
+glusterfs (3.6.2beta2-1) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * 3.6.2
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Fri, 16 Dec 2015 20:48:51 -0400
+
 glusterfs (3.6.1-1) wheezy; urgency=low
 
   [ Gluster Packager ]
