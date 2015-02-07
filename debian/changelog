@@ -1,3 +1,9 @@
+glusterfs (3.6.2-ubuntu1~trusty3) trusty; urgency=medium
+
+  * Automatic build
+
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Sat, 07 Feb 2015 06:13:08 +0000
+
 glusterfs (3.6.1-ubuntu1~trusty1) trusty; urgency=low
 
   * New release
