@@ -5,6 +5,7 @@
 	compress
 	notifempty
 	missingok
+	copytruncate
 	postrotate
 		[ ! -f /var/run/glusterd.pid ] || kill -HUP `cat /var/run/glusterd.pid`
 	endscript

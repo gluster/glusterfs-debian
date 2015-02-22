@@ -2,24 +2,25 @@ Source: glusterfs
 Section: admin
 Priority: optional
 Maintainer: Louis Zuckerman <me@louiszuckerman.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: bison,
+ flex,
  dh-autoreconf,
  libfuse-dev (>= 2.6.5),
  libibverbs-dev (>= 1.0.4),
+ librdmacm-dev,
  libdb-dev,
+ libaio-dev,
+ liblvm2-dev,
  attr,
- flex,
- bison,
+ libattr1-dev,
  libreadline-dev,
  libncurses5-dev,
  libssl-dev,
  libxml2-dev,
  pkg-config,
  python-all-dev (>= 2.6.6-3~),
- liblvm2-dev,
- libaio-dev,
- librdmacm-dev,
  chrpath,
+ debhelper (>= 9),
  hardening-wrapper
 Standards-Version: 3.9.4
 Homepage: http://www.gluster.org/
@@ -50,8 +51,9 @@ Depends: ${misc:Depends},
  ${shlibs:Depends},
  lsb-base (>= 3.0-6),
  glusterfs-common (>= ${binary:Version}),
- glusterfs-client (>= ${binary:Version})
-Recommends: nfs-common
+ glusterfs-client (>= ${binary:Version}),
+ nfs-common,
+ libxml2
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
  peta-bytes. It aggregates various storage bricks over Infiniband RDMA
