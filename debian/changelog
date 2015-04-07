@@ -1,3 +1,9 @@
+glusterfs (3.4.7-1) wheezy; urgency=low
+
+  * New release
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Tue, 7 apr 2015 22:25:14 -0400
+
 glusterfs (3.4.6-1) wheezy; urgency=low
 
   * New release
