@@ -1,3 +1,9 @@
+glusterfs (3.4.7-ubuntu1~utopic1) utopic; urgency=medium
+
+  * Automatic build
+
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Thu, 09 Apr 2015 03:06:36 +0000
+
 glusterfs (3.4.6-ubuntu1~utopic1) utopic; urgency=low
 
   * New release
