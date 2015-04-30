@@ -18,7 +18,12 @@ Build-Depends: debhelper (>= 9),
  python-all-dev (>= 2.6.6-3~),
  liblvm2-dev,
  libaio-dev,
+ libacl1-dev,
  librdmacm-dev,
+ uuid-dev,
+ liburcu-dev,
+ libsqlite3-dev,
+ libglib2.0-dev,
  chrpath,
  hardening-wrapper
 Standards-Version: 3.9.4
