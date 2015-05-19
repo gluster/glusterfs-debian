@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 9),
  libfuse-dev (>= 2.6.5),
  libibverbs-dev (>= 1.0.4),
  libdb-dev,
- attr,
+ libattr1-dev,
  flex,
  bison,
  libreadline-dev,
@@ -76,7 +76,7 @@ Pre-Depends: ${misc:Pre-Depends},
  dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
- attr
+ libattr1-dev
 Conflicts: libglusterfs0,
  libglusterfs-dev
 Breaks: glusterfs-server (<< 3.4.0~qa5)
