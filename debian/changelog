@@ -1,9 +1,16 @@
+glusterfs (3.7.0-2) jessie; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.0, build w/ libattr1-dev, not attr 
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 19 May 2015 20:48:51 -0400
+
 glusterfs (3.7.0-1) jessie; urgency=low
 
   [ Gluster Packager ]
   * glusterfs-3.7.0 GA
 
- -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 15 May 2015 20:48:51 -0400
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 15 May 2015 20:48:51 -0400
 
 glusterfs (3.7.0beta2-1) jessie; urgency=low
 
