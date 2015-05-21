@@ -1,7 +1,7 @@
-glusterfs (3.7.0-3) jessie; urgency=low
+glusterfs (3.7.0-3) stretch; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-3.7.0, /usr/lib/* is already in -common
+  * glusterfs-3.7.0, GA, libattr1-dev, /usr/lib/* is already in -common
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 20 May 2015 20:48:51 -0400
 
