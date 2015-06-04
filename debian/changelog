@@ -1,3 +1,17 @@
+glusterfs (3.5.4-1) jessie; urgency=low
+
+  [ Gluster Packager ]
+  * New release
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 4 Jun 2015 20:48:51 -0400
+
+glusterfs (3.5.3-1) jessie; urgency=low
+
+  [ Gluster Packager ]
+  * New release
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 17 Nov 2014 20:48:51 -0400
+
 glusterfs (3.5.2-4) jessie; urgency=low
 
   [ Nathan R. Hruby ]
