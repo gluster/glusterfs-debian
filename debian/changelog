@@ -1,14 +1,14 @@
-glusterfs (3.6.2-ubuntu1~utopic3) utopic; urgency=medium
+glusterfs (3.6.3-ubuntu1~utopic1) trusty; urgency=medium
 
   * Automatic build
 
- -- GlusterFS deb packages <deb.packages@gluster.org>  Sun, 22 Feb 2015 07:09:30 +0000
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Mon, 08 Jun 2015 06:13:08 +0000
 
-glusterfs (3.6.1-ubuntu1~utopic1) utopic; urgency=low
+glusterfs (3.6.2-ubuntu1~trusty3) trusty; urgency=medium
 
-  * New release
+  * Automatic build
 
- -- Louis Zuckerman <me@louiszuckerman.com>  Fri, 19 Dec 2014 21:45:00 -0400
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Sat, 07 Feb 2015 06:13:08 +0000
 
 glusterfs (3.6.1-ubuntu1~trusty1) trusty; urgency=low
 
