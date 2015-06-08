@@ -1,3 +1,10 @@
+glusterfs (3.7.1-ubuntu1~trusty1) trusty; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.1 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Mon, 8 Jun 2015 20:48:51 -0400
+
 glusterfs (3.7.1-1) jessie; urgency=low
 
   [ Gluster Packager ]
