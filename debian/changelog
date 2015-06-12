@@ -1,8 +1,8 @@
-glusterfs (3.7.1-ubuntu1~utopic2) utopic; urgency=low
+glusterfs (3.7.1-ubuntu1~vivid1) vivid; urgency=low
 
   * new version
 
- -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 12 Jun 2015 07:58:51 -0400
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 12 Jun 2015 07:59:51 -0400
 
 glusterfs (3.7.1-1) jessie; urgency=low
 
