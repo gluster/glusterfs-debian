@@ -1,8 +1,8 @@
-glusterfs (3.6.3-ubuntu1~utopic1) trusty; urgency=medium
+glusterfs (3.6.3-ubuntu1~utopic2) utopic; urgency=medium
 
   * Automatic build
 
- -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Mon, 08 Jun 2015 06:13:08 +0000
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 12 Jun 2015 06:13:08 +0000
 
 glusterfs (3.6.2-ubuntu1~trusty3) trusty; urgency=medium
 
