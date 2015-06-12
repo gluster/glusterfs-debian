@@ -1,3 +1,9 @@
+glusterfs (3.5.4-ubuntu1~trusty1) trusty; urgency=low
+
+  * New release
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 12 Jun 2015 07:20:51 -0400
+
 glusterfs (3.5.3-ubuntu1~trusty1) trusty; urgency=low
 
   * New release
