@@ -1,4 +1,4 @@
-glusterfs (3.7.1-ubuntu1~trusty2) trusty; urgency=low
+glusterfs (3.7.1-ubuntu1~utopic1) utopic; urgency=low
 
   [ Gluster Packager ]
   * glusterfs-3.7.1 GA
