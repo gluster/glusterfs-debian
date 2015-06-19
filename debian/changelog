@@ -1,3 +1,9 @@
+glusterfs (3.7.2-ubuntu1~utopic1) utopic; urgency=low
+
+  * GlusterFS 3.7.2 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 19 Jun 2015 10:35:51 -0400
+
 glusterfs (3.7.1-ubuntu1~utopic3) utopic; urgency=low
 
   * add libacl1-dev to -common for qemu builds
