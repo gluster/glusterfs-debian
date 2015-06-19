@@ -1,3 +1,9 @@
+glusterfs (3.7.2-ubuntu1~vivid1) vivid; urgency=low
+
+  * GlusterFS 3.7.2 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 19 Jun 2015 10:41:51 -0400
+
 glusterfs (3.7.1-ubuntu1~vivid2) vivid; urgency=low
 
   * glusterfs-common depends on libacl1-dev in order to build qemu
