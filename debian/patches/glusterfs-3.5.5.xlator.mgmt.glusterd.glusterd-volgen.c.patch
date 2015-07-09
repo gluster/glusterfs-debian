@@ -1,0 +1,27 @@
+--- glusterfs-3.5.5/xlators/mgmt/glusterd/src/glusterd-volgen.c.orig	2015-07-08 14:27:52.386643601 -0400
++++ glusterfs-3.5.5/xlators/mgmt/glusterd/src/glusterd-volgen.c	2015-07-08 14:32:44.137643601 -0400
+@@ -1982,7 +1982,8 @@
+         int                      ret = -1;
+         char                    *def_val = NULL;
+         char                    *descr = NULL;
+-        char                     output_string[25600] = {0, };
++        char                     output_string[51200] = {0, };
++        size_t                   len_output_string = 0;
+         char                    *output = NULL;
+         char                     tmp_str[2048] = {0, };
+ #if (HAVE_LIB_XML)
+@@ -2046,10 +2047,12 @@
+                         gf_log ("glusterd", GF_LOG_ERROR, "Libxml not present");
+ #endif
+                 } else {
+-                        snprintf (tmp_str, sizeof (tmp_str), "Option: %s\nDefault "
++                        len_output_string += 
++                              snprintf (tmp_str,sizeof (tmp_str), "Option: %s\nDefault "
+                                         "Value: %s\nDescription: %s\n\n",
+                                         vme->key, def_val, descr);
+-                        strcat (output_string, tmp_str);
++                        if (len_output_string < sizeof output_string)
++                                strcat (output_string, tmp_str);
+                 }
+ cont:
+                 if (dl_handle) {
