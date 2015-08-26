@@ -1,3 +1,9 @@
+glusterfs (3.6.5-ubuntu1~vivid1) vivid; urgency=medium
+
+  * GlusterFS 3.6.5 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Wed, 26 Aug 2015 16:08:08 +0000
+
 glusterfs (3.6.4-ubuntu1~vivid1) vivid; urgency=medium
 
   * Automatic build
