@@ -1,11 +1,25 @@
-glusterfs (3.7.2-1) jessie; urgency=low
+glusterfs (3.7.4-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.4 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 9 Sep 2015 08:47:51 -0400
+
+glusterfs (3.7.3-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.3 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 28 Jul 2015 13:52:51 -0400
+
+glusterfs (3.7.2-1) stretch; urgency=low
 
   [ Gluster Packager ]
   * glusterfs-3.7.2 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 19 Jun 2015 12:56:51 -0400
 
-glusterfs (3.7.1-1) jessie; urgency=low
+glusterfs (3.7.1-1) stretch; urgency=low
 
   [ Gluster Packager ]
   * glusterfs-3.7.1 GA
