@@ -1,3 +1,9 @@
+glusterfs (3.5.6-ubuntu1~trusty1) trusty; urgency=low
+
+  * GlusterFS 3.5.6 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Wed, 16 Sep 2015 11:15:51 -0400
+
 glusterfs (3.5.5-ubuntu1~trusty2) trusty; urgency=low
 
   * GlusterFS 3.5.5 GA
