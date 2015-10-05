@@ -1,3 +1,9 @@
+glusterfs (3.7.4-ubuntu1~vivid2) vivid; urgency=low
+
+  * GlusterFS 3.7.4, with upstart
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 5 Oct 2015 11:01:51 -0400
+
 glusterfs (3.7.4-ubuntu1~vivid1) vivid; urgency=low
 
   * GlusterFS 3.7.4 GA

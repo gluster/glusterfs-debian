@@ -1,6 +1,12 @@
 #!/usr/bin/make -f
 
 export DEB_BUILD_HARDENING=1
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+#include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/class/autotools.mk
+#include /usr/share/cdbs/1/class/python-module.mk
 
 %:
 	dh $@ --with python2
@@ -16,6 +22,12 @@ override_dh_install:
 	dh_install
 	mv debian/glusterfs-common/usr/lib/*/pkgconfig/ \
 		debian/glusterfs-common/usr/lib/
+	/usr/bin/install -D -p -m 0744 extras/hook-scripts/S56glusterd-geo-rep-create-post.sh \
+		debian/glusterfs-server/var/lib/glusterd/hooks/1/gsync-create/post/S56glusterd-geo-rep-create-post.sh
+
+override_dh_installinit:
+	dh_installinit -pglusterfs-client --upstart-only --no-start --name=mounting-glusterfs
+	dh_installinit -pglusterfs-server --upstart-only
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
