@@ -1,3 +1,10 @@
+
+glusterfs (3.7.5-ubuntu1~vivid1) vivid; urgency=low
+
+  * GlusterFS 3.7.5 GA
+
+ -- GlusterFS Mohamed Ashiq Liyazudeen <mliyazud@redhat.com>  Fri, 9 Oct 2015 01:17:51 -0400
+
 glusterfs (3.7.4-ubuntu1~vivid2) vivid; urgency=low
 
   * GlusterFS 3.7.4, with upstart
