@@ -1,3 +1,9 @@
+glusterfs (3.7.6-ubuntu1~wily1) wily; urgency=low
+
+  * GlusterFS 3.7.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 9 Nov 2015 09:09:51 -0400
+
 glusterfs (3.7.5-ubuntu1~wily1) wily; urgency=low
 
   * GlusterFS 3.7.5 GA
