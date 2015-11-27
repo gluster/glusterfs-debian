@@ -1,3 +1,9 @@
+glusterfs (3.6.7-ubuntu1~trusty1) trusty; urgency=medium
+
+  * GlusterFS 3.6.7 GA
+
+ -- GlusterFS M S Vishwanath Bhat <vbhat@redhat.com>  Fri, 27 Nov 2015 18:50:00 +0530
+
 glusterfs (3.6.5-ubuntu1~trusty1) trusty; urgency=medium
 
   * GlusterFS 3.6.5 GA
