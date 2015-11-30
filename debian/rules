@@ -3,7 +3,7 @@
 export DEB_BUILD_HARDENING=1
 
 %:
-	dh $@ --with python2
+	dh $@ --with python2 --with autoreconf
 
 override_dh_install:
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \

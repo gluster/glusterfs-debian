@@ -1,3 +1,9 @@
+glusterfs (3.7.6-ubuntu1~precise1) precise; urgency=low
+
+  * glusterfs-3.7.6 GA + patch
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 24 Nov 2015 20:50:51 -0400
+
 glusterfs (3.7.3-ubuntu1~precise1) precise; urgency=low
 
   * glusterfs-3.7.3 GA
