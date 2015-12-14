@@ -1,3 +1,10 @@
+glusterfs (3.5.7-1) wheezy; urgency=low
+
+  [ Manikandan ]
+  * 3.5.7 GA
+
+ -- GlusterFS deb packages <deb.packages@download.gluster.org>  Mon, 14 Dec 2015 22:10:28 -0400
+
 glusterfs (3.5.6-1) wheezy; urgency=low
 
   [ Gluster Packager ]
