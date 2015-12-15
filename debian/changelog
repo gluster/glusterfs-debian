@@ -1,3 +1,10 @@
+glusterfs (3.5.7-1) jessie; urgency=low
+
+  [ Manikandan Selvaganesh ]
+  * GlusterFS 3.5.7 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 15 Dec 2015 14:53:51 -0400
+
 glusterfs (3.5.6-1) jessie; urgency=low
 
   [ Gluster Packager ]
