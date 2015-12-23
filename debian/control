@@ -77,7 +77,8 @@ Pre-Depends: ${misc:Pre-Depends},
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  attr,
- libacl1-dev
+ libacl1-dev,
+ uuid-dev
 Conflicts: libglusterfs0,
  libglusterfs-dev
 Breaks: glusterfs-server (<< 3.4.0~qa5)
@@ -94,7 +95,8 @@ Description: GlusterFS common libraries and translator modules
  is in userspace and easily manageable.
  .
  This package includes libglusterfs and glusterfs translator modules
- common to both GlusterFS server and client framework.
+ common to both GlusterFS server and client framework, as well as header
+ files for development.
 
 Package: glusterfs-dbg
 Section: debug
