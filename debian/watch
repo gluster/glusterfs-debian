@@ -1,2 +1,2 @@
 version=3
-http://bits.gluster.com/pub/gluster/glusterfs/src/glusterfs-([\d.]+)\.tar\.gz
+http://pkgs.fedoraproject.org/repo/pkgs/libntirpc libntirpc-(.+)\.tar\.bz2/

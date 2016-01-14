@@ -1,122 +1,30 @@
-Source: glusterfs
-Section: admin
-Priority: optional
-Maintainer: Louis Zuckerman <me@louiszuckerman.com>
-Build-Depends: bison,
- flex,
- libfuse-dev (>= 2.6.5),
- libibverbs-dev (>= 1.0.4),
- librdmacm-dev,
- libdb-dev,
- libaio-dev,
- liblvm2-dev,
- libattr1-dev,
- libreadline-dev,
- libncurses5-dev,
- libssl-dev,
- libxml2-dev,
- pkg-config,
- python-all-dev (>= 2.6.6-3~),
- chrpath,
- debhelper (>= 9),
- autotools-dev,
- cdbs,
- libtool,
- hardening-wrapper
-Standards-Version: 3.9.3
-Homepage: http://www.gluster.org/
-
-Package: glusterfs-client
-Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends},
- ${shlibs:Depends},
- python,
- glusterfs-common (>= ${binary:Version})
-Breaks: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5)
-Replaces: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5)
-Description: clustered file-system (client package)
- GlusterFS is a clustered file-system capable of scaling to several
- peta-bytes. It aggregates various storage bricks over Infiniband RDMA
- or TCP/IP interconnect into one large parallel network file
- system. GlusterFS is one of the most sophisticated file system in
- terms of features and extensibility. It borrows a powerful concept
- called Translators from GNU Hurd kernel. Much of the code in GlusterFS
- is in userspace and easily manageable.
- .
- This package provides the FUSE based GlusterFS tool.
-
-Package: glusterfs-server
-Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends},
- ${shlibs:Depends},
- lsb-base (>= 3.0-6),
- glusterfs-common (>= ${binary:Version}),
- glusterfs-client (>= ${binary:Version}),
- nfs-common,
- libxml2
-Breaks: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5)
-Replaces: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5)
-Description: clustered file-system (server package)
- GlusterFS is a clustered file-system capable of scaling to several
- peta-bytes. It aggregates various storage bricks over Infiniband RDMA
- or TCP/IP interconnect into one large parallel network file
- system. GlusterFS is one of the most sophisticated file system in
- terms of features and extensibility. It borrows a powerful concept
- called Translators from GNU Hurd kernel. Much of the code in GlusterFS
- is in userspace and easily manageable.
- .
- This package installs init scripts and configuration files to turn
- GlusterFS into a fully fledged file server.
-
-Package: glusterfs-common
+Source: libntirpc
+Priority: standard
+Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
+Build-Depends: debhelper (>= 9), cmake, libkrb5-dev, libjemalloc-dev
+Standards-Version: 3.9.6
 Section: libs
-Architecture: any
-Pre-Depends: ${misc:Pre-Depends},
- dpkg (>= 1.15.6~)
-Depends: ${misc:Depends},
- ${shlibs:Depends},
- attr
-Conflicts: libglusterfs0,
- libglusterfs-dev
-Breaks: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5)
-Replaces: glusterfs-server (<< 3.4.0~qa5),
- glusterfs (<< 3.4.0~qa5),
- libglusterfs0,
- libglusterfs-dev
-Description: GlusterFS common libraries and translator modules
- GlusterFS is a clustered file-system capable of scaling to several
- petabytes. It aggregates various storage bricks over Infiniband RDMA
- or TCP/IP interconnect into one large parallel network file
- system. GlusterFS is one of the most sophisticated file system in
- terms of features and extensibility. It borrows a powerful concept
- called Translators from GNU Hurd kernel. Much of the code in GlusterFS
- is in userspace and easily manageable.
- .
- This package includes libglusterfs and glusterfs translator modules
- common to both GlusterFS server and client framework.
+Homepage: https://github.com/nfs-ganesha/ntirpc
 
-Package: glusterfs-dbg
-Section: debug
+Package: libntirpc-dev
+Section: libdevel
 Priority: extra
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${shlibs:Depends},
- ${misc:Depends},
- glusterfs-client (= ${binary:Version})
-Description: GlusterFS debugging symbols
- GlusterFS is a clustered file-system capable of scaling to several
- peta-bytes. It aggregates various storage bricks over Infiniband RDMA
- or TCP/IP interconnect into one large parallel network file
- system. GlusterFS is one of the most sophisticated file system in
- terms of features and extensibility.  It borrows a powerful concept
- called Translators from GNU Hurd kernel. Much of the code in GlusterFS
- is in userspace and easily manageable.
+Depends: libntirpc1 (= ${binary:Version}), ${misc:Depends}
+Description: new transport-independent RPC library - development files
+ This package contains a port of Sun's transport-independent RPC library to
+ Linux. The library is intended as a replacement for the RPC code in the GNU C
+ library, providing among others support for RPC (and in turn, NFS) over IPv6.
  .
- This package includes the debugging symbols.
+ This package contains the files needed for development with libntirpc.
+
+Package: libntirpc1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtirpc1
+Description: new transport-independent RPC library
+ This package contains a port of Sun's transport-independent RPC library to
+ Linux. The library is intended as a replacement for the RPC code in the GNU C
+ library, providing among others support for RPC (and in turn, NFS) over IPv6.
