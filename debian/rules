@@ -3,6 +3,7 @@
 	dh $@
 
 override_dh_auto_configure:
+	cd cmake/build_configurations && ln -s everything.cmake debian.cmake
 	dh_auto_configure -- -DBUILD_CONFIG=debian -DTIRPC_EPOLL=1 -DUSE_GSS=ON
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
