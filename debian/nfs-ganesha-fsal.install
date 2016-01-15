@@ -1,0 +1,6 @@
+usr/lib/*/ganesha/libfsalnull.so*
+usr/lib/*/ganesha/libfsalproxy.so*
+usr/lib/*/ganesha/libfsalvfs.so*
+usr/lib/*/ganesha/libfsalxfs.so*
+usr/lib/*/ganesha/libfsalgluster.so*
+usr/lib/*/ganesha/libfsalgpfs.so*

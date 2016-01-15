@@ -1,17 +1,36 @@
 #!/usr/bin/make -f
-%:
-	dh $@
-
-override_dh_auto_configure:
-	cd cmake/build_configurations && ln -s everything.cmake debian.cmake
-	dh_auto_configure -- -DBUILD_CONFIG=debian -DTIRPC_EPOLL=1 -DUSE_GSS=ON
+# -*- makefile -*-
+#
+# Expected debian/rules file that is used by the dpkg build procedure
+#
+#   $ git clone <nfs-ganesha>
+#   $ cd nfs-ganesha/src
+#   $ dpkg-buildpackage -uc -us
+#
+export PREFIX=/usr
+export DESTDIR=$(CURDIR)/debian/tmp
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+%:
+	 dh $@ --with python2
+
+override_dh_auto_configure:
+	 cd src && mv debian debian.deprecated && ln -s ../debian .
+	 cd src && dh_auto_configure -- -DBUILD_CONFIG=debian -DFSAL_DESTINATION=lib/${DEB_HOST_MULTIARCH}/ganesha -DCMAKE_BUILD_TYPE=Debug -DUSE_FSAL_NULL=YES -DUSE_FSAL_ZFS=NO -DUSE_FSAL_XFS=YES -DUSE_FSAL_CEPH=NO -DUSE_FSAL_LUSTRE=NO -DUSE_FSAL_SHOOK=NO -DUSE_FSAL_GPFS=YES -DUSE_FSAL_HPSS=NO -DUSE_FSAL_PANFS=NO -DUSE_FSAL_PT=NO -DUSE_FSAL_GLUSTER=YES -DUSE_SYSTEM_NTIRPC=YES -DUSE_9P_RDMA=NO -DUSE_FSAL_LUSTRE_UP=NO -DUSE_LTTNG=NO -DUSE_ADMIN_TOOLS=YES -DUSE_GUI_ADMIN_TOOLS=YES -DUSE_FSAL_VFS=ON -DUSE_FSAL_PROXY=ON -DUSE_DBUS=ON -DUSE_9P=ON -DDISTNAME_HAS_GIT_DATA=OFF -DALLOCATOR=jemalloc
+
+override_dh_auto_build:
+	cd src && dh_auto_build
+
+override_dh_auto_test:
+
 override_dh_install:
-	# Move libntirpc.so.* to /lib
-	mkdir -p debian/tmp/lib/$(DEB_HOST_MULTIARCH)
-	mv debian/tmp/usr/lib/libntirpc.* debian/tmp/lib/$(DEB_HOST_MULTIARCH)
-	# Fix up the -dev symlink
-	LINKTARGET=`readlink debian/tmp/lib/$(DEB_HOST_MULTIARCH)/libntirpc.so`; \
-	ln -sf /lib/$(DEB_HOST_MULTIARCH)/$$LINKTARGET debian/tmp/lib/$(DEB_HOST_MULTIARCH)/libntirpc.so
-	dh_install
+	 mkdir -p debian/tmp/etc/ganesha/
+	 mkdir -p debian/tmp/etc/init.d/
+	 mkdir -p debian/tmp/etc/logrotate.d/
+	 mkdir -p debian/tmp/etc/dbus-1/system.d/
+	 cp src/config_samples/vfs.conf debian/tmp/etc/ganesha/ganesha.conf
+	 cp src/config_samples/logrotate_ganesha debian/tmp/etc/logrotate.d/nfs-ganesha
+	 cp src/scripts/init.d/nfs-ganesha debian/tmp/etc/init.d/nfs-ganesha
+	 cp src/scripts/ganeshactl/org.ganesha.nfsd.conf debian/tmp/etc/dbus-1/system.d/nfs-ganesha-dbus.conf
+	 make -C src/obj-${DEB_HOST_MULTIARCH} install && dh_install --sourcedir=./src

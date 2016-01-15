@@ -1,30 +1,82 @@
-Source: libntirpc
-Priority: standard
-Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
-Build-Depends: debhelper (>= 9), cmake, libkrb5-dev, libjemalloc-dev
+Source: nfs-ganesha
+Section: net
+Priority: optional
+Maintainer: Philippe Deniel <philippe.deniel@cea.fr>
 Standards-Version: 3.9.6
-Section: libs
-Homepage: https://github.com/nfs-ganesha/ntirpc
+Homepage: http://nfs-ganesha.sourceforge.net
+Build-Depends: debhelper (>= 9),
+               quilt,
+               bison,
+               flex,
+               cmake,
+               libdbus-1-dev,
+               libjemalloc-dev,
+               libnfsidmap-dev,
+               libwbclient-dev,
+               libntirpc-dev,
+               libkrb5-dev,
+               libblkid-dev,
+               libattr1-dev,
+               libacl1-dev,
+               xfslibs-dev,
+               uuid-dev,
+               libcap-dev,
+               glusterfs-common,
+               python-dev,
+               dh-python,
+               python-qt4,
+               pyqt4-dev-tools,
+               pkgconf
+Vcs-Git: https://github.com/nfs-ganesha/nfs-ganesha.git
 
-Package: libntirpc-dev
-Section: libdevel
-Priority: extra
+Package: nfs-ganesha
 Architecture: any
-Depends: libntirpc1 (= ${binary:Version}), ${misc:Depends}
-Description: new transport-independent RPC library - development files
- This package contains a port of Sun's transport-independent RPC library to
- Linux. The library is intended as a replacement for the RPC code in the GNU C
- library, providing among others support for RPC (and in turn, NFS) over IPv6.
- .
- This package contains the files needed for development with libntirpc.
+Depends: dbus, nfs-common, rpcbind,
+         ${perl:Depends},
+         ${misc:Depends}
+Description: nfs-ganesha is a NFS server in User Space
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
 
-Package: libntirpc1
-Section: libs
-Architecture: any
+Package: nfs-ganesha-fsal
 Multi-Arch: same
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: nfs-ganesha fsal libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+
+Package: python-nfs-ganesha
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}, libtirpc1
-Description: new transport-independent RPC library
- This package contains a port of Sun's transport-independent RPC library to
- Linux. The library is intended as a replacement for the RPC code in the GNU C
- library, providing among others support for RPC (and in turn, NFS) over IPv6.
+Architecture: all
+Section: python
+Provides: ${python:Provides}
+Depends: python-dbus,
+         python-qt4,
+         ${misc:Depends},
+         ${python:Depends},
+         ${shlibs:Depends}
+Description: Python bindings for nfs-ganesha
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ .
+ This package contains Python bindings for nfs-ganesha admin
+
+Package: nfs-ganesha-doc
+Architecture: all
+Section: doc
+Description: Documentation for nfs-ganesha
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ .
+ This package contains documentation and examples for nfs-ganesha
+
