@@ -33,4 +33,4 @@ override_dh_install:
 	 cp src/config_samples/logrotate_ganesha debian/tmp/etc/logrotate.d/nfs-ganesha
 	 cp src/scripts/init.d/nfs-ganesha debian/tmp/etc/init.d/nfs-ganesha
 	 cp src/scripts/ganeshactl/org.ganesha.nfsd.conf debian/tmp/etc/dbus-1/system.d/nfs-ganesha-dbus.conf
-	 make -C src/obj-${DEB_HOST_MULTIARCH} install && dh_install --sourcedir=./src
+	 make -C src/obj-*-linux-gnu install && dh_install --sourcedir=./src
