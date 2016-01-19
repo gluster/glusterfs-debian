@@ -1,6 +1,7 @@
-libntirpc (1.3.1-ubuntu1~wily9) wily; urgency=medium
+libntirpc (1.3.1-1) jessie; urgency=low
 
+  [ Gluster Packager ]
   * libntirpc-1.3.1 GA
 
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Thu, 14 Jan 2015 02:30:09 +0100
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 19 Dec 2016 13:52:51 -0400
 
