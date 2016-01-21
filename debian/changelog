@@ -1,3 +1,15 @@
+nfs-ganesha (2.3.0-ubuntu1~trusty3) trusty; urgency=medium
+
+  * nfs-ganesha 2.3.0 GA + FSAL_GPFS/export.c patch, BZs 1300842, 1300845
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 19 Dec 2015 15:30:00 +0200
+
+nfs-ganesha (2.3.0-ubuntu1~trusty2) trusty; urgency=medium
+
+  * nfs-ganesha 2.3.0 GA + FSAL_GPFS/export.c patch
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 19 Dec 2015 15:30:00 +0200
+
 nfs-ganesha (2.3.0-ubuntu1~trusty1) trusty; urgency=medium
 
   * nfs-ganesha 2.3.0 GA

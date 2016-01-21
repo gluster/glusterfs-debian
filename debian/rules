@@ -17,7 +17,33 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 override_dh_auto_configure:
 	 cd src && mv debian debian.deprecated && ln -s ../debian .
-	 cd src && dh_auto_configure -- -DBUILD_CONFIG=debian -DFSAL_DESTINATION=lib/${DEB_HOST_MULTIARCH}/ganesha -DCMAKE_BUILD_TYPE=Debug -DUSE_FSAL_NULL=YES -DUSE_FSAL_ZFS=NO -DUSE_FSAL_XFS=YES -DUSE_FSAL_CEPH=NO -DUSE_FSAL_LUSTRE=NO -DUSE_FSAL_SHOOK=NO -DUSE_FSAL_GPFS=YES -DUSE_FSAL_HPSS=NO -DUSE_FSAL_PANFS=NO -DUSE_FSAL_PT=NO -DUSE_FSAL_GLUSTER=YES -DUSE_SYSTEM_NTIRPC=YES -DUSE_9P_RDMA=NO -DUSE_FSAL_LUSTRE_UP=NO -DUSE_LTTNG=NO -DUSE_ADMIN_TOOLS=YES -DUSE_GUI_ADMIN_TOOLS=YES -DUSE_FSAL_VFS=ON -DUSE_FSAL_PROXY=ON -DUSE_DBUS=ON -DUSE_9P=ON -DDISTNAME_HAS_GIT_DATA=OFF -DALLOCATOR=jemalloc
+	 cd src && dh_auto_configure -- \
+		-DBUILD_CONFIG=debian \
+		-DFSAL_DESTINATION=/usr/lib/${DEB_HOST_MULTIARCH}/ganesha \
+		-DCMAKE_BUILD_TYPE=Debug \
+		-DUSE_FSAL_NULL=YES \
+		-DUSE_FSAL_ZFS=NO \
+		-DUSE_FSAL_XFS=YES \
+		-DUSE_FSAL_CEPH=NO \
+		-DUSE_FSAL_LUSTRE=NO \
+		-DUSE_FSAL_SHOOK=NO \
+		-DUSE_FSAL_GPFS=YES \
+		-DUSE_FSAL_HPSS=NO \
+		-DUSE_FSAL_PANFS=NO \
+		-DUSE_FSAL_PT=NO \
+		-DUSE_FSAL_GLUSTER=YES \
+		-DUSE_SYSTEM_NTIRPC=YES \
+		-DUSE_9P_RDMA=NO \
+		-DUSE_FSAL_LUSTRE_UP=NO \
+		-DUSE_LTTNG=NO \
+		-DUSE_ADMIN_TOOLS=YES \
+		-DUSE_GUI_ADMIN_TOOLS=YES \
+		-DUSE_FSAL_VFS=ON \
+		-DUSE_FSAL_PROXY=ON \
+		-DUSE_DBUS=ON \
+		-DUSE_9P=ON \
+		-DDISTNAME_HAS_GIT_DATA=OFF \
+		-DALLOCATOR=jemalloc
 
 override_dh_auto_build:
 	cd src && dh_auto_build
@@ -33,4 +59,4 @@ override_dh_install:
 	 cp src/config_samples/logrotate_ganesha debian/tmp/etc/logrotate.d/nfs-ganesha
 	 cp src/scripts/init.d/nfs-ganesha debian/tmp/etc/init.d/nfs-ganesha
 	 cp src/scripts/ganeshactl/org.ganesha.nfsd.conf debian/tmp/etc/dbus-1/system.d/nfs-ganesha-dbus.conf
-	 make -C src/obj-${DEB_HOST_MULTIARCH} install && dh_install --sourcedir=./src
+	 make -C src/obj-*-linux-gnu install && dh_install --sourcedir=./src

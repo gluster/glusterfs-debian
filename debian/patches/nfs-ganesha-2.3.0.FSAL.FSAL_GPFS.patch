@@ -1,0 +1,121 @@
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/export.c.orig	2016-01-18 07:34:50.789665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/export.c	2016-01-18 07:52:43.957665000 -0500
+@@ -378,7 +378,7 @@
+ 	fh_size = gpfs_sizeof_handle(hdl);
+ 	if (fh_desc->len != fh_size) {
+ 		LogMajor(COMPONENT_FSAL,
+-			 "Size mismatch for handle.  should be %lu, got %lu",
++			 "Size mismatch for handle.  should be %zu, got %zu",
+ 			 fh_size, fh_desc->len);
+ 		return fsalstat(ERR_FSAL_SERVERFAULT, 0);
+ 	}
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/handle.c.orig	2016-01-18 08:01:01.165665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/handle.c	2016-01-18 08:01:36.269665000 -0500
+@@ -638,8 +638,8 @@
+ 
+  errout:
+ 	LogMajor(COMPONENT_FSAL,
+-		 "Space too small for handle.  need %lu, have %lu", fh_size,
+-		 fh_desc->len);
++		 "Space too small for handle.  need %zu, have %zu",
++		 fh_size, fh_desc->len);
+ 
+ 	return fsalstat(ERR_FSAL_TOOSMALL, 0);
+ }
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/file.c.orig	2016-01-18 08:16:19.077665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/file.c	2016-01-18 08:25:30.721665000 -0500
+@@ -435,7 +435,7 @@
+ 		goto out;
+ 	}
+ 	LogFullDebug(COMPONENT_FSAL,
+-		"Locking: op:%d type:%d claim:%d start:%" PRIu64 " length:%lu ",
++		"Locking: op:%d type:%d claim:%d start:%" PRIu64 " length:%" PRIu64,
+ 		lock_op, request_lock->lock_type,
+ 		request_lock->lock_reclaim,
+ 		request_lock->lock_start,
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_up.c.orig	2016-01-18 08:36:02.397665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_up.c	2016-01-18 08:36:53.293665000 -0500
+@@ -253,7 +253,7 @@
+ 
+ 		case LAYOUT_NOTIFY_DEVICEID:	/* Device update Event */
+ 			LogDebug(COMPONENT_FSAL_UP,
+-				"layout dev update: flags:%x ino %ld seq %d fd %d fsid 0x%lx",
++				"layout dev update: flags:%x ino %ld seq %d fd %d fsid 0x%" PRIx64,
+ 				flags, callback.buf->st_ino, devid.device_id2,
+ 				devid.device_id4, devid.devid);
+ 
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_mds.c.orig	2016-01-18 08:44:33.737665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_mds.c	2016-01-18 08:48:09.525665000 -0500
+@@ -172,7 +172,7 @@
+ 			+ ((ds_buffer - da_beginning) / BYTES_PER_XDR_UNIT));
+ 
+ 	LogDebug(COMPONENT_PNFS,
+-		"getdeviceinfo p %p end %p da_length %lu ds_buffer %lu seq %d fd %d fsid 0x%lx\n",
++		"getdeviceinfo p %p end %p da_length %zu ds_buffer %zu seq %d fd %d fsid 0x%" PRIx64,
+ 		darg.xdr.p, darg.xdr.end, da_beginning, ds_buffer,
+ 		deviceid->device_id2, deviceid->device_id4,
+ 		deviceid->devid);
+@@ -189,7 +189,7 @@
+ 	(void)xdr_inline(da_addr_body, rc);
+ 	da_length = xdr_getpos(da_addr_body) - da_beginning;
+ 
+-	LogDebug(COMPONENT_PNFS, "getdeviceinfo rc %d da_length %ld\n", rc,
++	LogDebug(COMPONENT_PNFS, "getdeviceinfo rc %d da_length %zd\n", rc,
+ 		 da_length);
+ 
+ 	return NFS4_OK;
+@@ -336,7 +336,7 @@
+ 	deviceid.devid = file_layout.device_id.devid;
+ 	/* last_possible_byte = NFS4_UINT64_MAX; strict. set but unused */
+ 
+-	LogDebug(COMPONENT_PNFS, "fsal_id %d seq %d fd %d fsid 0x%lx index %d",
++	LogDebug(COMPONENT_PNFS, "fsal_id %d seq %d fd %d fsid 0x%" PRIx64 " index %d",
+ 		deviceid.fsal_id, deviceid.device_id2,
+ 		deviceid.device_id4, deviceid.devid,
+ 		file_layout.lg_first_stripe_index);
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_attrs.c.orig	2016-01-18 09:54:31.709665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_attrs.c	2016-01-18 09:56:01.645665000 -0500
+@@ -324,7 +324,7 @@
+ 	if (FSAL_TEST_MASK(p_object_attributes->mask, ATTR_OWNER)) {
+ 		attr_changed |= XATTR_UID;
+ 		buffxstat.buffstat.st_uid = (int)p_object_attributes->owner;
+-		LogDebug(COMPONENT_FSAL, "current uid = %ld, new uid = %d",
++		LogDebug(COMPONENT_FSAL, "current uid = %" PRIu64 ", new uid = %d",
+ 			 myself->attributes.owner, buffxstat.buffstat.st_uid);
+ 	}
+ 
+@@ -332,7 +332,7 @@
+ 	if (FSAL_TEST_MASK(p_object_attributes->mask, ATTR_GROUP)) {
+ 		attr_changed |= XATTR_GID;
+ 		buffxstat.buffstat.st_gid = (int)p_object_attributes->group;
+-		LogDebug(COMPONENT_FSAL, "current gid = %ld, new gid = %d",
++		LogDebug(COMPONENT_FSAL, "current gid = %" PRIu64 ", new gid = %d",
+ 			 myself->attributes.group, buffxstat.buffstat.st_gid);
+ 	}
+ 
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_convert.c.orig	2016-01-18 10:04:16.177665000 -0500
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_GPFS/fsal_convert.c	2016-01-18 10:05:12.105665000 -0500
+@@ -133,7 +133,7 @@
+ 	}
+ 	if (FSAL_TEST_MASK(p_fsalattr_out->mask, ATTR_FILEID)) {
+ 		p_fsalattr_out->fileid = (uint64_t) (p_buffstat->st_ino);
+-		LogFullDebug(COMPONENT_FSAL, "fileid = %lu",
++		LogFullDebug(COMPONENT_FSAL, "fileid = %" PRIu64,
+ 			     p_fsalattr_out->fileid);
+ 	}
+ 
+@@ -149,12 +149,12 @@
+ 	}
+ 	if (FSAL_TEST_MASK(p_fsalattr_out->mask, ATTR_OWNER)) {
+ 		p_fsalattr_out->owner = p_buffstat->st_uid;
+-		LogFullDebug(COMPONENT_FSAL, "owner = %lu",
++		LogFullDebug(COMPONENT_FSAL, "owner = %" PRIu64,
+ 			     p_fsalattr_out->owner);
+ 	}
+ 	if (FSAL_TEST_MASK(p_fsalattr_out->mask, ATTR_GROUP)) {
+ 		p_fsalattr_out->group = p_buffstat->st_gid;
+-		LogFullDebug(COMPONENT_FSAL, "group = %lu",
++		LogFullDebug(COMPONENT_FSAL, "group = %" PRIu64,
+ 			     p_fsalattr_out->group);
+ 	}
+ 	if (FSAL_TEST_MASK(p_fsalattr_out->mask, ATTR_ATIME)) {
