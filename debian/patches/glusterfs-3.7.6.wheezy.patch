@@ -1,36 +1,3 @@
-diff -u a/configure.ac b/configure.ac
---- a/configure.ac
-+++ b/configure.ac
-@@ -388,6 +388,10 @@
- 
- AC_CHECK_HEADERS([sys/extattr.h])
- 
-+AC_CHECK_HEADERS([openssl/dh.h])
-+
-+AC_CHECK_HEADERS([openssl/ecdh.h])
-+
- dnl Math library
- AC_CHECK_LIB([m], [pow], [MATH_LIB='-lm'], [MATH_LIB=''])
- AC_SUBST(MATH_LIB)
-@@ -1228,11 +1232,13 @@
- # end glupy section
- 
- dnl Check for userspace-rcu
--PKG_CHECK_MODULES([URCU], [liburcu-bp])
--PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.8], [],
--  [PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.7],
--    [AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.7 is found])],
--    [AC_MSG_ERROR([liburcu >= 0.7 required])])])
-+#PKG_CHECK_MODULES([URCU], [liburcu-bp])
-+#PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.8], [],
-+#  [PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.7],
-+#    [AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.7 is found])],
-+#    [AC_MSG_ERROR([liburcu >= 0.7 required])])])
-+
-+AC_CHECK_HEADERS([urcu-bp.h urcu/cds.h], AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.7 is found]), AC_MSG_ERROR([liburcu >= 0.7 required]))
- 
- BUILD_UNITTEST="no"
- AC_ARG_ENABLE([cmocka],
 diff --git a/contrib/qemu/util/oslib-posix.c b/contrib/qemu/util/oslib-posix.c
 --- a/contrib/qemu/util/oslib-posix.c
 +++ b/contrib/qemu/util/oslib-posix.c
@@ -125,3 +92,38 @@ diff --git a/rpc/rpc-transport/socket/src/socket.h b/rpc/rpc-transport/socket/sr
 -- 
 2.5.0
 
+diff --git a/configure.ac.orig b/configure.ac
+--- a/configure.ac.orig	2016-02-03 09:57:35.711581481 -0500
++++ b/configure.ac	2016-02-03 11:54:33.053296503 -0500
+@@ -388,6 +388,10 @@
+ 
+ AC_CHECK_HEADERS([sys/extattr.h])
+ 
++AC_CHECK_HEADERS([openssl/dh.h])
++
++AC_CHECK_HEADERS([openssl/ecdh.h])
++
+ dnl Math library
+ AC_CHECK_LIB([m], [pow], [MATH_LIB='-lm'], [MATH_LIB=''])
+ AC_SUBST(MATH_LIB)
+@@ -1228,11 +1232,17 @@
+ # end glupy section
+ 
+ dnl Check for userspace-rcu
+-PKG_CHECK_MODULES([URCU], [liburcu-bp])
++PKG_CHECK_MODULES([URCU], [liburcu-bp], [],
++  [AC_CHECK_HEADERS([urcu-bp.h],
++     [URCU_LIBS='-lurcu-bp'],
++     AC_MSG_ERROR([liburcu-bp not found]))])
+ PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.8], [],
+   [PKG_CHECK_MODULES([URCU_CDS], [liburcu-cds >= 0.7],
+-    [AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.7 is found])],
+-    [AC_MSG_ERROR([liburcu >= 0.7 required])])])
++    [AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.6 or 0.7 is found])],
++    [AC_CHECK_HEADERS([urcu/cds.h],
++      [AC_DEFINE(URCU_0_7, 1, [Define if liburcu 0.6 or 0.7 is found])
++       URCU_CDS_LIBS='-lurcu-cds'],
++      [AC_MSG_ERROR([liburcu-cds not found])])])])
+ 
+ BUILD_UNITTEST="no"
+ AC_ARG_ENABLE([cmocka],

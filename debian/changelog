@@ -1,3 +1,10 @@
+glusterfs (3.7.6-2) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.6 GA + revised patch
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 3 Feb 2016 09:09:51 -0400
+
 glusterfs (3.7.6-1) wheezy; urgency=low
 
   [ Gluster Packager ]
