@@ -1,14 +1,8 @@
-nfs-ganesha (2.3.0-ubuntu1~wily17) wily; urgency=medium
+nfs-ganesha (2.3.0-1) stretch; urgency=medium
 
   * nfs-ganesha 2.3.0 GA + FSAL_GPFS/export.c patch
 
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Thu, 10 Dec 2015 15:30:00 +0200
-
-nfs-ganesha (2.3.0-ubuntu1~wily7) wily; urgency=medium
-
-  * nfs-ganesha 2.3.0 GA
-
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Thu, 10 Dec 2015 15:30:00 +0200
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 19 Dec 2016 15:30:00 +0200
 
 nfs-ganesha (2.2.0-1) stable; urgency=low
 
