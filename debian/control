@@ -33,7 +33,11 @@ Package: nfs-ganesha
 Architecture: any
 Depends: dbus, nfs-common, rpcbind,
          ${perl:Depends},
-         ${misc:Depends}
+         ${misc:Depends},
+         libwbclient0,
+         libntirpc1,
+         libtirpc1,
+         daemon
 Description: nfs-ganesha is a NFS server in User Space
  NFS-GANESHA is a NFS Server running in user space with a large cache.
  It comes with various backend modules to support different file systems
