@@ -119,3 +119,25 @@
  			     p_fsalattr_out->group);
  	}
  	if (FSAL_TEST_MASK(p_fsalattr_out->mask, ATTR_ATIME)) {
+--- nfs-ganesha-2.3.0/src/MainNFSD/nfs_main.c.orig	2016-02-27 18:22:43.996000000 -0500
++++ nfs-ganesha-2.3.0/src/MainNFSD/nfs_main.c	2016-02-27 18:24:16.064000000 -0500
+@@ -166,8 +166,8 @@
+ 		case 'v':
+ 		case '@':
+ 			/* A litlle backdoor to keep track of binary versions */
+-			printf("%s compiled on %s at %s\n", exec_name, __DATE__,
+-			       __TIME__);
++			/* printf("%s compiled on %s at %s\n", exec_name, __DATE__, 
++			       __TIME__); */
+ 			printf("Release = V%s\n", GANESHA_VERSION);
+ 			printf("Release comment = %s\n", VERSION_COMMENT);
+ 			printf("Git HEAD = %s\n", _GIT_HEAD_COMMIT);
+@@ -261,7 +261,7 @@
+ 		 "%s Starting: %s",
+ 		 exec_name,
+ 		 "Ganesha Version " _GIT_DESCRIBE ", built at "
+-		 __DATE__ " " __TIME__ " on " BUILD_HOST);
++		 /* __DATE__ " " __TIME__ */ " on " BUILD_HOST);
+ 
+ 	/* Start in background, if wanted */
+ 	if (detach_flag) {
