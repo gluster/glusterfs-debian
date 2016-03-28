@@ -1,8 +1,14 @@
+glusterfs (3.5.9-ubuntu1~wily1) wily; urgency=medium
+
+  * GlusterFS 3.5.9 GA
+
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Mon, 28 Mar 2016 11:26:51 -0400
+
 glusterfs (3.5.8-ubuntu1~wily1) wily; urgency=low
 
   * GlusterFS 3.5.8 GA
 
- -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Wed, 16 Dec 2015 11:26:51 -0400
+ -- GlusterFS Kaleb S. KEITHLEY <kkeithle@redhat.com>  Sun, 15 Feb 2016 11:26:51 -0400
 
 glusterfs (3.5.7-ubuntu1~wily1) wily; urgency=low
 
