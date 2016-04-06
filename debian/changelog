@@ -1,3 +1,17 @@
+glusterfs (3.7.10-2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.10 GA, again
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 6 Apr 2016 08:16:51 -0400
+
+glusterfs (3.7.10-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.10 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 1 Apr 2016 08:16:51 -0400
+
 glusterfs (3.7.9-1) stretch; urgency=low
 
   [ Gluster Packager ]
