@@ -2,7 +2,8 @@ Source: glusterfs
 Section: admin
 Priority: optional
 Maintainer: Louis Zuckerman <me@louiszuckerman.com>
-Build-Depends: bison,
+Build-Depends: dh-python,
+ bison,
  flex,
  libfuse-dev (>= 2.6.5),
  libibverbs-dev (>= 1.0.4),
