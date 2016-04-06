@@ -1,3 +1,10 @@
+glusterfs (3.6.9-2) jessie; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.6.9 GA, again
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 06 Apr 2016 18:30:00 +0530
+
 glusterfs (3.6.9-1) jessie; urgency=low
 
   [ Gluster Packager ]
