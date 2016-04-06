@@ -30,8 +30,8 @@ override_dh_install:
 		debian/glusterfs-server/var/lib/glusterd/hooks/1/gsync-create/post/S56glusterd-geo-rep-create-post.sh
 
 override_dh_installinit:
-	dh_installinit -pglusterfs-client --upstart-only --no-start --name=mounting-glusterfs
-	dh_installinit -pglusterfs-server --upstart-only
+	dh_installinit -pglusterfs-client --no-start --name=mounting-glusterfs
+	dh_installinit -pglusterfs-server
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
