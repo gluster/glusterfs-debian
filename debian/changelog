@@ -1,3 +1,9 @@
+libntirpc (1.3.1-ubuntu1~xenial1) xenial; urgency=medium
+
+  * libntirpc-1.3.1 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 6 Apr 2016 09:09:51 -0400
+
 libntirpc (1.3.1-ubuntu1~wily9) wily; urgency=medium
 
   * libntirpc-1.3.1 GA
