@@ -77,9 +77,7 @@ Pre-Depends: ${misc:Pre-Depends},
  dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
- attr,
- uuid,
- libacl1
+ attr
 Conflicts: libglusterfs0,
  libglusterfs-dev
 Breaks: glusterfs-server (<< 3.4.0~qa5)
