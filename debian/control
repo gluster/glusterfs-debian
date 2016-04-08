@@ -77,8 +77,6 @@ Pre-Depends: ${misc:Pre-Depends},
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  attr,
- uuid,
- libacl1,
  rsync
 Conflicts: libglusterfs0,
  libglusterfs-dev
