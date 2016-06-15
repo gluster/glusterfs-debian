@@ -24,10 +24,10 @@ override_dh_install:
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
 	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
 	dh_install
+	mv debian/glusterfs-common/usr/lib/python2.7/site-packages \
+		debian/glusterfs-common/usr/lib/python2.7/dist-packages
 	mv debian/glusterfs-common/usr/lib/*/pkgconfig/ \
 		debian/glusterfs-common/usr/lib/
-	/usr/bin/install -D -p -m 0744 extras/hook-scripts/S56glusterd-geo-rep-create-post.sh \
-		debian/glusterfs-server/var/lib/glusterd/hooks/1/gsync-create/post/S56glusterd-geo-rep-create-post.sh
 
 override_dh_installinit:
 	dh_installinit -pglusterfs-client --no-start --name=mounting-glusterfs
