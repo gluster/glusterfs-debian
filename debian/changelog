@@ -1,3 +1,9 @@
+glusterfs (3.8.0-ubuntu1~trusty1) trusty; urgency=medium
+
+  * glusterfs-3.8.0 GA
+
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Tue, 14 Jun 2016 10:07:01 -0400
+
 glusterfs (3.7.11-ubuntu1~trusty1) trusty; urgency=medium
 
   * glusterfs-3.7.11 GA again
