@@ -52,11 +52,13 @@ override_dh_auto_test:
 
 override_dh_install:
 	 mkdir -p debian/tmp/etc/ganesha/
-	 mkdir -p debian/tmp/etc/init.d/
+	 mkdir -p debian/tmp/lib/systemd/system
+	 mkdir -p debian/tmp/etc/defaults
 	 mkdir -p debian/tmp/etc/logrotate.d/
 	 mkdir -p debian/tmp/etc/dbus-1/system.d/
 	 cp src/config_samples/vfs.conf debian/tmp/etc/ganesha/ganesha.conf
 	 cp src/config_samples/logrotate_ganesha debian/tmp/etc/logrotate.d/nfs-ganesha
-	 cp src/scripts/init.d/nfs-ganesha debian/tmp/etc/init.d/nfs-ganesha
+	 cp src/scripts/systemd/nfs-ganesha* debian/tmp/lib/systemd/system/
+	 cp src/scripts/systemd/sysconfig/nfs-ganesha debian/tmp/etc/defaults
 	 cp src/scripts/ganeshactl/org.ganesha.nfsd.conf debian/tmp/etc/dbus-1/system.d/nfs-ganesha-dbus.conf
 	 make -C src/obj-*-linux-gnu install && dh_install --sourcedir=./src
