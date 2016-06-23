@@ -1,3 +1,9 @@
+nfs-ganesha (2.3.2-2) stretch; urgency=medium
+
+  * nfs-ganesha 2.3.2 GA
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Thu, 23 Jun 2016 15:30:00 +0200
+
 nfs-ganesha (2.3.2-1) stretch; urgency=medium
 
   * nfs-ganesha 2.3.2 GA
