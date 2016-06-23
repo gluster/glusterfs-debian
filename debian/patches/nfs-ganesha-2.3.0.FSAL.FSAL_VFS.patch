@@ -1,0 +1,27 @@
+--- nfs-ganesha-2.3.0/src/CMakeLists.txt.orig	2016-04-07 13:38:03.901665000 -0400
++++ nfs-ganesha-2.3.0/src/CMakeLists.txt	2016-04-07 15:14:55.973665000 -0400
+@@ -660,12 +660,7 @@
+ ENDIF(USE_FSAL_LUSTRE_UP)
+ 
+ if(USE_FSAL_XFS)
+-  check_library_exists(
+-    handle
+-    "open_by_handle"
+-    ""
+-    HAVE_XFS_LIB
+-    )
++  check_library_exists(handle "open_by_handle" "lib" HAVE_XFS_LIB)
+   check_include_files("xfs/xfs.h" HAVE_XFS_H)
+   if((NOT HAVE_XFS_LIB) OR (NOT HAVE_XFS_H))
+    if(STRICT_PACKAGE)
+--- nfs-ganesha-2.3.0/src/FSAL/FSAL_VFS/xfs/CMakeLists.txt.orig	2016-04-07 11:57:30.885665000 -0400
++++ nfs-ganesha-2.3.0/src/FSAL/FSAL_VFS/xfs/CMakeLists.txt	2016-04-07 15:31:51.281665000 -0400
+@@ -15,6 +15,8 @@
+   )
+ 
+ add_library(fsalxfs SHARED ${fsalxfs_LIB_SRCS})
++add_library(handle SHARED IMPORTED)
++set_target_properties(handle PROPERTIES IMPORTED_LOCATION /lib/libhandle.so)
+ 
+ target_link_libraries(fsalxfs
+   gos

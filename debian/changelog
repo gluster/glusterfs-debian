@@ -1,8 +1,26 @@
+nfs-ganesha (2.3.2-ubuntu1~wily1) wily; urgency=medium
+
+  * nfs-ganesha 2.3.2 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 23 Jun 2016 09:09:51 -0400
+
+nfs-ganesha (2.3.2-ubuntu1~xenial7) xenial; urgency=medium
+
+  * nfs-ganesha 2.3.2 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 23 Jun 2016 09:09:51 -0400
+
 nfs-ganesha (2.3.1-ubuntu1~wily1) wily; urgency=medium
 
   * nfs-ganesha 2.3.1 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 8 Apr 2016 09:09:51 -0400
+
+nfs-ganesha (2.3.0-ubuntu1~xenial9) xenial; urgency=medium
+
+  * nfs-ganesha 2.3.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 6 Apr 2016 09:09:51 -0400
 
 nfs-ganesha (2.3.0-ubuntu1~wily18) wily; urgency=medium
 
