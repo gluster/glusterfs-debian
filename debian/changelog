@@ -1,6 +1,12 @@
+glusterfs (3.7.12-ubuntu1~trusty1) trusty; urgency=medium
+
+  * glusterfs-3.7.12 GA (with http://review.gluster.org/14779)
+
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Mon, 27 Jun 2016 10:07:01 -0400
+
 glusterfs (3.7.11-ubuntu1~trusty1) trusty; urgency=medium
 
-  * glusterfs-3.7.11 GA again
+  * glusterfs-3.7.11 GA
 
  -- GlusterFS deb packages <deb.packages@gluster.org>  Wed, 6 Apr 2016 10:07:01 -0400
 
