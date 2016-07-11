@@ -1,8 +1,7 @@
-diff --git a/configure.ac.orig b/configure.ac
---- a/configure.ac.orig	2016-02-12 13:25:32.153297113 -0500
-+++ b/configure.ac	2016-02-12 13:25:45.913299053 -0500
+--- glusterfs-3.7.13/configure.ac.orig	2016-07-11 12:34:14.020398337 -0400
++++ glusterfs-3.7.13/configure.ac	2016-07-11 12:36:20.372400584 -0400
 @@ -1232,11 +1232,17 @@
- # end glupy section
+ dnl end glupy section
  
  dnl Check for userspace-rcu
 -PKG_CHECK_MODULES([URCU], [liburcu-bp])
