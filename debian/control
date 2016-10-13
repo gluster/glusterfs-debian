@@ -25,9 +25,8 @@ Build-Depends: debhelper (>= 9),
  liburcu-dev,
  libsqlite3-dev,
  libglib2.0-dev,
- chrpath,
- hardening-wrapper
-Standards-Version: 3.9.5
+ chrpath
+Standards-Version: 3.9.8
 Homepage: http://www.gluster.org/
 
 Package: glusterfs-client
