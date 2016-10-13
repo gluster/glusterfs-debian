@@ -1,3 +1,15 @@
+glusterfs (3.8.5-ubuntu1~wily3) wily; urgency=medium
+
+  * GlusterFS 3.8.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 13 Oct 2016 09:29:51 -0400
+
+glusterfs (3.8.5-ubuntu1~wily2) wily; urgency=medium
+
+  * GlusterFS 3.8.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 13 Oct 2016 09:19:51 -0400
+
 glusterfs (3.8.5-ubuntu1~wily1) wily; urgency=medium
 
   * GlusterFS 3.8.5 GA

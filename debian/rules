@@ -33,8 +33,5 @@ override_dh_installinit:
 	dh_installinit -pglusterfs-client --upstart-only --no-start --name=mounting-glusterfs
 	dh_installinit -pglusterfs-server --upstart-only
 
-override_dh_builddeb:
-	dh_builddeb -- -Zxz
-
 override_dh_strip:
 	dh_strip --dbg-package=glusterfs-dbg
