@@ -1,0 +1,138 @@
+--- glusterfs-3.9.0rc2/xlators/experimental/fdl/src/Makefile.am.orig	2016-10-26 17:19:40.860000000 -0400
++++ glusterfs-3.9.0rc2/xlators/experimental/fdl/src/Makefile.am	2016-10-26 17:19:20.772000000 -0400
+@@ -18,7 +18,8 @@
+ gf_recon_SOURCES = recon.c
+ nodist_gf_recon_SOURCES = librecon.c
+ gf_recon_LDADD = $(top_builddir)/libglusterfs/src/libglusterfs.la\
+-                   $(top_builddir)/api/src/libgfapi.la
++                   $(top_builddir)/api/src/libgfapi.la\
++                   $(UUID_LIBS)
+ 
+ AM_CPPFLAGS = $(GF_CPPFLAGS) -I$(top_srcdir)/libglusterfs/src \
+ 	      -I$(top_srcdir)/api/src -fPIC \
+--- /dev/null	2016-10-21 14:04:59.192000000 -0400
++++ glusterfs-3.9.0rc2/extras/init.d/glustereventsd-Debian.in	2016-10-26 19:01:28.160000000 -0400
+@@ -0,0 +1,91 @@
++#!/bin/sh
++### BEGIN INIT INFO
++# Provides:          glustereventsd
++# Required-Start:    $local_fs $network
++# Required-Stop:     $local_fs $network
++# Default-Start:     2 3 4 5
++# Default-Stop:      0 1 6
++# Short-Description: Gluster Events Server
++# Description:       Gluster Events Server
++### END INIT INFO
++
++# Author: Chris AtLee <chris@atlee.ca>
++# Patched by: Matthias Albert < matthias@linux4experts.de>
++
++PATH=/sbin:/usr/sbin:/bin:/usr/bin
++NAME=glustereventsd
++SCRIPTNAME=/etc/init.d/$NAME
++DAEMON=@prefix@/sbin/$NAME
++PIDFILE=/var/run/$NAME.pid
++GLUSTEREVENTSD_OPTS=""
++PID=`test -f $PIDFILE && cat $PIDFILE`
++
++
++# Gracefully exit if the package has been removed.
++test -x $DAEMON || exit 0
++
++# Load the VERBOSE setting and other rcS variables
++. /lib/init/vars.sh
++
++# Define LSB log_* functions.
++. /lib/lsb/init-functions
++
++
++do_start()
++{
++    pidofproc -p $PIDFILE $DAEMON >/dev/null
++    status=$?
++    if [ $status -eq 0 ]; then
++      log_success_msg "glustereventsd service is already running with pid $PID"
++    else
++      log_daemon_msg "Starting glustereventsd service" "glustereventsd"
++      start-stop-daemon --start --quiet --oknodo --pidfile $PIDFILE --startas $DAEMON -- -p $PIDFILE $GLUSTEREVENTSD_OPTS
++      log_end_msg $?
++      start_daemon -p $PIDFILE $DAEMON -f $CONFIGFILE
++      return $?
++    fi
++}
++
++do_stop()
++{
++    log_daemon_msg "Stopping glustereventsd service" "glustereventsd"
++    start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE
++    log_end_msg $?
++    rm -f $PIDFILE
++    killproc -p $PIDFILE $DAEMON
++    return $?
++}
++
++do_status()
++{
++     pidofproc -p $PIDFILE $DAEMON >/dev/null
++     status=$?
++     if [ $status -eq 0 ]; then
++       log_success_msg "glustereventsd service is running with pid $PID"
++     else
++       log_failure_msg "glustereventsd service is not running."
++     fi
++     exit $status
++}
++
++case "$1" in
++  start)
++        do_start
++        ;;
++  stop)
++        do_stop
++        ;;
++  status)
++        do_status;
++        ;;
++  restart|force-reload)
++        do_stop
++        sleep 2
++        do_start
++        ;;
++  *)
++        echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
++        exit 3
++        ;;
++esac
++
+--- glusterfs-3.9.0rc2/extras/init.d/Makefile.am.orig	2016-10-26 19:01:45.852000000 -0400
++++ glusterfs-3.9.0rc2/extras/init.d/Makefile.am	2016-10-26 19:02:34.972000000 -0400
+@@ -1,7 +1,7 @@
+ 
+ EXTRA_DIST = glusterd-Debian glusterd-FreeBSD glusterd-Redhat glusterd-SuSE \
+ 	glusterd.plist rhel5-load-fuse.modules \
+-	glustereventsd-FreeBSD glustereventsd-Redhat
++	glustereventsd-FreeBSD glustereventsd-Redhat glustereventsd-Debian
+ 
+ CLEANFILES =
+ 
+--- glusterfs-3.9.0rc2/configure.ac.orig	2016-10-26 16:56:00.488000000 -0400
++++ glusterfs-3.9.0rc2/configure.ac	2016-10-26 19:28:30.872000000 -0400
+@@ -220,6 +220,7 @@
+                 extras/init.d/glusterd-Redhat
+                 extras/init.d/glusterd-FreeBSD
+                 extras/init.d/glusterd-SuSE
++                extras/init.d/glustereventsd-Debian
+                 extras/init.d/glustereventsd-Redhat
+                 extras/init.d/glustereventsd-FreeBSD
+                 extras/ganesha/Makefile
+@@ -554,8 +555,8 @@
+    dnl Find python libs at user configured libdir and also "lib" under prefix
+    PYTHONDEV_LDFLAGS="${PYTHON_LIBS} -L`${PYTHON}-config --prefix`/lib -L`${PYTHON}-config --prefix`/$libdir `${PYTHON}-config --ldflags`"
+ 
+-   BUILD_PYTHON_SITE_PACKAGES=`$PYTHON -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib(prefix="${exec_prefix}"))'`
+-   BUILD_PYTHON_INC=`$PYTHON -c "from distutils import sysconfig; print sysconfig.get_python_inc()"`
++   BUILD_PYTHON_SITE_PACKAGES=${pythondir}
++   BUILD_PYTHON_INC=`$PYTHON -c "import sys; from distutils import sysconfig; sys.stdout.write(sysconfig.get_python_inc())" 2>/dev/null`
+    BUILD_PYTHON_LIB=python$PYTHON_VERSION
+ 
+    dnl Now check for python header using the include path obtained above
