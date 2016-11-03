@@ -1,7 +1,7 @@
 Source: glusterfs
 Section: admin
 Priority: optional
-Maintainer: Louis Zuckerman <me@louiszuckerman.com>
+Maintainer: Gluster Packager <glusterpackager@download.gluster.org>
 Build-Depends: debhelper (>= 9),
  dh-autoreconf,
  libfuse-dev (>= 2.6.5),
@@ -24,9 +24,8 @@ Build-Depends: debhelper (>= 9),
  liburcu-dev,
  libsqlite3-dev,
  libglib2.0-dev,
- chrpath,
- hardening-wrapper
-Standards-Version: 3.9.5
+ chrpath
+Standards-Version: 3.9.7
 Homepage: http://www.gluster.org/
 
 Package: glusterfs-client
