@@ -1,8 +1,9 @@
 #!/usr/bin/make -f
 
-export DEB_BUILD_HARDENING=1
 #export DH_VERBOSE=1
 #export DH_OPTIONS=-v
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 #include /usr/share/cdbs/1/rules/debhelper.mk
 #include /usr/share/cdbs/1/class/autotools.mk
