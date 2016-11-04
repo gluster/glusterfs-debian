@@ -1,3 +1,17 @@
+glusterfs (3.7.17-2) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.17 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 4 Nov 2016 09:09:51 -0400
+
+glusterfs (3.7.17-1) wheezy; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.17 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 3 Nov 2016 09:09:51 -0400
+
 glusterfs (3.7.16-1) wheezy; urgency=low
 
   [ Gluster Packager ]
