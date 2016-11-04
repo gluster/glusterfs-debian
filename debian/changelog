@@ -1,3 +1,10 @@
+glusterfs (3.7.17-2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.7.17 plus python
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 4 Nov 2016 08:16:51 -0400
+
 glusterfs (3.7.17-1) stretch; urgency=low
 
   [ Gluster Packager ]
