@@ -1,3 +1,21 @@
+glusterfs (3.7.17-ubuntu1~xenial5) xenial; urgency=medium
+
+  * GlusterFS 3.7.17 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 4 Nov 2016 09:39:51 -0400
+
+glusterfs (3.7.17-ubuntu1~xenial4) xenial; urgency=medium
+
+  * GlusterFS 3.7.17 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 4 Nov 2016 09:29:51 -0400
+
+glusterfs (3.7.17-ubuntu1~xenial3) xenial; urgency=medium
+
+  * GlusterFS 3.7.17 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 4 Nov 2016 09:19:51 -0400
+
 glusterfs (3.7.17-ubuntu1~xenial2) xenial; urgency=medium
 
   * GlusterFS 3.7.17 GA
