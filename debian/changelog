@@ -1,4 +1,4 @@
-glusterfs (3.9.0-ubuntu1~xenial5) xenial; urgency=medium
+glusterfs (3.9.0-ubuntu1~yakkety1) yakkety; urgency=medium
 
   * GlusterFS 3.9.0 GA
 
