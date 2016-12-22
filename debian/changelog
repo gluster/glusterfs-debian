@@ -1,8 +1,32 @@
+glusterfs (3.9.0-ubuntu1~yakkety2) yakkety; urgency=medium
+
+  * GlusterFS 3.9.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 22 Dec 2016 09:09:51 -0400
+
 glusterfs (3.9.0-ubuntu1~yakkety1) yakkety; urgency=medium
 
   * GlusterFS 3.9.0 GA
 
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 22 Dec 2016 09:09:51 -0400
+
+glusterfs (3.9.0-ubuntu1~xenial5) xenial; urgency=medium
+
+  * GlusterFS 3.9.0 GA
+
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 15 Nov 2016 09:09:51 -0400
+
+glusterfs (3.8.7-ubuntu1~xenial1) xenial; urgency=medium
+
+  * GlusterFS 3.8.7 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 13 Dec 2016 09:09:51 -0400
+
+glusterfs (3.8.6-ubuntu1~xenial1) xenial; urgency=medium
+
+  * GlusterFS 3.8.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 23 Nov 2016 09:09:51 -0400
 
 glusterfs (3.8.5-ubuntu1~xenial1) xenial; urgency=medium
 
