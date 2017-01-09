@@ -1,1 +1,2 @@
 glusterfs-3.7.17.configure.ac.patch
+glusterfs-3.9.0rc2.xlators.crypt.patch
