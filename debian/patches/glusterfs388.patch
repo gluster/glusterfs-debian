@@ -1,16 +1,3 @@
---- glusterfs-3.8.6/configure.ac.orig	2016-11-23 12:48:59.100000000 -0500
-+++ glusterfs-3.8.6/configure.ac	2016-11-23 12:51:10.200000000 -0500
-@@ -1164,8 +1164,8 @@
-     dnl Find python libs at user configured libdir and also "lib" under prefix
-     PYTHONDEV_LDFLAGS="${PYTHON_LIBS} -L`${PYTHON}-config --prefix`/lib -L`${PYTHON}-config --prefix`/$libdir `${PYTHON}-config --ldflags`"
- 
--    BUILD_PYTHON_SITE_PACKAGES=`$PYTHON -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib(prefix="${exec_prefix}"))'`
--    BUILD_PYTHON_INC=`$PYTHON -c "from distutils import sysconfig; print sysconfig.get_python_inc()"`
-+    BUILD_PYTHON_SITE_PACKAGES=${pythondir}
-+    BUILD_PYTHON_INC=`$PYTHON -c "import sys; from distutils import sysconfig; sys.stdout.write(sysconfig.get_python_inc())" 2>/dev/null`
-     BUILD_PYTHON_LIB=python$PYTHON_VERSION
- 
-     GLUPY_SUBDIR=glupy
 --- glusterfs-3.8.6/cli/src/cli.c.orig	2016-11-23 12:51:26.632000000 -0500
 +++ glusterfs-3.8.6/cli/src/cli.c	2016-11-23 12:52:11.184000000 -0500
 @@ -66,9 +66,9 @@
