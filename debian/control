@@ -3,29 +3,28 @@ Section: admin
 Priority: optional
 Maintainer: Louis Zuckerman <me@louiszuckerman.com>
 Build-Depends: debhelper (>= 9),
- dh-autoreconf,
- dh-python,
- libfuse-dev (>= 2.6.5),
- libibverbs-dev (>= 1.0.4),
+ autotools-dev,
+ libfuse-dev,
+ libibverbs-dev,
  libdb-dev,
+ librdmacm-dev,
+ libaio-dev,
+ libacl1-dev,
+ libsqlite3-dev,
+ liburcu-dev,
+ uuid-dev,
+ liblvm2-dev,
  libattr1-dev,
  flex,
  bison,
  libreadline-dev,
  libncurses5-dev,
+ libglib2.0-dev,
  libssl-dev,
  libxml2-dev,
  pkg-config,
- python-all-dev (>= 2.6.6-3~),
- liblvm2-dev,
- libaio-dev,
- libacl1-dev,
- librdmacm-dev,
- uuid-dev,
- liburcu-dev,
- libsqlite3-dev,
- libglib2.0-dev,
- chrpath
+ dh-python,
+ python-all-dev (>= 2.6.6-3~)
 Standards-Version: 3.9.8
 Homepage: http://www.gluster.org/
 
@@ -76,6 +75,8 @@ Pre-Depends: ${misc:Pre-Depends},
  dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
+ ${python:Depends},
+ libacl1-dev,
  attr,
  psmisc
 Conflicts: libglusterfs0,
