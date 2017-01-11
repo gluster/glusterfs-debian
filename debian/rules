@@ -17,20 +17,16 @@ override_dh_install:
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
 	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
-	dh_install --list-misting
-	mv $(CURDIR)/debian/glusterfs-common/usr/share/glusterfs/scripts/gsync-sync-gfid \
+	dh_install --list-missing
+	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
+	mv $(CURDIR)/debian/tmp/usr/share/glusterfs/scripts/gsync-sync-gfid \
 		$(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
-	mv $(CURDIR)/debian/glusterfs-server/usr/sbin/gcron.py \
+	mv $(CURDIR)/debian/tmp/usr/sbin/gcron.py \
 		$(CURDIR)/debian/glusterfs-server/usr/sbin/gcron
-	mv $(CURDIR)/debian/glusterfs-server/usr/sbin/snap_scheduler.py \
+	mv $(CURDIR)/debian/tmp/usr/sbin/snap_scheduler.py \
 		$(CURDIR)/debian/glusterfs-server/usr/sbin/snap_scheduler
-	chmod +x $(CURDIR)/debian/glusterfs-common/usr/share/glusterfs/scripts/*.sh
 
 override_dh_python2:
-	for i in $$(find debian -name '*-packages'); do \
-		echo "renaming $$i ..."; \
-		mv $$i $$(echo $$i | sed 's/site-packages/dist-packages/'); \
-	done
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
