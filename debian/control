@@ -1,7 +1,7 @@
 Source: glusterfs
 Section: admin
 Priority: optional
-Maintainer: Louis Zuckerman <me@louiszuckerman.com>
+Maintainer: Gluster Packager <deb.packages@gluster.org>
 Build-Depends: debhelper (>= 9),
  autotools-dev,
  libfuse-dev,
