@@ -1,0 +1,28 @@
+Source: glusterfs-coreutils
+Section: net
+Priority: optional
+Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
+Standards-Version: 3.9.8
+Homepage: https://github.com/glusterfs/glusterfs-coreutils
+Build-Depends: debhelper (>= 9),
+               quilt,
+               gnulib,
+               libreadline-dev,
+               uuid-dev,
+               help2man,
+               glusterfs-common (>= 3.8.6),
+               pkgconf
+Vcs-Git: https://github.com/glusterfs/glusterfs-coreutils/glusterfs-coreutils.git
+
+Package: glusterfs-coreutils
+Architecture: any
+Depends: ${misc:Depends}
+Description: yada
+
+Package: glusterfs-coreutils-doc
+Architecture: all
+Section: doc
+Description: Documentation for yada
+ .
+ This package contains documentation and examples for yada
+

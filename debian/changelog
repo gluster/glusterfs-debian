@@ -1,0 +1,6 @@
+glusterfs-coreutils (0.2.0-1) stretch; urgency=medium
+
+  * glusterfs-coreutils 0.2.0 GA
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 27 Jan 2017 15:30:00 +0200
+

@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+# Expected debian/rules file that is used by the dpkg build procedure
+#
+#
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	 dh $@ 
+
+override_dh_auto_configure:
+	./autogen.sh
+	dh_auto_configure
+
+
