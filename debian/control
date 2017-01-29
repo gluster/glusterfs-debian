@@ -2,7 +2,7 @@ Source: glusterfs-coreutils
 Section: net
 Priority: optional
 Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
-Standards-Version: 3.9.8
+Standards-Version: 3.9.6
 Homepage: https://github.com/glusterfs/glusterfs-coreutils
 Build-Depends: debhelper (>= 9),
                quilt,
@@ -17,12 +17,12 @@ Vcs-Git: https://github.com/glusterfs/glusterfs-coreutils/glusterfs-coreutils.gi
 Package: glusterfs-coreutils
 Architecture: any
 Depends: ${misc:Depends}
-Description: yada
+Description: Tools that work directly on Gluster volumes, inspired by the standard coreutils. 
 
 Package: glusterfs-coreutils-doc
 Architecture: all
 Section: doc
-Description: Documentation for yada
+Description: Documentation for tools that work directly on Gluster volumes, inspired by the standard coreutils. 
  .
  This package contains documentation and examples for yada
 
