@@ -1,4 +1,4 @@
-glusterfs-coreutils (0.2.0-1) stretch; urgency=medium
+glusterfs-coreutils (0.2.0-ubuntu1~zesty1) zesty; urgency=medium
 
   * glusterfs-coreutils 0.2.0 GA
 
