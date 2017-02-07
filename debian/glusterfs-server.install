@@ -6,12 +6,5 @@ usr/sbin/gcron.py
 etc/glusterfs/glusterd.vol
 usr/bin/glusterfind
 usr/sbin/gfind_missing_files
-var/lib/glusterd/hooks/1/gsync-create/post/S56glusterd-geo-rep-create-post.sh
-usr/share/glusterfs/scripts/gsync-upgrade.sh
-usr/share/glusterfs/scripts/generate-gfid-file.sh
-usr/share/glusterfs/scripts/get-gfid.sh
-usr/share/glusterfs/scripts/slave-upgrade.sh
-usr/share/glusterfs/scripts/gsync-sync-gfid
-usr/share/glusterfs/scripts/post-upgrade-script-for-quota.sh
-usr/share/glusterfs/scripts/pre-upgrade-script-for-quota.sh
-
+var/lib/glusterd/hooks/1/*
+usr/share/glusterfs/scripts/*
