@@ -1,8 +1,8 @@
-glusterfs (3.10.0-ubuntu1~xenial0.2rc1) xenial; urgency=medium
+glusterfs (3.10.0-ubuntu1~xenial1) xenial; urgency=medium
 
-  * GlusterFS 3.10.0 RC1
+  * GlusterFS 3.10.0 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Feb 2017 09:09:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 23 Feb 2017 09:09:51 -0400
 
 glusterfs (3.10.0-ubuntu1~xenial0.1rc0) xenial; urgency=medium
 
