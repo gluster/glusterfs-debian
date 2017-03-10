@@ -1,4 +1,8 @@
 usr/sbin/glusterfsd
+usr/sbin/gluster-eventsapi
+usr/sbin/glustereventsd
+usr/sbin/gluster-georep-sshkey
+usr/sbin/gluster-mountbroker
 usr/lib/*
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
 libglusterfs/src/*.h usr/include/glusterfs/
