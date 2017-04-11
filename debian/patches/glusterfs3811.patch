@@ -1,0 +1,25 @@
+--- glusterfs-3.8.6/cli/src/cli.c.orig	2016-11-23 12:51:26.632000000 -0500
++++ glusterfs-3.8.6/cli/src/cli.c	2016-11-23 12:52:11.184000000 -0500
+@@ -66,9 +66,9 @@
+ /* using argp for command line parsing */
+ 
+ const char *argp_program_version = ""                                 \
+-        PACKAGE_NAME" "PACKAGE_VERSION" built on "__DATE__" "__TIME__ \
++        PACKAGE_NAME" "PACKAGE_VERSION"\n"                            \
+         "\nRepository revision: " GLUSTERFS_REPOSITORY_REVISION "\n"  \
+-        "Copyright (c) 2006-2011 Gluster Inc. "                       \
++        "Copyright (c) 2006-2016 Gluster Inc. "                       \
+         "<http://www.gluster.com>\n"                                  \
+         "GlusterFS comes with ABSOLUTELY NO WARRANTY.\n"              \
+         "You may redistribute copies of GlusterFS under the terms of "\
+--- glusterfs-3.8.6/glusterfsd/src/glusterfsd.c.orig	2016-11-23 12:52:24.712000000 -0500
++++ glusterfs-3.8.6/glusterfsd/src/glusterfsd.c	2016-11-23 12:53:22.032000000 -0500
+@@ -92,7 +92,7 @@
+ static char argp_doc[] = "--volfile-server=SERVER [MOUNT-POINT]\n"       \
+         "--volfile=VOLFILE [MOUNT-POINT]";
+ const char *argp_program_version = ""
+-        PACKAGE_NAME" "PACKAGE_VERSION" built on "__DATE__" "__TIME__
++        PACKAGE_NAME" "PACKAGE_VERSION
+         "\nRepository revision: " GLUSTERFS_REPOSITORY_REVISION "\n"
+         "Copyright (c) 2006-2013 Red Hat, Inc. <http://www.redhat.com/>\n"
+         "GlusterFS comes with ABSOLUTELY NO WARRANTY.\n"
