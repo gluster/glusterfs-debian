@@ -1,4 +1,4 @@
-glusterfs (3.10.3-ubuntu1~xenial1) xenial; urgency=medium
+glusterfs (3.10.3-ubuntu1~trusty1) trusty; urgency=medium
 
   * GlusterFS 3.10.3-1
 
