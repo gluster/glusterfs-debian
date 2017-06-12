@@ -17,6 +17,10 @@ override_dh_install:
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
 	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
+	install -D -p -m 0644 extras/glusterfs-logrotate \
+		debian/glusterfs-common/etc/logrotate.d/glusterfs
+	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
+		debian/glusterfs-common/etc/logrotate.d/glusterfs-georep
 	dh_install
 	mv debian/glusterfs-common/usr/lib/*/pkgconfig/ \
 		debian/glusterfs-common/usr/lib/
