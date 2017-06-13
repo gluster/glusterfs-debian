@@ -1,21 +1,28 @@
+glusterfs (3.8.12-2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.8.12 w/ glusterfs logrotate files
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 13 Jun 2017 08:16:51 -0400
+
 glusterfs (3.8.12-1) stretch; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-3.8.12
+  * glusterfs-3.8.12 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 12 May 2017 08:16:51 -0400
 
 glusterfs (3.8.11-1) stretch; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-3.8.11
+  * glusterfs-3.8.11 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 11 Apr 2017 08:16:51 -0400
 
 glusterfs (3.8.10-1) stretch; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-3.8.10
+  * glusterfs-3.8.10 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Sun, 12 Mar 2017 08:16:51 -0400
 
