@@ -1,3 +1,10 @@
+glusterfs (3.8.12-2) jessie; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.8.12 w/ glusterfs logrotate files
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 13 Jun 2017 09:09:51 -0400
+
 glusterfs (3.8.12-1) jessie; urgency=low
 
   [ Gluster Packager ]
