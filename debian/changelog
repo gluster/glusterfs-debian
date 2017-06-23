@@ -1,9 +1,9 @@
-glusterfs (3.10.3-2) stretch; urgency=low
+glusterfs (3.10.3-1) buster; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-3.10.3 w/ glusterfs logrotate files
+  * glusterfs-3.10.3 GA
 
- -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 13 Jun 2017 08:16:51 -0400
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 23 Jun 2017 08:16:51 -0400
 
 glusterfs (3.10.3-1) stretch; urgency=low
 
