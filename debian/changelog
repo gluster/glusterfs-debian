@@ -1,3 +1,10 @@
+glusterfs (3.11.1-2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.11.1  enable gnfs
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 3 Jul 2017 08:16:51 -0400
+
 glusterfs (3.11.1-1) stretch; urgency=low
 
   [ Gluster Packager ]
