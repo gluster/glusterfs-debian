@@ -1,3 +1,9 @@
+glusterfs (3.11.1-ubuntu1~xenial2) xenial; urgency=medium
+
+  * GlusterFS 3.11.1 enable gnfs
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 3 Jul 2017 09:09:51 -0400
+
 glusterfs (3.11.1-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 3.11.1 GA
