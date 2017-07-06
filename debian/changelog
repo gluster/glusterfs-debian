@@ -1,8 +1,8 @@
-glusterfs (3.10.3-ubuntu1~artful1) artful; urgency=medium
+glusterfs (3.10.4-ubuntu1~artful1) artful; urgency=medium
 
-  * GlusterFS 3.10.3
+  * GlusterFS 3.10.4
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sun, 18 Jun 2017 09:19:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 6 Jul 2017 09:19:51 -0400
 
 glusterfs (3.10.3-ubuntu1~zesty2) zesty; urgency=medium
 
