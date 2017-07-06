@@ -1,8 +1,8 @@
-glusterfs (3.10.3-ubuntu1~xenial2) xenial; urgency=medium
+glusterfs (3.10.4-ubuntu1~xenial1) xenial; urgency=medium
 
-  * GlusterFS 3.10.3 w/ glusterfs logrotate files
+  * GlusterFS 3.10.4
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 13 Jun 2017 09:09:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 6 Jul 2017 09:09:51 -0400
 
 glusterfs (3.10.3-ubuntu1~xenial1) xenial; urgency=medium
 
