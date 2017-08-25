@@ -9,7 +9,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 #include /usr/share/cdbs/1/class/python-module.mk
 
 %:
-	dh $@ --with python2
+	dh $@ --with python2,systemd
 
 override_dh_auto_configure:
 	mv configure configure.dist && ./autogen.sh
@@ -24,16 +24,16 @@ override_dh_install:
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
 	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
 	install -D -p -m 0644 extras/glusterfs-logrotate \
-		debian/glusterfs-common/etc/logrotate.d/glusterfs
+		debian/tmp/etc/logrotate.d/glusterfs
 	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
-		debian/glusterfs-common/etc/logrotate.d/glusterfs-georep
+		debian/tmp/etc/logrotate.d/glusterfs-georep
+	install -D -p -m 0644 extras/systemd/glusterd.service \
+		debian/tmp/lib/systemd/system/glusterd.service
+	install -D -p -m 0644 extras/systemd/glustereventsd.service \
+		debian/tmp/lib/systemd/system/glustereventsd.service
+	ls -R debian
 	dh_install
-	mv debian/glusterfs-common/usr/lib/*/pkgconfig/ \
-		debian/glusterfs-common/usr/lib/
-
-override_dh_installinit:
-	dh_installinit -pglusterfs-client --no-start --name=mounting-glusterfs
-	dh_installinit -pglusterfs-server
+	ls -R debian
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
