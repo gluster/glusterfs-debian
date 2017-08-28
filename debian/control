@@ -5,6 +5,7 @@ Maintainer: Gluster Packager <glusterpackager@gluster.org>
 Build-Depends: debhelper (>= 9),
  dh-autoreconf,
  dh-python,
+ dh-systemd,
  libfuse-dev (>= 2.6.5),
  libibverbs-dev (>= 1.0.4),
  libdb-dev,
