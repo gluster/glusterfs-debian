@@ -1,3 +1,4 @@
+etc/logrotate.d/*
 usr/sbin/glusterfsd
 usr/sbin/gluster-eventsapi
 usr/sbin/glustereventsd
