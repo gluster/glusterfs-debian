@@ -55,9 +55,9 @@ Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  lsb-base (>= 3.0-6),
+ nfs-common,
  glusterfs-common (>= ${binary:Version}),
  glusterfs-client (>= ${binary:Version})
-Recommends: nfs-common
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
  peta-bytes. It aggregates various storage bricks over Infiniband RDMA

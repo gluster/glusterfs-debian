@@ -1,3 +1,4 @@
+etc/default/glusterd
 lib/systemd/system/*
 usr/sbin/gluster
 usr/sbin/glusterd
