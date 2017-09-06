@@ -23,10 +23,15 @@ override_dh_install:
 		debian/tmp/etc/logrotate.d/glusterfs-georep
 	install -D -p -m 0644 extras/systemd/glusterd.service \
 		debian/tmp/lib/systemd/system/glusterd.service
+	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
 	install -D -p -m 0644 extras/systemd/glustereventsd.service \
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
+	install -D -p -m 0755 extras/mount-shared-storage.sh \
+		debian/tmp/usr/lib/x86_64-linux-gnu/glusterfs/mount-shared-storage.sh
+	install -D -p -m 0644 extras/glusterd-sysconfig \
+		debian/tmp/etc/default/glusterd
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
 	mv $(CURDIR)/debian/tmp/usr/share/glusterfs/scripts/gsync-sync-gfid \
