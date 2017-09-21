@@ -4,7 +4,7 @@ glusterfs-debian
 What is this?
 ---------------
 
-This is the source package for [glusterfs] that is used to build the community Debian & Ubuntu packages on [download.gluster.org] and in the [Launchpad PPAs], respectively.
+This is the packaging source for [glusterfs] that is used to build the community Debian & Ubuntu packages on [download.gluster.org] and in the [Launchpad PPAs], respectively.
 
 The interesting stuff is in branches dedicated to glusterfs & distro releases.
 
