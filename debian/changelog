@@ -1,3 +1,10 @@
+glusterfs (3.10.6-1) buster; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-3.10.6 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 3 Oct 2017 08:16:51 -0400
+
 glusterfs (3.10.5-1) buster; urgency=low
 
   [ Gluster Packager ]
