@@ -79,7 +79,9 @@ Depends: ${misc:Depends},
  ${python:Depends},
  libacl1-dev,
  attr,
- psmisc
+ psmisc,
+ python-prettytable,
+ python-requests
 Conflicts: libglusterfs0,
  libglusterfs-dev
 Breaks: glusterfs-server (<< 3.4.0~qa5)
