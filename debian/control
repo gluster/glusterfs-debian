@@ -78,7 +78,9 @@ Pre-Depends: ${misc:Pre-Depends},
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  attr,
- psmisc
+ psmisc,
+ python-prettytable,
+ python-requests
 Conflicts: libglusterfs0,
  libglusterfs-dev
 Breaks: glusterfs-server (<< 3.4.0~qa5)
