@@ -1,3 +1,9 @@
+glusterfs (3.12.2-ubuntu1~xenial2) xenial; urgency=medium
+
+  * GlusterFS 3.12.2, /var/lib/glusterd/groups/*
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 20 Oct 2017 09:09:51 -0400
+
 glusterfs (3.12.2-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 3.12.2 GA
