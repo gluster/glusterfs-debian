@@ -1,18 +1,24 @@
+glusterfs (3.10.6-ubuntu1~xenial2) xenial; urgency=medium
+
+  * GlusterFS 3.10.6, /var/lib/glusterd/groups
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 20 Oct 2017 09:09:51 -0400
+
 glusterfs (3.10.6-ubuntu1~xenial1) xenial; urgency=medium
 
-  * GlusterFS 3.10.6
+  * GlusterFS 3.10.6 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 3 Oct 2017 09:09:51 -0400
 
 glusterfs (3.10.5-ubuntu1~xenial1) xenial; urgency=medium
 
-  * GlusterFS 3.10.5
+  * GlusterFS 3.10.5 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 12 Aug 2017 09:09:51 -0400
 
 glusterfs (3.10.4-ubuntu1~xenial1) xenial; urgency=medium
 
-  * GlusterFS 3.10.4
+  * GlusterFS 3.10.4 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 6 Jul 2017 09:09:51 -0400
 
