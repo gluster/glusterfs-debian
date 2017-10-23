@@ -6,5 +6,5 @@ usr/sbin/gcron.py
 etc/glusterfs/glusterd.vol
 usr/bin/glusterfind
 usr/sbin/gfind_missing_files
-var/lib/glusterd/hooks/1/*
+var/lib/glusterd/*
 usr/share/glusterfs/scripts/*
