@@ -1,3 +1,9 @@
+glusterfs-coreutils (0.2.0-ubuntu1~bionic1) bionic; urgency=medium
+
+  * glusterfs-coreutils 0.2.0
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Sat, 28 Oct 2017 15:30:00 +0200
+
 glusterfs-coreutils (0.2.0-ubuntu1~artful1) artful; urgency=medium
 
   * glusterfs-coreutils 0.2.0 GA
