@@ -1,3 +1,9 @@
+glusterfs (3.10.6-ubuntu1~bionic1) bionic; urgency=medium
+
+  * GlusterFS 3.10.6
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 28 Oct 2017 09:19:51 -0400
+
 glusterfs (3.10.6-ubuntu1~artful2) artful; urgency=medium
 
   * GlusterFS 3.10.6, /var/lib/glusterd/groups
