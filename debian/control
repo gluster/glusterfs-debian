@@ -26,6 +26,7 @@ Build-Depends: debhelper (>= 9),
  liburcu-dev,
  libsqlite3-dev,
  libglib2.0-dev,
+ libtirpc-dev,
  chrpath
 Standards-Version: 3.9.8
 Homepage: http://www.gluster.org/
@@ -57,7 +58,8 @@ Depends: ${misc:Depends},
  lsb-base (>= 3.0-6),
  nfs-common,
  glusterfs-common (>= ${binary:Version}),
- glusterfs-client (>= ${binary:Version})
+ glusterfs-client (>= ${binary:Version}),
+ libtirpc1
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
  peta-bytes. It aggregates various storage bricks over Infiniband RDMA
