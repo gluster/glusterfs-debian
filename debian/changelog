@@ -1,3 +1,9 @@
+glusterfs (3.10.8-ubuntu1~artful1) artful; urgency=medium
+
+  * GlusterFS 3.10.8 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 30 Nov 2017 09:19:51 -0400
+
 glusterfs (3.10.7-ubuntu1~artful1) artful; urgency=medium
 
   * GlusterFS 3.10.7, /var/lib/glusterd/groups
