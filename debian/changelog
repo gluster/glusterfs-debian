@@ -1,3 +1,9 @@
+glusterfs (3.13.0-ubuntu1~zesty1) zesty; urgency=medium
+
+  * GlusterFS 3.13.0 GA
+
+ -- GlusterFS deb packages <deb.packages@gluster.org>  Sat, 2 Dec 2017 09:19:51 -0400
+
 glusterfs (3.12.3-ubuntu1~zesty1) zesty; urgency=medium
 
   * GlusterFS 3.12.3 GA
