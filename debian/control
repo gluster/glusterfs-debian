@@ -6,6 +6,7 @@ Build-Depends: debhelper (>= 9),
  dh-autoreconf,
  dh-systemd,
  dh-python,
+ libfile-fcntllock-perl,
  libfuse-dev (>= 2.6.5),
  libibverbs-dev (>= 1.0.4),
  libdb-dev,
@@ -27,7 +28,7 @@ Build-Depends: debhelper (>= 9),
  libsqlite3-dev,
  libglib2.0-dev,
  chrpath
-Standards-Version: 3.9.8
+Standards-Version: 4.1.1
 Homepage: http://www.gluster.org/
 
 Package: glusterfs-client
