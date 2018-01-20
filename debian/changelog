@@ -1,8 +1,8 @@
-glusterfs (3.13.1-ubuntu1~artful1) artful; urgency=medium
+glusterfs (3.13.2-ubuntu1~artful1) artful; urgency=medium
 
-  * GlusterFS 3.13.1 GA
+  * GlusterFS 3.13.2 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  thu, 21 Dec 2017 09:19:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 20 Jan 2018 09:19:51 -0400
 
 glusterfs (3.13.0-ubuntu1~artful1) artful; urgency=medium
 
