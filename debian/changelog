@@ -1,3 +1,9 @@
+glusterfs (3.10.10-ubuntu1~bionic1) bionic; urgency=medium
+
+  * GlusterFS 3.1010.
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 31 Jan 2018 09:19:51 -0400
+
 glusterfs (3.10.9-ubuntu1~bionic1) bionic; urgency=medium
 
   * GlusterFS 3.10.9
