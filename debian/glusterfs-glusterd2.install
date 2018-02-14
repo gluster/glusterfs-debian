@@ -1,0 +1,3 @@
+usr/sbin/glusterd2
+usr/sbin/glustercli
+/usr/lib/systemd/user/glusterd2.service

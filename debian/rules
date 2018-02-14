@@ -6,11 +6,23 @@
 #
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
+export PREFIX=/usr
+
+GD2IMPORT_PATH=github.com/gluster/glusterd2
+GD2MAKE=%{__make} PREFIX=%{_prefix} EXEC_PREFIX=%{_exec_prefix} BINDIR=%{_bindir} SBINDIR=%{_sbindir} DATADIR=%{_datadir} LOCALSTATEDIR=%{_sharedstatedir} LOGDIR=%{_localstatedir}/log SYSCONFDIR=%{_sysconfdir}
+
+
 %:
-	 dh $@ 
+	 dh $@ --with systemd
 
 override_dh_auto_configure:
-	./autogen.sh
-	dh_auto_configure
 
+override_dh_auto_make:
+	GOPATH=$(pwd):%{gopath}
+	mkdir -p src/$(dir $(GD2IMPORT_PATH))
+	ln -s ../../../ src/$(GD2IMPORT_PATH)
+	pushd src/$(GD2IMPORT_PATH)
+	$(GD2MAKE) glusterd2
+	$(GD2MAKE) glustercli
+	$(GD2MAKE) glusterd2.toml
 

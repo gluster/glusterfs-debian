@@ -1,7 +1,7 @@
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Name: glusterfs-coreutils
-Maintener: Kaleb S. KEITHLEY <kkeithle@redhat.com>
-Source: https://github.org/glusterfs/glusterfs-coreutils
+Name: glusterfs-glusterd2
+Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
+Source: https://github.org/glusterfs/glusterd2
 
 License: GPL-3
 
