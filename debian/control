@@ -17,7 +17,6 @@ Build-Depends: debhelper (>= 9),
  libncurses5-dev,
  libssl-dev,
  libxml2-dev,
- libtirpc-dev,
  pkg-config,
  python-all-dev (>= 2.6.6-3~),
  liblvm2-dev,
@@ -59,8 +58,7 @@ Depends: ${misc:Depends},
  lsb-base (>= 3.0-6),
  nfs-common,
  glusterfs-common (>= ${binary:Version}),
- glusterfs-client (>= ${binary:Version}),
- libtirpc1
+ glusterfs-client (>= ${binary:Version})
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
  peta-bytes. It aggregates various storage bricks over Infiniband RDMA
