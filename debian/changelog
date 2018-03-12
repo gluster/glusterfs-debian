@@ -1,6 +1,6 @@
 glusterfs (4.0.0-ubuntu1~artful3) artful; urgency=medium
 
-  * GlusterFS 4.0.0 GA (v4.0.0-2 respin)
+  * GlusterFS 4.0.0 GA (v4.0.0-2 respin, artful)
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 12 Mar 2018 09:19:51 -0400
 
