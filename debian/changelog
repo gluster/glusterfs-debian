@@ -1,6 +1,12 @@
+glusterfs (4.0.0-ubuntu1~bionic3) bionic; urgency=medium
+
+  * GlusterFS 4.0.0 GA (v4.0.0-2 respin, bionic)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 6 Mar 2018 09:19:51 -0400
+
 glusterfs (4.0.0-ubuntu1~bionic2) bionic; urgency=medium
 
-  * GlusterFS 4.0.0
+  * GlusterFS 4.0.0 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 6 Mar 2018 09:19:51 -0400
 
