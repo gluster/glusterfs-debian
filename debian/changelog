@@ -1,3 +1,9 @@
+glusterfs (4.0.0-ubuntu1~xenial3) xenial; urgency=medium
+
+  * GlusterFS 4.0.0 GA (v4.0.0-2 respin)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 12 Mar 2018 09:09:51 -0400
+
 glusterfs (4.0.0-ubuntu1~xenial2) xenial; urgency=medium
 
   * GlusterFS 4.0.0 GA
