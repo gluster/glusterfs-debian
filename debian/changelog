@@ -1,3 +1,9 @@
+glusterfs (3.13.2-ubuntu1~xenial2) xenial; urgency=medium
+
+  * GlusterFS 3.13.2 w/ arm64 and armhf enabled
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 21 Mar 2018 09:09:51 -0400
+
 glusterfs (3.13.2-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 3.13.2 GA
