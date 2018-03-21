@@ -1,18 +1,24 @@
+glusterfs (3.13.2-ubuntu1~bionic2) bionic; urgency=medium
+
+  * GlusterFS 3.13.2 (rebuild w/ arm64, ganesha dependency)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 21 Mar 2018 09:19:51 -0400
+
 glusterfs (3.13.2-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.13.2
+  * GlusterFS 3.13.2 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 20 Jan 2018 09:19:51 -0400
 
 glusterfs (3.13.1-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.13.1
+  * GlusterFS 3.13.1 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 21 Dec 2017 09:19:51 -0400
 
 glusterfs (3.13.0-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.13.0
+  * GlusterFS 3.13.0 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 2 Dec 2017 09:19:51 -0400
 
