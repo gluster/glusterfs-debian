@@ -1,36 +1,42 @@
+glusterfs (3.12.7-ubuntu1~bionic2) bionic; urgency=medium
+
+  * GlusterFS 3.12.7 mount-shared-storage.sh
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 6 Apr 2018 09:19:51 -0400
+
 glusterfs (3.12.7-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.7
+  * GlusterFS 3.12.7 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 20 Mar 2018 09:19:51 -0400
 
 glusterfs (3.12.6-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.6
+  * GlusterFS 3.12.6 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 13 Feb 2018 09:19:51 -0400
 
 glusterfs (3.12.5-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.5
+  * GlusterFS 3.12.5 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 12 Jan 2018 09:19:51 -0400
 
 glusterfs (3.12.4-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.4
+  * GlusterFS 3.12.4 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 15 Dec 2017 09:19:51 -0400
 
 glusterfs (3.12.3-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.3
+  * GlusterFS 3.12.3 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 13 Nov 2017 09:19:51 -0400
 
 glusterfs (3.12.2-ubuntu1~bionic1) bionic; urgency=medium
 
-  * GlusterFS 3.12.2
+  * GlusterFS 3.12.2 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Sat, 28 Oct 2017 09:19:51 -0400
 
