@@ -21,11 +21,6 @@ override_dh_install:
 		debian/tmp/etc/logrotate.d/glusterfs
 	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
 		debian/tmp/etc/logrotate.d/glusterfs-georep
-	install -D -p -m 0644 extras/systemd/glusterd.service \
-		debian/tmp/lib/systemd/system/glusterd.service
-	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
-	install -D -p -m 0644 extras/systemd/glustereventsd.service \
-		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
 	install -D -p -m 0755 extras/mount-shared-storage.sh \
@@ -46,6 +41,15 @@ override_dh_python2:
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
 	dh_python2 usr/lib/python2.7/dist-packages/gluster/
+
+override_dh_installinit:
+	install -D -p -m 0644 extras/systemd/glusterd.service \
+		debian/tmp/lib/systemd/system/glusterd.service
+	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
+	install -D -p -m 0644 extras/systemd/glustereventsd.service \
+		debian/tmp/lib/systemd/system/glustereventsd.service
+	dh_installinit -p glusterfs-server --name = glusterd
+	dh_installinit -p glusterfs-server --name = glustereventsd
 
 override_dh_strip:
 	dh_strip --dbg-package=glusterfs-dbg
