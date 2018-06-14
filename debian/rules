@@ -25,6 +25,14 @@ override_dh_install:
 		debian/tmp/usr/lib/${DEB_HOST_GNU_TYPE}/glusterfs/mount-shared-storage.sh
 	install -D -p -m 0644 extras/glusterd-sysconfig \
 		debian/tmp/etc/default/glusterd
+	install -c -d -m 755 debian/tmp/lib/systemd/system
+	install -D -p -m 0644 extras/systemd/glusterd.service \
+		debian/tmp/lib/systemd/system/glusterd.service
+	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
+	install -D -p -m 0644 extras/systemd/glustereventsd.service \
+		debian/tmp/lib/systemd/system/glustereventsd.service
+	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
+		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
 	mv $(CURDIR)/debian/tmp/usr/share/glusterfs/scripts/gsync-sync-gfid \
@@ -41,13 +49,6 @@ override_dh_python2:
 	dh_python2 usr/lib/python2.7/dist-packages/gluster/
 
 override_dh_installinit:
-	install -D -p -m 0644 extras/systemd/glusterd.service \
-		debian/tmp/lib/systemd/system/glusterd.service
-	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
-	install -D -p -m 0644 extras/systemd/glustereventsd.service \
-		debian/tmp/lib/systemd/system/glustereventsd.service
-	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
-		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
 	dh_installinit -p glusterfs-server --name=glusterd
 	dh_installinit -p glusterfs-server --name=glustereventsd
 	dh_installinit -p glusterfs-server --name=glusterfssharedstorage
