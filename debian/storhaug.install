@@ -1,0 +1,4 @@
+usr/sbin/storhaug
+etc/ctdb/nfs-checks-ganesha.d/20.nfs-ganesha.check
+etc/ctdb/nfs-ganesha-callout
+/etc/default/storhaug.d

@@ -10,7 +10,14 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 	 dh $@ 
 
 override_dh_auto_configure:
-	./autogen.sh
-	dh_auto_configure
+	echo "nothing to configure"
 
+override_dh_install:
+	mkdir -p debian/tmp/usr/sbin
+	mkdir -p debian/tmp/storhaug/etc/ctdb/nfs-checks-ganesha.d
+	install -d -m 0755 debian/tmp/etc/default/storhaug.d
+	install -m 0744 storhaug debian/tmp/usr/sbin/
+	sed -i s/sysconfig/default/ debian/tmp/usr/sbin/storhaug
+	install -m 0744 20.nfs-ganesha.check debian/tmp/storhaug/etc/ctdb/nfs-checks-ganesha.d
+	install -m 0744 nfs-ganesha-callout debian/tmp/storhaug/etc/ctdb
 

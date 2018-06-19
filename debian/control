@@ -1,28 +1,18 @@
-Source: glusterfs-coreutils
+Source: storhaug
 Section: net
 Priority: optional
 Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
 Standards-Version: 3.9.8
-Homepage: https://github.com/glusterfs/glusterfs-coreutils
+Homepage: https://github.com/glusterfs/storhaug
 Build-Depends: debhelper (>= 9),
                quilt,
                gnulib,
-               libreadline-dev,
-               uuid-dev,
-               help2man,
-               glusterfs-common (>= 3.8.6),
+               ctdb,
                pkgconf
-Vcs-Git: https://github.com/glusterfs/glusterfs-coreutils/glusterfs-coreutils.git
+Vcs-Git: https://github.com/glusterfs/storhaug/storhaug.git
 
-Package: glusterfs-coreutils
+Package: storhaug
 Architecture: any
 Depends: ${misc:Depends}
-Description: yada
-
-Package: glusterfs-coreutils-doc
-Architecture: all
-Section: doc
-Description: Documentation for yada
- .
- This package contains documentation and examples for yada
+Description: CTDB-based HA for NFS-Ganesha with GlusterFS
 

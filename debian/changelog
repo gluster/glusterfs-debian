@@ -1,18 +1,6 @@
-glusterfs-coreutils (0.2.0-1) buster; urgency=medium
+storhaug (1.0-1) buster; urgency=medium
 
-  * glusterfs-coreutils 0.2.0 GA
+  * storhaug 1.0 GA
 
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 3 Oct 2017 15:30:00 +0200
-
-glusterfs-coreutils (0.2.0-ubuntu1~artful1) artful; urgency=medium
-
-  * glusterfs-coreutils 0.2.0 GA
-
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Sat, 30 Sep 2017 15:30:00 +0200
-
-glusterfs-coreutils (0.2.0-ubuntu1~zesty1) zesty; urgency=medium
-
-  * glusterfs-coreutils 0.2.0 GA
-
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 27 Jan 2017 15:30:00 +0200
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 19 Jun 2018 15:30:00 +0200
 
