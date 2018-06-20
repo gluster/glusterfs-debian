@@ -14,10 +14,11 @@ override_dh_auto_configure:
 
 override_dh_install:
 	mkdir -p debian/tmp/usr/sbin
-	mkdir -p debian/tmp/storhaug/etc/ctdb/nfs-checks-ganesha.d
-	install -d -m 0755 debian/tmp/etc/default/storhaug.d
-	install -m 0744 storhaug debian/tmp/usr/sbin/
+	mkdir -p debian/tmp/etc/ctdb/nfs-checks-ganesha.d
+	mkdir -p debian/tmp/etc/default/storhaug.d
+	install -m 0744 storhaug debian/tmp/usr/sbin/storhaug
 	sed -i s/sysconfig/default/ debian/tmp/usr/sbin/storhaug
-	install -m 0744 20.nfs-ganesha.check debian/tmp/storhaug/etc/ctdb/nfs-checks-ganesha.d
-	install -m 0744 nfs-ganesha-callout debian/tmp/storhaug/etc/ctdb
+	install -m 0744 20.nfs-ganesha.check debian/tmp/etc/ctdb/nfs-checks-ganesha.d/20.nfs-ganesha.check
+	install -m 0744 nfs-ganesha-callout debian/tmp/etc/ctdb/nfs-ganesha-callout
+	dh_install
 
