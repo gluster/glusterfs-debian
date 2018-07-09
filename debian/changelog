@@ -1,3 +1,9 @@
+glusterfs (4.1.1-ubuntu1~artful2) artful; urgency=medium
+
+  * GlusterFS 4.1.1 mount-shared-storage.sh
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 9 Jul 2018 09:19:51 -0400
+
 glusterfs (4.1.1-ubuntu1~artful1) artful; urgency=medium
 
   * GlusterFS 4.1.1 GA
