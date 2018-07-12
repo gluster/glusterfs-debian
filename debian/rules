@@ -28,7 +28,7 @@ override_dh_install:
 	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
 		debian/tmp/etc/logrotate.d/glusterfs-georep
 	install -D -p -m 0755 extras/mount-shared-storage.sh \
-		debian/tmp/usr/lib/${DEB_HOST_GNU_TYPE}/glusterfs/mount-shared-storage.sh
+		debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/glusterfs/mount-shared-storage.sh
 	install -D -p -m 0644 extras/glusterd-sysconfig \
 		debian/tmp/etc/default/glusterd
 	install -c -d -m 755 debian/tmp/lib/systemd/system
