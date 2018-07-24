@@ -1,12 +1,12 @@
 etc/default/glusterd
+etc/glusterfs/glusterd.vol
 lib/systemd/system/*
+usr/bin/glusterfind
 usr/sbin/gluster
 usr/sbin/glusterd
 usr/sbin/glfsheal
 usr/sbin/snap_scheduler.py
 usr/sbin/gcron.py
-etc/glusterfs/glusterd.vol
-usr/bin/glusterfind
 usr/sbin/gfind_missing_files
 var/lib/glusterd/*
 usr/share/glusterfs/scripts/*
