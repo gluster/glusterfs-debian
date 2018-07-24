@@ -22,7 +22,7 @@ override_dh_install:
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/error-gen.so
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/io-stats.so
-	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
+	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's|^dependency_libs|#dependency_libs|g' -i {} \;
 	install -D -p -m 0644 extras/glusterfs-logrotate \
 		debian/tmp/etc/logrotate.d/glusterfs
 	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
@@ -34,12 +34,13 @@ override_dh_install:
 	install -c -d -m 755 debian/tmp/lib/systemd/system
 	install -D -p -m 0644 extras/systemd/glusterd.service \
 		debian/tmp/lib/systemd/system/glusterd.service
-	sed -i s/sysconfig/default/ debian/tmp/lib/systemd/system/glusterd.service
+	sed -i 's|sysconfig|default|' debian/tmp/lib/systemd/system/glusterd.service
 	install -D -p -m 0644 extras/systemd/glustereventsd.service \
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
 	dh_install
+	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name=glusterd
