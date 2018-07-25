@@ -1,5 +1,5 @@
 etc/logrotate.d/*
-etc/glusterd/gsyncd.conf
+etc/glusterfs/gsyncd.conf
 usr/lib/*
 usr/sbin/glusterfsd
 usr/sbin/gluster-eventsapi
