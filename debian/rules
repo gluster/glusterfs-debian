@@ -40,7 +40,6 @@ override_dh_install:
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
 	dh_install
-	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name=glusterd
