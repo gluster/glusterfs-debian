@@ -1,8 +1,8 @@
-glusterfs (3.12.12-ubuntu1~cosmic1) cosmic; urgency=medium
+glusterfs (3.12.13-ubuntu1~cosmic1) cosmic; urgency=medium
 
-  * GlusterFS 3.12.12 GA
+  * GlusterFS 3.12.13 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 12 Jul 2018 09:19:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Aug 2018 09:19:51 -0400
 
 glusterfs (3.12.11-ubuntu1~cosmic2) cosmic; urgency=medium
 
