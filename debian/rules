@@ -33,15 +33,14 @@ override_dh_install:
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
-	mkdir -p debian/tmp/run/gluster/metrics
+	mv debian/tmp/usr/sbin/gcron.py debian/tmp/usr/sbin/gcron
+	mv debian/tmp/usr/sbin/snap_scheduler.py debian/tmp/usr/sbin/snap_scheduler
+	install -c -d -m 0755 debian/tmp/run/gluster/metrics
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
-	mv $(CURDIR)/debian/tmp/usr/share/glusterfs/scripts/gsync-sync-gfid \
-		$(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
-	mv $(CURDIR)/debian/tmp/usr/sbin/gcron.py \
-		$(CURDIR)/debian/glusterfs-server/usr/sbin/gcron
-	mv $(CURDIR)/debian/tmp/usr/sbin/snap_scheduler.py \
-		$(CURDIR)/debian/glusterfs-server/usr/sbin/snap_scheduler
+	mv debian/glusterfs-server/usr/share/glusterfs/scripts/gsync-sync-gfid \
+		debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
+	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_python2:
 	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
