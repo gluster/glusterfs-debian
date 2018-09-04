@@ -5,9 +5,10 @@ usr/bin/glusterfind
 usr/sbin/gluster
 usr/sbin/glusterd
 usr/sbin/glfsheal
-usr/sbin/snap_scheduler.py
-usr/sbin/gcron.py
+usr/sbin/snap_scheduler
+usr/sbin/gcron
 usr/sbin/gfind_missing_files
+usr/share/glusterfs/scripts/*
 var/lib/glusterd/*
 run/gluster/*
 usr/share/glusterfs/scripts/*
