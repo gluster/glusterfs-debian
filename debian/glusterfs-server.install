@@ -10,3 +10,4 @@ usr/sbin/gcron.py
 usr/sbin/gfind_missing_files
 usr/share/glusterfs/scripts/*
 var/lib/glusterd/*
+run/gluster/*

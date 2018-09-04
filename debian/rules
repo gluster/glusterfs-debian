@@ -39,6 +39,7 @@ override_dh_install:
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
+	mkdir -p debian/tmp/run/gluster/metrics
 	dh_install
 
 override_dh_installinit:
