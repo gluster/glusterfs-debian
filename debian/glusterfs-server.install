@@ -9,4 +9,5 @@ usr/sbin/snap_scheduler.py
 usr/sbin/gcron.py
 usr/sbin/gfind_missing_files
 var/lib/glusterd/*
+run/gluster/*
 usr/share/glusterfs/scripts/*

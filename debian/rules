@@ -33,6 +33,7 @@ override_dh_install:
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
 		debian/tmp/lib/systemd/system/glusterfssharedstorage.service
+	mkdir -p /run/gluster/metrics
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
 	mv $(CURDIR)/debian/tmp/usr/share/glusterfs/scripts/gsync-sync-gfid \
