@@ -1,3 +1,15 @@
+glusterfs (4.1.3-ubuntu1~xenial4) xenial; urgency=medium
+
+  * GlusterFS 4.1.3, sync changes from Debian branches
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 4 Sep 2018 09:09:51 -0400
+
+glusterfs (4.1.3-ubuntu1~xenial3) xenial; urgency=medium
+
+  * GlusterFS 4.1.3, sync changes from Debian branches
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 4 Sep 2018 09:09:51 -0400
+
 glusterfs (4.1.3-ubuntu1~xenial2) xenial; urgency=medium
 
   * GlusterFS 4.1.3, create (/var)/run/gluster/metrics
