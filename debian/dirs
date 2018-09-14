@@ -1,2 +1,5 @@
 usr/sbin
-usr/lib/systemd/users
+var/lib
+var/log
+lib/systemd/system
+etc/logrotate.d

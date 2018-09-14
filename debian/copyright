@@ -1,20 +1,26 @@
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Name: glusterfs-glusterd2
+Name: glusterd2
 Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
-Source: https://github.org/glusterfs/glusterd2
+Source: https://github.org/glusterfs/glusterd2.git
 
-License: GPL-3
+License: GPL-2 or GPL-3+
 
-License: GPL-3
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Copyright (c) 2018 Red Hat, Inc. <http://www.redhat.com>
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+This is free software; you can redistribute it and/or modify it under
+the terms of either the GNU General Public License version 2 (GPLv2) or the
+GNU Lesser General Public License version 3 or greater (LGPLv3+) as published by
+the Free Software Foundation.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+This is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License version 2 and
+the GNU Lesser General Public License version 3 with the dpkg source package as
+the files COPYING-GPLV2 and COPYING-LGPLV3, respectively. If not, see
+<http://www.gnu.org/licenses/>.
+
+
+

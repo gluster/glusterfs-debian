@@ -1,6 +1,7 @@
-glusterd2 (4.0.0rc0) buster; urgency=medium
+glusterd2 (4.1.0-0) buster; urgency=medium
 
-  * glusterd2 RC0
+  * glusterd2 4.1.0 GA
 
- -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 2 Feb 2018 15:30:00 +0200
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 3 Oct 2017 15:30:00 +0200
+
 

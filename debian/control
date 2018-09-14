@@ -2,17 +2,16 @@ Source: glusterd2
 Section: net
 Priority: optional
 Maintainer: Kaleb S. KEITHLEY <kkeithle@redhat.com>
-Standards-Version: 3.9.8
-Homepage: https://github.com/glusterfs/glusterd2
+Standards-Version: 4.1.1
+Homepage: https://github.com/glusterfs/glusterfs-coreutils
 Build-Depends: debhelper (>= 9),
                quilt,
-               gnulib,
-               glusterfs-common (>= 4.0.0),
-               golang,
+               golang-go,
                pkgconf
-Vcs-Git: https://github.com/glusterfs/glusterfs-coreutils/glusterfs-coreutils.git
+Vcs-Git: https://github.com/gluster/glusterd2.git
 
-Package: glusterfs-glusterd2
+Package: glusterd2
 Architecture: any
-Depends: ${misc:Depends}
-Description: Next Generation glusterd 
+Depends: ${misc:Depends},
+               glusterfs-common (>= 4.1.0),
+Description: glusterd2

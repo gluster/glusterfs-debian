@@ -4,25 +4,33 @@
 # Expected debian/rules file that is used by the dpkg build procedure
 #
 #
-export DEB_BUILD_MAINT_OPTIONS=hardening=+all
-
-export PREFIX=/usr
-
-GD2IMPORT_PATH=github.com/gluster/glusterd2
-GD2MAKE=%{__make} PREFIX=%{_prefix} EXEC_PREFIX=%{_exec_prefix} BINDIR=%{_bindir} SBINDIR=%{_sbindir} DATADIR=%{_datadir} LOCALSTATEDIR=%{_sharedstatedir} LOGDIR=%{_localstatedir}/log SYSCONFDIR=%{_sysconfdir}
-
+# export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 %:
-	 dh $@ --with systemd
+	 dh $@ 
 
 override_dh_auto_configure:
+	echo "nothing to configure"
+	mkdir -p src/github.com/gluster/
+	ln -s ../../../ src/github.com/gluster/glusterd2
 
-override_dh_auto_make:
-	GOPATH=$(pwd):%{gopath}
-	mkdir -p src/$(dir $(GD2IMPORT_PATH))
-	ln -s ../../../ src/$(GD2IMPORT_PATH)
-	pushd src/$(GD2IMPORT_PATH)
-	$(GD2MAKE) glusterd2
-	$(GD2MAKE) glustercli
-	$(GD2MAKE) glusterd2.toml
+GD2MAKEFLAGS=PREFIX=/usr EXEC_PREFIX=/usr BINDIR=bin SBINDIR=sbin DATADIR=/run LOCALSTATEDIR=/var/lib LOGDIR=/var/log SYSCONFDIR=/etc
 
+override_dh_auto_build:
+	(export GOPATH="${CURDIR}:${PATH}" && \
+	make -C src/github.com/gluster/glusterd2 ${GD2MAKEFLAGS} glusterd2 && \
+	make -C src/github.com/gluster/glusterd2 ${GD2MAKEFLAGS} glustercli && \
+	make -C src/github.com/gluster/glusterd2 ${GD2MAKEFLAGS} glusterd2.toml)
+	
+override_dh_auto_test:
+	echo "nothing to test"
+
+override_dh_auto_install:
+	install -D build/glusterd2 debian/tmp/usr/sbin/glusterd2
+	install -D build/glustercli debian/tmp/usr/sbin/glustercli
+	install -D build/glusterd2.toml debian/tmp/etc/glusterd2/glusterd2.toml
+	install -D build/glustercli.sh debian/tmp/etc/bash_completion.d/glustercli.sh
+	install -D -p -m 0644 extras/systemd/glusterd2.service \
+		debian/tmp/lib/systemd/system/glusterd2.service
+	install -D -p -m 0644 extras/rpms/glusterd2-logrotate \
+		debian/tmp/etc/logrotate.d/glusterd2

@@ -1,0 +1,5 @@
+usr/sbin/glusterd2
+usr/sbin/glustercli
+etc/glusterd2/glusterd2.toml
+etc/bash_completion.d/glustercli.sh
+etc/logrotate.d/glusterd2
