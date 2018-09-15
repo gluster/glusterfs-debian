@@ -1,3 +1,9 @@
+glusterfs (5.0-ubuntu1~cosmic10) cosmic; urgency=medium
+
+  * GlusterFS 5.0 X
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 10 Sep 2018 09:19:51 -0400
+
 glusterfs (4.1.4-ubuntu1~cosmic1) cosmic; urgency=medium
 
   * GlusterFS 4.1.4 GA

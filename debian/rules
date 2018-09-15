@@ -3,10 +3,10 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ --with python2,autotools-dev,systemd
+	dh $@ --with python3,autotools-dev,systemd
 
 override_dh_auto_configure:
-	mv configure configure.dist && ./autogen.sh
+	./autogen.sh
 	dh_auto_configure -- --enable-gnfs
 
 override_dh_install:
@@ -41,11 +41,11 @@ override_dh_install:
 	mv debian/glusterfs-server/usr/share/glusterfs/scripts/gsync-sync-gfid debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
-override_dh_python2:
-	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
-	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
-	dh_python2 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
-	dh_python2 usr/lib/python2.7/dist-packages/gluster/
+override_dh_python3:
+	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
+	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
+	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
+	dh_python3 usr/lib/python3.7/dist-packages/gluster/
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name = glusterd
