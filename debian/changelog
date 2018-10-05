@@ -1,7 +1,14 @@
+glusterfs (5.0rc1-0.2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-5.0 RC1
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 5 Oct 2018 12:21:24 -0400
+
 glusterfs (5.0rc0-0.1) stretch; urgency=low
 
   [ Gluster Packager ]
-  * glusterfs-5.0 
+  * glusterfs-5.0 RC0
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 18 Sep 2018 12:21:24 -0400
 
