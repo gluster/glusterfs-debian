@@ -1,3 +1,9 @@
+glusterd2 (5.0-1) stretch; urgency=medium
+
+  * glusterd2 5.0 GA
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 23 Oct 2018 15:30:00 +0200
+
 glusterd2 (4.1.0-0) stretch; urgency=medium
 
   * glusterd2 4.1.0 GA
