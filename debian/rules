@@ -17,7 +17,7 @@ override_dh_auto_configure:
 GD2MAKEFLAGS=PREFIX=/usr EXEC_PREFIX=/usr BINDIR=bin SBINDIR=sbin DATADIR=/run LOCALSTATEDIR=/var/lib LOGDIR=/var/log SYSCONFDIR=/etc
 
 override_dh_auto_build:
-	(export PATH="/usr/lib/go-1.8/bin:${PATH}" && \
+	(export PATH="/usr/lib/go-1.10/bin:${PATH}" && \
 	export GOPATH="${CURDIR}:/usr/lib/go-1.8:${PATH}" && \
 	make -C src/github.com/gluster/glusterd2 ${GD2MAKEFLAGS} glusterd2 && \
 	make -C src/github.com/gluster/glusterd2 ${GD2MAKEFLAGS} glustercli && \
