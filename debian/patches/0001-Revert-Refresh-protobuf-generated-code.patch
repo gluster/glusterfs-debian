@@ -1,0 +1,778 @@
+From 811c14df3648865b08ed29b1429d8f582834ca3e Mon Sep 17 00:00:00 2001
+From: Kaushal M <kshlmster@gmail.com>
+Date: Tue, 23 Oct 2018 20:38:31 +0530
+Subject: [PATCH] Revert "Refresh protobuf generated code"
+
+This reverts commit ec4a6c680e7caf53fdeefbdb2fc44d63270d2081.
+---
+ glusterd2/commands/peers/addpeer.go         |   2 +-
+ glusterd2/commands/peers/peer-rpc-clnt.go   |   8 +-
+ glusterd2/commands/peers/peer-rpc-svc.go    |  31 ++-
+ glusterd2/commands/peers/peer-rpc.pb.go     | 254 ++++++--------------
+ glusterd2/transaction/rpc-client.go         |   4 +-
+ glusterd2/transaction/rpc-service.go        |   2 +-
+ glusterd2/transaction/transaction-rpc.pb.go | 135 ++++-------
+ 7 files changed, 147 insertions(+), 289 deletions(-)
+
+diff --git a/glusterd2/commands/peers/addpeer.go b/glusterd2/commands/peers/addpeer.go
+index c717c0c..79a5b28 100644
+--- a/glusterd2/commands/peers/addpeer.go
++++ b/glusterd2/commands/peers/addpeer.go
+@@ -73,7 +73,7 @@ func addPeerHandler(w http.ResponseWriter, r *http.Request) {
+ 	defer client.conn.Close()
+ 	logger = logger.WithField("peer", remotePeerAddress)
+ 
+-	newconfig := &StoreConfig{Endpoints: store.Store.Endpoints()}
++	newconfig := &StoreConfig{store.Store.Endpoints()}
+ 	logger.WithField("endpoints", newconfig.Endpoints).Debug("asking new peer to join cluster with given endpoints")
+ 
+ 	// Ask the peer to join the cluster
+diff --git a/glusterd2/commands/peers/peer-rpc-clnt.go b/glusterd2/commands/peers/peer-rpc-clnt.go
+index acd2746..7c175e3 100644
+--- a/glusterd2/commands/peers/peer-rpc-clnt.go
++++ b/glusterd2/commands/peers/peer-rpc-clnt.go
+@@ -35,9 +35,9 @@ func getPeerServiceClient(address string) (*peerSvcClnt, error) {
+ // JoinCluster asks the remote peer to join the current cluster by reconfiguring the store with the given config
+ func (pc *peerSvcClnt) JoinCluster(conf *StoreConfig) (*JoinRsp, error) {
+ 	args := &JoinReq{
+-		PeerID:    gdctx.MyUUID.String(),
+-		ClusterID: gdctx.MyClusterID.String(),
+-		Config:    conf,
++		gdctx.MyUUID.String(),
++		gdctx.MyClusterID.String(),
++		conf,
+ 	}
+ 	rsp, err := pc.client.Join(context.TODO(), args)
+ 	if err != nil {
+@@ -52,7 +52,7 @@ func (pc *peerSvcClnt) JoinCluster(conf *StoreConfig) (*JoinRsp, error) {
+ 
+ // LeaveCluster asks the remote peer to leave the current cluster
+ func (pc *peerSvcClnt) LeaveCluster() (*LeaveRsp, error) {
+-	args := &LeaveReq{PeerID: gdctx.MyUUID.String()}
++	args := &LeaveReq{gdctx.MyUUID.String()}
+ 
+ 	rsp, err := pc.client.Leave(context.TODO(), args)
+ 	if err != nil {
+diff --git a/glusterd2/commands/peers/peer-rpc-svc.go b/glusterd2/commands/peers/peer-rpc-svc.go
+index b7211c1..bce7019 100644
+--- a/glusterd2/commands/peers/peer-rpc-svc.go
++++ b/glusterd2/commands/peers/peer-rpc-svc.go
+@@ -1,8 +1,6 @@
+ package peercommands
+ 
+ import (
+-	"context"
+-
+ 	"github.com/gluster/glusterd2/glusterd2/events"
+ 	"github.com/gluster/glusterd2/glusterd2/gdctx"
+ 	"github.com/gluster/glusterd2/glusterd2/peer"
+@@ -13,6 +11,7 @@ import (
+ 	"github.com/pborman/uuid"
+ 
+ 	log "github.com/sirupsen/logrus"
++	"golang.org/x/net/context"
+ 	"google.golang.org/grpc"
+ )
+ 
+@@ -40,7 +39,7 @@ func (p *PeerService) Join(ctx context.Context, req *JoinReq) (*JoinRsp, error)
+ 		defer mutex.Unlock()
+ 	} else {
+ 		logger.Info("rejecting join request, already processing another join/leave request")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrAnotherReqInProgress)}, nil
++		return &JoinRsp{"", int32(ErrAnotherReqInProgress)}, nil
+ 	}
+ 
+ 	logger.Info("handling new incoming join cluster request")
+@@ -57,22 +56,22 @@ func (p *PeerService) Join(ctx context.Context, req *JoinReq) (*JoinRsp, error)
+ 	peers, err := peer.GetPeersF()
+ 	if err != nil {
+ 		logger.WithError(err).Error("failed to connect to store")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrFailedToConnectToStore)}, nil
++		return &JoinRsp{"", int32(ErrFailedToConnectToStore)}, nil
+ 	}
+ 	if len(peers) != 1 {
+ 		logger.Info("rejecting join, already part of a cluster")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrAnotherCluster)}, nil
++		return &JoinRsp{"", int32(ErrAnotherCluster)}, nil
+ 	}
+ 
+ 	volumes, err := volume.GetVolumes(context.TODO())
+ 	if err != nil {
+ 		logger.WithError(err).Error("failed to connect to store")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrFailedToConnectToStore)}, nil
++		return &JoinRsp{"", int32(ErrFailedToConnectToStore)}, nil
+ 	}
+ 
+ 	if len(volumes) != 0 {
+ 		logger.Info("rejecting join, we already have volumes")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrAnotherCluster)}, nil
++		return &JoinRsp{"", int32(ErrAnotherCluster)}, nil
+ 	}
+ 
+ 	logger.Debug("all checks passed, joining new cluster")
+@@ -87,18 +86,18 @@ func (p *PeerService) Join(ctx context.Context, req *JoinReq) (*JoinRsp, error)
+ 		}
+ 	}(gdctx.MyClusterID.String())
+ 	if err := gdctx.UpdateClusterID(req.ClusterID); err != nil {
+-		return &JoinRsp{PeerID: "", Err: int32(ErrClusterIDUpdateFailed)}, nil
++		return &JoinRsp{"", int32(ErrClusterIDUpdateFailed)}, nil
+ 	}
+ 
+ 	if err := ReconfigureStore(req.Config); err != nil {
+ 		logger.WithError(err).Error("reconfigure store failed, failed to join new cluster")
+-		return &JoinRsp{PeerID: "", Err: int32(ErrStoreReconfigFailed)}, nil
++		return &JoinRsp{"", int32(ErrStoreReconfigFailed)}, nil
+ 	}
+ 	success = true
+ 	logger.Debug("reconfigured store to join new cluster")
+ 
+ 	logger.Info("joined new cluster")
+-	return &JoinRsp{PeerID: gdctx.MyUUID.String(), Err: int32(ErrNone)}, nil
++	return &JoinRsp{gdctx.MyUUID.String(), int32(ErrNone)}, nil
+ }
+ 
+ // Leave makes the peer leave its current cluster, and restart as a single node cluster
+@@ -109,7 +108,7 @@ func (p *PeerService) Leave(ctx context.Context, req *LeaveReq) (*LeaveRsp, erro
+ 		defer mutex.Unlock()
+ 	} else {
+ 		logger.Info("rejecting leave request, already processing another join/leave request")
+-		return &LeaveRsp{Err: int32(ErrAnotherReqInProgress)}, nil
++		return &LeaveRsp{int32(ErrAnotherReqInProgress)}, nil
+ 	}
+ 
+ 	logger.Info("handling incoming leave cluster request")
+@@ -125,10 +124,10 @@ func (p *PeerService) Leave(ctx context.Context, req *LeaveReq) (*LeaveRsp, erro
+ 
+ 	if p, err := peer.GetPeer(req.PeerID); err != nil {
+ 		logger.Info("could not verify peer")
+-		return &LeaveRsp{Err: int32(ErrUnknownPeer)}, nil
++		return &LeaveRsp{int32(ErrUnknownPeer)}, nil
+ 	} else if p == nil {
+ 		logger.Info("rejecting leave, request received from unknown peer")
+-		return &LeaveRsp{Err: int32(ErrUnknownPeer)}, nil
++		return &LeaveRsp{int32(ErrUnknownPeer)}, nil
+ 	}
+ 	logger.Debug("request received from known peer")
+ 
+@@ -148,16 +147,16 @@ func (p *PeerService) Leave(ctx context.Context, req *LeaveReq) (*LeaveRsp, erro
+ 		}
+ 	}(gdctx.MyClusterID.String())
+ 	if err := gdctx.UpdateClusterID(uuid.New()); err != nil {
+-		return &LeaveRsp{Err: int32(ErrClusterIDUpdateFailed)}, nil
++		return &LeaveRsp{int32(ErrClusterIDUpdateFailed)}, nil
+ 	}
+ 
+ 	logger.Debug("reconfiguring store with defaults")
+-	if err := ReconfigureStore(&StoreConfig{Endpoints: store.NewConfig().Endpoints}); err != nil {
++	if err := ReconfigureStore(&StoreConfig{store.NewConfig().Endpoints}); err != nil {
+ 		logger.WithError(err).Warn("failed to reconfigure store with defaults")
+ 		// XXX: We should probably keep retrying here?
+ 	}
+ 	success = true
+-	return &LeaveRsp{Err: int32(ErrNone)}, nil
++	return &LeaveRsp{int32(ErrNone)}, nil
+ }
+ 
+ // ReconfigureStore reconfigures the store with the given store config, if no
+diff --git a/glusterd2/commands/peers/peer-rpc.pb.go b/glusterd2/commands/peers/peer-rpc.pb.go
+index ae029dc..956f43f 100644
+--- a/glusterd2/commands/peers/peer-rpc.pb.go
++++ b/glusterd2/commands/peers/peer-rpc.pb.go
+@@ -1,14 +1,28 @@
+ // Code generated by protoc-gen-go. DO NOT EDIT.
+-// source: glusterd2/commands/peers/peer-rpc.proto
++// source: peer-rpc.proto
+ 
++/*
++Package peercommands is a generated protocol buffer package.
++
++It is generated from these files:
++	peer-rpc.proto
++
++It has these top-level messages:
++	StoreConfig
++	JoinReq
++	JoinRsp
++	LeaveReq
++	LeaveRsp
++*/
+ package peercommands
+ 
++import proto "github.com/golang/protobuf/proto"
++import fmt "fmt"
++import math "math"
++
+ import (
+-	fmt "fmt"
+-	proto "github.com/golang/protobuf/proto"
+ 	context "golang.org/x/net/context"
+ 	grpc "google.golang.org/grpc"
+-	math "math"
+ )
+ 
+ // Reference imports to suppress errors if they are not otherwise used.
+@@ -23,36 +37,13 @@ var _ = math.Inf
+ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
+ 
+ type StoreConfig struct {
+-	Endpoints            []string `protobuf:"bytes,1,rep,name=Endpoints,proto3" json:"Endpoints,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
++	Endpoints []string `protobuf:"bytes,1,rep,name=Endpoints" json:"Endpoints,omitempty"`
+ }
+ 
+-func (m *StoreConfig) Reset()         { *m = StoreConfig{} }
+-func (m *StoreConfig) String() string { return proto.CompactTextString(m) }
+-func (*StoreConfig) ProtoMessage()    {}
+-func (*StoreConfig) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_9a55bf24376d7438, []int{0}
+-}
+-
+-func (m *StoreConfig) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_StoreConfig.Unmarshal(m, b)
+-}
+-func (m *StoreConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_StoreConfig.Marshal(b, m, deterministic)
+-}
+-func (m *StoreConfig) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_StoreConfig.Merge(m, src)
+-}
+-func (m *StoreConfig) XXX_Size() int {
+-	return xxx_messageInfo_StoreConfig.Size(m)
+-}
+-func (m *StoreConfig) XXX_DiscardUnknown() {
+-	xxx_messageInfo_StoreConfig.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_StoreConfig proto.InternalMessageInfo
++func (m *StoreConfig) Reset()                    { *m = StoreConfig{} }
++func (m *StoreConfig) String() string            { return proto.CompactTextString(m) }
++func (*StoreConfig) ProtoMessage()               {}
++func (*StoreConfig) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
+ 
+ func (m *StoreConfig) GetEndpoints() []string {
+ 	if m != nil {
+@@ -62,38 +53,15 @@ func (m *StoreConfig) GetEndpoints() []string {
+ }
+ 
+ type JoinReq struct {
+-	PeerID               string       `protobuf:"bytes,1,opt,name=PeerID,proto3" json:"PeerID,omitempty"`
+-	ClusterID            string       `protobuf:"bytes,2,opt,name=ClusterID,proto3" json:"ClusterID,omitempty"`
+-	Config               *StoreConfig `protobuf:"bytes,3,opt,name=Config,proto3" json:"Config,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+-	XXX_unrecognized     []byte       `json:"-"`
+-	XXX_sizecache        int32        `json:"-"`
++	PeerID    string       `protobuf:"bytes,1,opt,name=PeerID" json:"PeerID,omitempty"`
++	ClusterID string       `protobuf:"bytes,2,opt,name=ClusterID" json:"ClusterID,omitempty"`
++	Config    *StoreConfig `protobuf:"bytes,3,opt,name=Config" json:"Config,omitempty"`
+ }
+ 
+-func (m *JoinReq) Reset()         { *m = JoinReq{} }
+-func (m *JoinReq) String() string { return proto.CompactTextString(m) }
+-func (*JoinReq) ProtoMessage()    {}
+-func (*JoinReq) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_9a55bf24376d7438, []int{1}
+-}
+-
+-func (m *JoinReq) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_JoinReq.Unmarshal(m, b)
+-}
+-func (m *JoinReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_JoinReq.Marshal(b, m, deterministic)
+-}
+-func (m *JoinReq) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_JoinReq.Merge(m, src)
+-}
+-func (m *JoinReq) XXX_Size() int {
+-	return xxx_messageInfo_JoinReq.Size(m)
+-}
+-func (m *JoinReq) XXX_DiscardUnknown() {
+-	xxx_messageInfo_JoinReq.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_JoinReq proto.InternalMessageInfo
++func (m *JoinReq) Reset()                    { *m = JoinReq{} }
++func (m *JoinReq) String() string            { return proto.CompactTextString(m) }
++func (*JoinReq) ProtoMessage()               {}
++func (*JoinReq) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
+ 
+ func (m *JoinReq) GetPeerID() string {
+ 	if m != nil {
+@@ -117,37 +85,14 @@ func (m *JoinReq) GetConfig() *StoreConfig {
+ }
+ 
+ type JoinRsp struct {
+-	PeerID               string   `protobuf:"bytes,1,opt,name=PeerID,proto3" json:"PeerID,omitempty"`
+-	Err                  int32    `protobuf:"varint,2,opt,name=Err,proto3" json:"Err,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
+-}
+-
+-func (m *JoinRsp) Reset()         { *m = JoinRsp{} }
+-func (m *JoinRsp) String() string { return proto.CompactTextString(m) }
+-func (*JoinRsp) ProtoMessage()    {}
+-func (*JoinRsp) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_9a55bf24376d7438, []int{2}
+-}
+-
+-func (m *JoinRsp) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_JoinRsp.Unmarshal(m, b)
+-}
+-func (m *JoinRsp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_JoinRsp.Marshal(b, m, deterministic)
+-}
+-func (m *JoinRsp) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_JoinRsp.Merge(m, src)
+-}
+-func (m *JoinRsp) XXX_Size() int {
+-	return xxx_messageInfo_JoinRsp.Size(m)
+-}
+-func (m *JoinRsp) XXX_DiscardUnknown() {
+-	xxx_messageInfo_JoinRsp.DiscardUnknown(m)
++	PeerID string `protobuf:"bytes,1,opt,name=PeerID" json:"PeerID,omitempty"`
++	Err    int32  `protobuf:"varint,2,opt,name=Err" json:"Err,omitempty"`
+ }
+ 
+-var xxx_messageInfo_JoinRsp proto.InternalMessageInfo
++func (m *JoinRsp) Reset()                    { *m = JoinRsp{} }
++func (m *JoinRsp) String() string            { return proto.CompactTextString(m) }
++func (*JoinRsp) ProtoMessage()               {}
++func (*JoinRsp) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{2} }
+ 
+ func (m *JoinRsp) GetPeerID() string {
+ 	if m != nil {
+@@ -164,36 +109,13 @@ func (m *JoinRsp) GetErr() int32 {
+ }
+ 
+ type LeaveReq struct {
+-	PeerID               string   `protobuf:"bytes,1,opt,name=PeerID,proto3" json:"PeerID,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
++	PeerID string `protobuf:"bytes,1,opt,name=PeerID" json:"PeerID,omitempty"`
+ }
+ 
+-func (m *LeaveReq) Reset()         { *m = LeaveReq{} }
+-func (m *LeaveReq) String() string { return proto.CompactTextString(m) }
+-func (*LeaveReq) ProtoMessage()    {}
+-func (*LeaveReq) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_9a55bf24376d7438, []int{3}
+-}
+-
+-func (m *LeaveReq) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_LeaveReq.Unmarshal(m, b)
+-}
+-func (m *LeaveReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_LeaveReq.Marshal(b, m, deterministic)
+-}
+-func (m *LeaveReq) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_LeaveReq.Merge(m, src)
+-}
+-func (m *LeaveReq) XXX_Size() int {
+-	return xxx_messageInfo_LeaveReq.Size(m)
+-}
+-func (m *LeaveReq) XXX_DiscardUnknown() {
+-	xxx_messageInfo_LeaveReq.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_LeaveReq proto.InternalMessageInfo
++func (m *LeaveReq) Reset()                    { *m = LeaveReq{} }
++func (m *LeaveReq) String() string            { return proto.CompactTextString(m) }
++func (*LeaveReq) ProtoMessage()               {}
++func (*LeaveReq) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{3} }
+ 
+ func (m *LeaveReq) GetPeerID() string {
+ 	if m != nil {
+@@ -203,36 +125,13 @@ func (m *LeaveReq) GetPeerID() string {
+ }
+ 
+ type LeaveRsp struct {
+-	Err                  int32    `protobuf:"varint,1,opt,name=Err,proto3" json:"Err,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
++	Err int32 `protobuf:"varint,1,opt,name=Err" json:"Err,omitempty"`
+ }
+ 
+-func (m *LeaveRsp) Reset()         { *m = LeaveRsp{} }
+-func (m *LeaveRsp) String() string { return proto.CompactTextString(m) }
+-func (*LeaveRsp) ProtoMessage()    {}
+-func (*LeaveRsp) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_9a55bf24376d7438, []int{4}
+-}
+-
+-func (m *LeaveRsp) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_LeaveRsp.Unmarshal(m, b)
+-}
+-func (m *LeaveRsp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_LeaveRsp.Marshal(b, m, deterministic)
+-}
+-func (m *LeaveRsp) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_LeaveRsp.Merge(m, src)
+-}
+-func (m *LeaveRsp) XXX_Size() int {
+-	return xxx_messageInfo_LeaveRsp.Size(m)
+-}
+-func (m *LeaveRsp) XXX_DiscardUnknown() {
+-	xxx_messageInfo_LeaveRsp.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_LeaveRsp proto.InternalMessageInfo
++func (m *LeaveRsp) Reset()                    { *m = LeaveRsp{} }
++func (m *LeaveRsp) String() string            { return proto.CompactTextString(m) }
++func (*LeaveRsp) ProtoMessage()               {}
++func (*LeaveRsp) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{4} }
+ 
+ func (m *LeaveRsp) GetErr() int32 {
+ 	if m != nil {
+@@ -249,31 +148,6 @@ func init() {
+ 	proto.RegisterType((*LeaveRsp)(nil), "peercommands.LeaveRsp")
+ }
+ 
+-func init() {
+-	proto.RegisterFile("glusterd2/commands/peers/peer-rpc.proto", fileDescriptor_9a55bf24376d7438)
+-}
+-
+-var fileDescriptor_9a55bf24376d7438 = []byte{
+-	// 268 bytes of a gzipped FileDescriptorProto
+-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x91, 0x4f, 0x4b, 0xc3, 0x30,
+-	0x18, 0xc6, 0x8d, 0x75, 0xd5, 0xbe, 0xf5, 0x20, 0x01, 0x47, 0x1d, 0x3b, 0x94, 0x5c, 0x2c, 0x88,
+-	0x1d, 0x76, 0x20, 0x78, 0xde, 0x76, 0x98, 0x78, 0x90, 0xec, 0x13, 0xcc, 0xf6, 0x75, 0x14, 0x5c,
+-	0x12, 0xdf, 0xd4, 0x9d, 0xfd, 0xe8, 0x92, 0xfe, 0x71, 0x1b, 0x54, 0x2f, 0x21, 0xef, 0x93, 0x27,
+-	0xcf, 0xf3, 0x23, 0x81, 0xdb, 0xcd, 0xc7, 0x97, 0xad, 0x90, 0x8a, 0x6c, 0x92, 0xeb, 0xed, 0x76,
+-	0xad, 0x0a, 0x3b, 0x31, 0x88, 0xd4, 0xac, 0xf7, 0x64, 0xf2, 0xd4, 0x90, 0xae, 0x34, 0xbf, 0x74,
+-	0x73, 0x67, 0x11, 0x77, 0x10, 0xae, 0x2a, 0x4d, 0x38, 0xd3, 0xea, 0xbd, 0xdc, 0xf0, 0x31, 0x04,
+-	0x0b, 0x55, 0x18, 0x5d, 0xaa, 0xca, 0x46, 0x2c, 0xf6, 0x92, 0x40, 0xee, 0x05, 0x41, 0x70, 0xfe,
+-	0xac, 0x4b, 0x25, 0xf1, 0x93, 0x0f, 0xc1, 0x7f, 0x45, 0xa4, 0xe5, 0x3c, 0x62, 0x31, 0x4b, 0x02,
+-	0xd9, 0x4e, 0x2e, 0x60, 0xd6, 0x80, 0x2c, 0xe7, 0xd1, 0x69, 0x7d, 0xb4, 0x17, 0xf8, 0x03, 0xf8,
+-	0x4d, 0x51, 0xe4, 0xc5, 0x2c, 0x09, 0xb3, 0x9b, 0xf4, 0x10, 0x26, 0x3d, 0x20, 0x91, 0xad, 0x51,
+-	0x4c, 0xdb, 0x4e, 0x6b, 0xfe, 0xec, 0xbc, 0x02, 0x6f, 0x41, 0x54, 0xb7, 0x0d, 0xa4, 0xdb, 0x0a,
+-	0x01, 0x17, 0x2f, 0xb8, 0xde, 0xe1, 0x3f, 0xa4, 0x62, 0xdc, 0x79, 0xac, 0xe9, 0x12, 0xd8, 0x6f,
+-	0x42, 0xf6, 0xcd, 0x20, 0x74, 0xc6, 0x15, 0xd2, 0xae, 0xcc, 0x91, 0x3f, 0xc2, 0x99, 0xc3, 0xe0,
+-	0xd7, 0xc7, 0xc4, 0xed, 0x73, 0x8c, 0xfa, 0x64, 0x6b, 0xc4, 0x09, 0x7f, 0x82, 0x41, 0xdd, 0xc2,
+-	0x87, 0xc7, 0x8e, 0x0e, 0x6f, 0xd4, 0xab, 0xbb, 0xab, 0x6f, 0x7e, 0xfd, 0x5f, 0xd3, 0x9f, 0x00,
+-	0x00, 0x00, 0xff, 0xff, 0xdd, 0xc1, 0x05, 0x89, 0xda, 0x01, 0x00, 0x00,
+-}
+-
+ // Reference imports to suppress errors if they are not otherwise used.
+ var _ context.Context
+ var _ grpc.ClientConn
+@@ -282,9 +156,8 @@ var _ grpc.ClientConn
+ // is compatible with the grpc package it is being compiled against.
+ const _ = grpc.SupportPackageIsVersion4
+ 
+-// PeerServiceClient is the client API for PeerService service.
+-//
+-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
++// Client API for PeerService service
++
+ type PeerServiceClient interface {
+ 	Join(ctx context.Context, in *JoinReq, opts ...grpc.CallOption) (*JoinRsp, error)
+ 	Leave(ctx context.Context, in *LeaveReq, opts ...grpc.CallOption) (*LeaveRsp, error)
+@@ -300,7 +173,7 @@ func NewPeerServiceClient(cc *grpc.ClientConn) PeerServiceClient {
+ 
+ func (c *peerServiceClient) Join(ctx context.Context, in *JoinReq, opts ...grpc.CallOption) (*JoinRsp, error) {
+ 	out := new(JoinRsp)
+-	err := c.cc.Invoke(ctx, "/peercommands.PeerService/Join", in, out, opts...)
++	err := grpc.Invoke(ctx, "/peercommands.PeerService/Join", in, out, c.cc, opts...)
+ 	if err != nil {
+ 		return nil, err
+ 	}
+@@ -309,14 +182,15 @@ func (c *peerServiceClient) Join(ctx context.Context, in *JoinReq, opts ...grpc.
+ 
+ func (c *peerServiceClient) Leave(ctx context.Context, in *LeaveReq, opts ...grpc.CallOption) (*LeaveRsp, error) {
+ 	out := new(LeaveRsp)
+-	err := c.cc.Invoke(ctx, "/peercommands.PeerService/Leave", in, out, opts...)
++	err := grpc.Invoke(ctx, "/peercommands.PeerService/Leave", in, out, c.cc, opts...)
+ 	if err != nil {
+ 		return nil, err
+ 	}
+ 	return out, nil
+ }
+ 
+-// PeerServiceServer is the server API for PeerService service.
++// Server API for PeerService service
++
+ type PeerServiceServer interface {
+ 	Join(context.Context, *JoinReq) (*JoinRsp, error)
+ 	Leave(context.Context, *LeaveReq) (*LeaveRsp, error)
+@@ -376,5 +250,27 @@ var _PeerService_serviceDesc = grpc.ServiceDesc{
+ 		},
+ 	},
+ 	Streams:  []grpc.StreamDesc{},
+-	Metadata: "glusterd2/commands/peers/peer-rpc.proto",
++	Metadata: "peer-rpc.proto",
++}
++
++func init() { proto.RegisterFile("peer-rpc.proto", fileDescriptor0) }
++
++var fileDescriptor0 = []byte{
++	// 255 bytes of a gzipped FileDescriptorProto
++	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x91, 0xc1, 0x4b, 0xc3, 0x30,
++	0x14, 0xc6, 0x8d, 0x75, 0xd5, 0xbe, 0x8a, 0xc8, 0x03, 0x47, 0x1d, 0x3b, 0x94, 0x9c, 0x0a, 0x62,
++	0xc1, 0x0d, 0x04, 0xcf, 0x73, 0x07, 0xc5, 0x83, 0x64, 0x7f, 0xc1, 0xec, 0x9e, 0x52, 0x70, 0x49,
++	0x7c, 0xa9, 0x3b, 0xfb, 0xa7, 0x4b, 0x62, 0xeb, 0x36, 0xa8, 0xde, 0xf2, 0xbe, 0xf7, 0xe5, 0xfb,
++	0x7e, 0x24, 0x70, 0x66, 0x89, 0xf8, 0x9a, 0x6d, 0x55, 0x5a, 0x36, 0x8d, 0xc1, 0x53, 0x3f, 0x57,
++	0x66, 0xbd, 0x5e, 0xea, 0x95, 0x93, 0x57, 0x90, 0x2e, 0x1a, 0xc3, 0x34, 0x33, 0xfa, 0xb5, 0x7e,
++	0xc3, 0x31, 0x24, 0x73, 0xbd, 0xb2, 0xa6, 0xd6, 0x8d, 0xcb, 0x44, 0x1e, 0x15, 0x89, 0xda, 0x0a,
++	0x92, 0xe1, 0xf8, 0xd1, 0xd4, 0x5a, 0xd1, 0x07, 0x0e, 0x21, 0x7e, 0x26, 0xe2, 0x87, 0xfb, 0x4c,
++	0xe4, 0xa2, 0x48, 0x54, 0x3b, 0xf9, 0x80, 0xd9, 0xfb, 0xa7, 0x6b, 0xc2, 0xea, 0x30, 0xac, 0xb6,
++	0x02, 0xde, 0x40, 0xfc, 0x53, 0x94, 0x45, 0xb9, 0x28, 0xd2, 0xc9, 0x65, 0xb9, 0x0b, 0x53, 0xee,
++	0x90, 0xa8, 0xd6, 0x28, 0xa7, 0x6d, 0xa7, 0xb3, 0x7f, 0x76, 0x9e, 0x43, 0x34, 0x67, 0x0e, 0x6d,
++	0x03, 0xe5, 0x8f, 0x52, 0xc2, 0xc9, 0x13, 0x2d, 0x37, 0xf4, 0x0f, 0xa9, 0x1c, 0x77, 0x1e, 0x67,
++	0xbb, 0x04, 0xf1, 0x9b, 0x30, 0xf9, 0x12, 0x90, 0x7a, 0xe3, 0x82, 0x78, 0x53, 0x57, 0x84, 0xb7,
++	0x70, 0xe4, 0x31, 0xf0, 0x62, 0x9f, 0xb8, 0x7d, 0x8e, 0x51, 0x9f, 0xec, 0xac, 0x3c, 0xc0, 0x3b,
++	0x18, 0x84, 0x16, 0x1c, 0xee, 0x3b, 0x3a, 0xbc, 0x51, 0xaf, 0xee, 0xaf, 0xbe, 0xc4, 0xe1, 0xbf,
++	0xa6, 0xdf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x4e, 0x3e, 0xe7, 0x68, 0xc1, 0x01, 0x00, 0x00,
+ }
+diff --git a/glusterd2/transaction/rpc-client.go b/glusterd2/transaction/rpc-client.go
+index cdf7ed8..d10ae17 100644
+--- a/glusterd2/transaction/rpc-client.go
++++ b/glusterd2/transaction/rpc-client.go
+@@ -1,7 +1,6 @@
+ package transaction
+ 
+ import (
+-	"context"
+ 	"encoding/json"
+ 	"errors"
+ 
+@@ -12,11 +11,12 @@ import (
+ 	log "github.com/sirupsen/logrus"
+ 	"go.opencensus.io/plugin/ocgrpc"
+ 	"go.opencensus.io/trace"
++	netctx "golang.org/x/net/context"
+ 	"google.golang.org/grpc"
+ )
+ 
+ // runStepOn will run the step on the specified node
+-func runStepOn(origCtx context.Context, step string, node uuid.UUID, c TxnCtx) error {
++func runStepOn(origCtx netctx.Context, step string, node uuid.UUID, c TxnCtx) error {
+ 	// TODO: I'm creating connections on demand. This should be changed so that
+ 	// we have long term connections.
+ 	p, err := peer.GetPeerF(node.String())
+diff --git a/glusterd2/transaction/rpc-service.go b/glusterd2/transaction/rpc-service.go
+index ecc00b7..0c49d04 100644
+--- a/glusterd2/transaction/rpc-service.go
++++ b/glusterd2/transaction/rpc-service.go
+@@ -1,7 +1,6 @@
+ package transaction
+ 
+ import (
+-	"context"
+ 	"encoding/json"
+ 	"errors"
+ 
+@@ -9,6 +8,7 @@ import (
+ 
+ 	log "github.com/sirupsen/logrus"
+ 	"go.opencensus.io/trace"
++	"golang.org/x/net/context"
+ 	"google.golang.org/grpc"
+ )
+ 
+diff --git a/glusterd2/transaction/transaction-rpc.pb.go b/glusterd2/transaction/transaction-rpc.pb.go
+index 2e1ff49..2ff286a 100644
+--- a/glusterd2/transaction/transaction-rpc.pb.go
++++ b/glusterd2/transaction/transaction-rpc.pb.go
+@@ -1,14 +1,25 @@
+ // Code generated by protoc-gen-go. DO NOT EDIT.
+-// source: glusterd2/transaction/transaction-rpc.proto
++// source: transaction-rpc.proto
+ 
++/*
++Package transaction is a generated protocol buffer package.
++
++It is generated from these files:
++	transaction-rpc.proto
++
++It has these top-level messages:
++	TxnStepReq
++	TxnStepResp
++*/
+ package transaction
+ 
++import proto "github.com/golang/protobuf/proto"
++import fmt "fmt"
++import math "math"
++
+ import (
+-	fmt "fmt"
+-	proto "github.com/golang/protobuf/proto"
+ 	context "golang.org/x/net/context"
+ 	grpc "google.golang.org/grpc"
+-	math "math"
+ )
+ 
+ // Reference imports to suppress errors if they are not otherwise used.
+@@ -23,37 +34,14 @@ var _ = math.Inf
+ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
+ 
+ type TxnStepReq struct {
+-	StepFunc             string   `protobuf:"bytes,1,opt,name=StepFunc,proto3" json:"StepFunc,omitempty"`
+-	Context              []byte   `protobuf:"bytes,2,opt,name=Context,proto3" json:"Context,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
++	StepFunc string `protobuf:"bytes,1,opt,name=StepFunc" json:"StepFunc,omitempty"`
++	Context  []byte `protobuf:"bytes,2,opt,name=Context,proto3" json:"Context,omitempty"`
+ }
+ 
+-func (m *TxnStepReq) Reset()         { *m = TxnStepReq{} }
+-func (m *TxnStepReq) String() string { return proto.CompactTextString(m) }
+-func (*TxnStepReq) ProtoMessage()    {}
+-func (*TxnStepReq) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_8c3c13f7a3182c1a, []int{0}
+-}
+-
+-func (m *TxnStepReq) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_TxnStepReq.Unmarshal(m, b)
+-}
+-func (m *TxnStepReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_TxnStepReq.Marshal(b, m, deterministic)
+-}
+-func (m *TxnStepReq) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_TxnStepReq.Merge(m, src)
+-}
+-func (m *TxnStepReq) XXX_Size() int {
+-	return xxx_messageInfo_TxnStepReq.Size(m)
+-}
+-func (m *TxnStepReq) XXX_DiscardUnknown() {
+-	xxx_messageInfo_TxnStepReq.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_TxnStepReq proto.InternalMessageInfo
++func (m *TxnStepReq) Reset()                    { *m = TxnStepReq{} }
++func (m *TxnStepReq) String() string            { return proto.CompactTextString(m) }
++func (*TxnStepReq) ProtoMessage()               {}
++func (*TxnStepReq) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
+ 
+ func (m *TxnStepReq) GetStepFunc() string {
+ 	if m != nil {
+@@ -70,36 +58,13 @@ func (m *TxnStepReq) GetContext() []byte {
+ }
+ 
+ type TxnStepResp struct {
+-	Error                string   `protobuf:"bytes,1,opt,name=Error,proto3" json:"Error,omitempty"`
+-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+-	XXX_unrecognized     []byte   `json:"-"`
+-	XXX_sizecache        int32    `json:"-"`
+-}
+-
+-func (m *TxnStepResp) Reset()         { *m = TxnStepResp{} }
+-func (m *TxnStepResp) String() string { return proto.CompactTextString(m) }
+-func (*TxnStepResp) ProtoMessage()    {}
+-func (*TxnStepResp) Descriptor() ([]byte, []int) {
+-	return fileDescriptor_8c3c13f7a3182c1a, []int{1}
++	Error string `protobuf:"bytes,1,opt,name=Error" json:"Error,omitempty"`
+ }
+ 
+-func (m *TxnStepResp) XXX_Unmarshal(b []byte) error {
+-	return xxx_messageInfo_TxnStepResp.Unmarshal(m, b)
+-}
+-func (m *TxnStepResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+-	return xxx_messageInfo_TxnStepResp.Marshal(b, m, deterministic)
+-}
+-func (m *TxnStepResp) XXX_Merge(src proto.Message) {
+-	xxx_messageInfo_TxnStepResp.Merge(m, src)
+-}
+-func (m *TxnStepResp) XXX_Size() int {
+-	return xxx_messageInfo_TxnStepResp.Size(m)
+-}
+-func (m *TxnStepResp) XXX_DiscardUnknown() {
+-	xxx_messageInfo_TxnStepResp.DiscardUnknown(m)
+-}
+-
+-var xxx_messageInfo_TxnStepResp proto.InternalMessageInfo
++func (m *TxnStepResp) Reset()                    { *m = TxnStepResp{} }
++func (m *TxnStepResp) String() string            { return proto.CompactTextString(m) }
++func (*TxnStepResp) ProtoMessage()               {}
++func (*TxnStepResp) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
+ 
+ func (m *TxnStepResp) GetError() string {
+ 	if m != nil {
+@@ -113,25 +78,6 @@ func init() {
+ 	proto.RegisterType((*TxnStepResp)(nil), "transaction.TxnStepResp")
+ }
+ 
+-func init() {
+-	proto.RegisterFile("glusterd2/transaction/transaction-rpc.proto", fileDescriptor_8c3c13f7a3182c1a)
+-}
+-
+-var fileDescriptor_8c3c13f7a3182c1a = []byte{
+-	// 174 bytes of a gzipped FileDescriptorProto
+-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xd2, 0x4e, 0xcf, 0x29, 0x2d,
+-	0x2e, 0x49, 0x2d, 0x4a, 0x31, 0xd2, 0x2f, 0x29, 0x4a, 0xcc, 0x2b, 0x4e, 0x4c, 0x2e, 0xc9, 0xcc,
+-	0xcf, 0x43, 0x66, 0xeb, 0x16, 0x15, 0x24, 0xeb, 0x15, 0x14, 0xe5, 0x97, 0xe4, 0x0b, 0x71, 0x23,
+-	0x09, 0x2b, 0x39, 0x71, 0x71, 0x85, 0x54, 0xe4, 0x05, 0x97, 0xa4, 0x16, 0x04, 0xa5, 0x16, 0x0a,
+-	0x49, 0x71, 0x71, 0x80, 0x98, 0x6e, 0xa5, 0x79, 0xc9, 0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x41,
+-	0x70, 0xbe, 0x90, 0x04, 0x17, 0xbb, 0x73, 0x7e, 0x5e, 0x49, 0x6a, 0x45, 0x89, 0x04, 0x93, 0x02,
+-	0xa3, 0x06, 0x4f, 0x10, 0x8c, 0xab, 0xa4, 0xcc, 0xc5, 0x0d, 0x37, 0xa3, 0xb8, 0x40, 0x48, 0x84,
+-	0x8b, 0xd5, 0xb5, 0xa8, 0x28, 0xbf, 0x08, 0x6a, 0x02, 0x84, 0x63, 0xe4, 0xc1, 0xc5, 0x06, 0x52,
+-	0x54, 0x96, 0x2c, 0x64, 0xc7, 0xc5, 0x1e, 0x54, 0x0a, 0x56, 0x2e, 0x24, 0xae, 0x87, 0xe4, 0x16,
+-	0x3d, 0x84, 0x43, 0xa4, 0x24, 0xb0, 0x4b, 0x14, 0x17, 0x28, 0x31, 0x24, 0xb1, 0x81, 0xbd, 0x61,
+-	0x0c, 0x08, 0x00, 0x00, 0xff, 0xff, 0x69, 0x42, 0xfa, 0xe6, 0xf5, 0x00, 0x00, 0x00,
+-}
+-
+ // Reference imports to suppress errors if they are not otherwise used.
+ var _ context.Context
+ var _ grpc.ClientConn
+@@ -140,9 +86,8 @@ var _ grpc.ClientConn
+ // is compatible with the grpc package it is being compiled against.
+ const _ = grpc.SupportPackageIsVersion4
+ 
+-// TxnSvcClient is the client API for TxnSvc service.
+-//
+-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
++// Client API for TxnSvc service
++
+ type TxnSvcClient interface {
+ 	RunStep(ctx context.Context, in *TxnStepReq, opts ...grpc.CallOption) (*TxnStepResp, error)
+ }
+@@ -157,14 +102,15 @@ func NewTxnSvcClient(cc *grpc.ClientConn) TxnSvcClient {
+ 
+ func (c *txnSvcClient) RunStep(ctx context.Context, in *TxnStepReq, opts ...grpc.CallOption) (*TxnStepResp, error) {
+ 	out := new(TxnStepResp)
+-	err := c.cc.Invoke(ctx, "/transaction.TxnSvc/RunStep", in, out, opts...)
++	err := grpc.Invoke(ctx, "/transaction.TxnSvc/RunStep", in, out, c.cc, opts...)
+ 	if err != nil {
+ 		return nil, err
+ 	}
+ 	return out, nil
+ }
+ 
+-// TxnSvcServer is the server API for TxnSvc service.
++// Server API for TxnSvc service
++
+ type TxnSvcServer interface {
+ 	RunStep(context.Context, *TxnStepReq) (*TxnStepResp, error)
+ }
+@@ -201,5 +147,22 @@ var _TxnSvc_serviceDesc = grpc.ServiceDesc{
+ 		},
+ 	},
+ 	Streams:  []grpc.StreamDesc{},
+-	Metadata: "glusterd2/transaction/transaction-rpc.proto",
++	Metadata: "transaction-rpc.proto",
++}
++
++func init() { proto.RegisterFile("transaction-rpc.proto", fileDescriptor0) }
++
++var fileDescriptor0 = []byte{
++	// 162 bytes of a gzipped FileDescriptorProto
++	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2d, 0x29, 0x4a, 0xcc,
++	0x2b, 0x4e, 0x4c, 0x2e, 0xc9, 0xcc, 0xcf, 0xd3, 0x2d, 0x2a, 0x48, 0xd6, 0x2b, 0x28, 0xca, 0x2f,
++	0xc9, 0x17, 0xe2, 0x46, 0x12, 0x56, 0x72, 0xe2, 0xe2, 0x0a, 0xa9, 0xc8, 0x0b, 0x2e, 0x49, 0x2d,
++	0x08, 0x4a, 0x2d, 0x14, 0x92, 0xe2, 0xe2, 0x00, 0x31, 0xdd, 0x4a, 0xf3, 0x92, 0x25, 0x18, 0x15,
++	0x18, 0x35, 0x38, 0x83, 0xe0, 0x7c, 0x21, 0x09, 0x2e, 0x76, 0xe7, 0xfc, 0xbc, 0x92, 0xd4, 0x8a,
++	0x12, 0x09, 0x26, 0x05, 0x46, 0x0d, 0x9e, 0x20, 0x18, 0x57, 0x49, 0x99, 0x8b, 0x1b, 0x6e, 0x46,
++	0x71, 0x81, 0x90, 0x08, 0x17, 0xab, 0x6b, 0x51, 0x51, 0x7e, 0x11, 0xd4, 0x04, 0x08, 0xc7, 0xc8,
++	0x83, 0x8b, 0x0d, 0xa4, 0xa8, 0x2c, 0x59, 0xc8, 0x8e, 0x8b, 0x3d, 0xa8, 0x14, 0xac, 0x5c, 0x48,
++	0x5c, 0x0f, 0xc9, 0x2d, 0x7a, 0x08, 0x87, 0x48, 0x49, 0x60, 0x97, 0x28, 0x2e, 0x50, 0x62, 0x48,
++	0x62, 0x03, 0x7b, 0xc3, 0x18, 0x10, 0x00, 0x00, 0xff, 0xff, 0x0e, 0x65, 0x9b, 0x63, 0xdf, 0x00,
++	0x00, 0x00,
+ }
+-- 
+2.19.1
+
