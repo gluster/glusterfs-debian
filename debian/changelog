@@ -1,3 +1,9 @@
+glusterd2 (5.0-ubuntu1~cosmic2) cosmic; urgency=medium
+
+  * glusterd2 5.0 w/ 0001-Revert-Refresh-protobuf-generated-code.patch
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Fri, 26 Oct 2018 15:30:00 +0200
+
 glusterd2 (5.0-ubuntu1~cosmic1) cosmic; urgency=medium
 
   * glusterd2 5.0 GA
