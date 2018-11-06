@@ -1,3 +1,9 @@
+glusterfs-coreutils (0.3.0-ubuntu1~bionic2) bionic; urgency=medium
+
+  * glusterfs-coreutils 0.3.0 w/ glusterfs 4.1
+
+ -- Kaleb S. KEITHLEY <kkeithle@redhat.com>  Tue, 6 Nov 2018 15:30:00 +0200
+
 glusterfs-coreutils (0.3.0-ubuntu1~bionic1) bionic; urgency=medium
 
   * glusterfs-coreutils 0.3.0
