@@ -1,8 +1,14 @@
+glusterfs (4.1.6-ubuntu1~cosmic1) cosmic; urgency=medium
+
+  * GlusterFS 4.1.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 14 Nov 2018 09:19:51 -0400
+
 glusterfs (4.1.5-ubuntu1~cosmic1) cosmic; urgency=medium
 
   * GlusterFS 4.1.5 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fry, 21 Sep 2018 09:19:51 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 21 Sep 2018 09:19:51 -0400
 
 glusterfs (4.1.4-ubuntu1~cosmic1) cosmic; urgency=medium
 
