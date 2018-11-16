@@ -46,7 +46,6 @@ override_dh_install:
 	mkdir -p debian/glusterfs-common/usr/lib/glusterfs
 	mv debian/glusterfs-server/usr/share/glusterfs/scripts/gsync-sync-gfid \
 		debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
-	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
