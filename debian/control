@@ -26,6 +26,7 @@ Build-Depends: debhelper (>= 9.20160709),
  liburcu-dev,
  libsqlite3-dev,
  libglib2.0-dev,
+ libtirpc-dev,
  chrpath
 Standards-Version: 4.1.1
 Homepage: http://www.gluster.org/
