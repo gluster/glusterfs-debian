@@ -1,3 +1,9 @@
+glusterfs (4.1.6-ubuntu1~disco2) disco; urgency=medium
+
+  * GlusterFS 4.1.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 14 Nov 2018 09:19:51 -0400
+
 glusterfs (4.1.6-ubuntu1~cosmic2) cosmic; urgency=medium
 
   * GlusterFS 4.1.6 GA
