@@ -51,6 +51,7 @@ override_dh_python3:
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name = glusterd
+	dh_installinit -p glusterfs-server --name = gluster-ta-volume
 	dh_installinit -p glusterfs-server --name = glustereventsd
 	dh_installinit -p glusterfs-server --name = glusterfssharedstorage
 
