@@ -35,6 +35,8 @@ override_dh_install:
 	install -D -p -m 0644 extras/systemd/glusterd.service \
 		debian/tmp/lib/systemd/system/glusterd.service
 	sed -i 's|sysconfig|default|' debian/tmp/lib/systemd/system/glusterd.service
+	install -D -p -m 0644 extras/systemd/gluster-ta-volume.service \
+		debian/tmp/lib/systemd/system/gluster-ta-volume.service
 	install -D -p -m 0644 extras/systemd/glustereventsd.service \
 		debian/tmp/lib/systemd/system/glustereventsd.service
 	install -D -p -m 0644 extras/systemd/glusterfssharedstorage.service \
@@ -50,6 +52,7 @@ override_dh_install:
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name=glusterd
+	dh_installinit -p glusterfs-server --name=gluster-ta-volume
 	dh_installinit -p glusterfs-server --name=glustereventsd
 	dh_installinit -p glusterfs-server --name=glusterfssharedstorage
 
