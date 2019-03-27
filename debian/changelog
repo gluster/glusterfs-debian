@@ -1,3 +1,9 @@
+glusterfs (6.0-ubuntu1~disco5) disco; urgency=medium
+
+  * GlusterFS 6.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 27 Mar 2019 09:19:51 -0400
+
 glusterfs (6.0-ubuntu1~disco4) disco; urgency=medium
 
   * GlusterFS 6.0 GA
