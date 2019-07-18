@@ -1,3 +1,9 @@
+glusterfs (6.4-ubuntu1~xenial1) xenial; urgency=medium
+
+  * GlusterFS 6.4 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 17 Jul 2019 18:22:00 -0400
+
 glusterfs (6.3-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 6.3 GA
