@@ -1,1 +1,2 @@
 extras/glusterfs.vim
+debian/tmp/etc/glusterfs/group-virt.example
