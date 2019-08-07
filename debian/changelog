@@ -1,3 +1,9 @@
+glusterfs (5.9-1) buster; urgency=low
+
+  * glusterfs-5.9 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 7 Aug 2019 04:16:51 -0400
+
 glusterfs (5.8-1) buster; urgency=low
 
   [ Gluster Packager ]

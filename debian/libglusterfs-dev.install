@@ -1,0 +1,11 @@
+usr/lib/*/*.so
+usr/lib/*/*.la
+usr/lib/*/pkgconfig
+libglusterfs/src/*.h usr/include/glusterfs/
+usr/include/glusterfs/*.h
+usr/include/glusterfs/api/glfs-handles.h
+usr/include/glusterfs/api/glfs.h
+usr/include/glusterfs/gfchangelog/changelog.h
+usr/include/glusterfs/gfdb
+usr/include/glusterfs/rpc
+usr/include/glusterfs/server
