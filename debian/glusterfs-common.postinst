@@ -7,6 +7,8 @@ case "$1" in
 		mkdir -p /var/log/glusterfs
 		chown root:root /var/log/glusterfs
 		chmod 0755 /var/log/glusterfs
+		getent group gluster >/dev/null 2>&1 || addgroup --system gluster
+		adduser --system --no-create-home --home /var/lib/glusterd --quiet gluster --ingroup gluster || true
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
