@@ -4,7 +4,10 @@ set -e
 
 case "$1" in
 	purge)
+		delgroup gluster || true
+		userdel gluster || true
 		rm -rf /var/log/glusterfs
+		rm -rf /var/lib/glusterd
 	;;
 	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
 	;;

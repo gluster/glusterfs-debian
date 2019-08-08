@@ -1,2 +1,5 @@
 doc/gluster.8
 doc/glusterd.8
+debian/manpages/glfsheal.8
+debian/manpages/gluster-eventsapi.8
+debian/manpages/glustereventsd.8

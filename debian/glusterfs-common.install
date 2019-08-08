@@ -1,11 +1,12 @@
-etc/logrotate.d/*
-etc/glusterfs/gsyncd.conf
-usr/lib/*
 usr/sbin/glusterfsd
-usr/sbin/gluster-eventsapi
-usr/sbin/glustereventsd
 usr/sbin/gluster-georep-sshkey
 usr/sbin/gluster-mountbroker
+usr/sbin/gf_attach
+usr/sbin/gluster-setgfid2path
+usr/lib/firewalld
+usr/lib/ocf
+usr/lib/python3
+usr/lib/*/glusterfs
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
-libglusterfs/src/*.h usr/include/glusterfs/
-api/src/*.h usr/include/glusterfs/api/
+usr/share/doc/glusterfs/benchmarking/
+usr/share/glusterfs/scripts/

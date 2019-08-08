@@ -1,1 +1,5 @@
 doc/glusterfsd.8
+tools/setgfid2path/gluster-setgfid2path.8
+debian/manpages/gf_attach.8
+debian/manpages/gluster-georep-sshkey.8
+debian/manpages/gluster-mountbroker.8
