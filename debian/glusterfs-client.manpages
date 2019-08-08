@@ -1,2 +1,3 @@
 doc/mount.glusterfs.8
 doc/glusterfs.8
+debian/manpages/glusterfind.8
