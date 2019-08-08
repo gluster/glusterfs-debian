@@ -1,0 +1,3 @@
+debian/glusterfs-server.tmpfile
+debian/glusterfs-server.glusterd.service
+debian/glusterfs-server.glustereventsd.service
