@@ -1,3 +1,10 @@
+glusterfs (5.9-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-5.9 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 7 Aug 2019 12:21:24 -0400
+
 glusterfs (5.8-1) stretch; urgency=low
 
   [ Gluster Packager ]
