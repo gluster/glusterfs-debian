@@ -5,7 +5,7 @@ include /usr/share/dpkg/pkg-info.mk
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 DEB_CONFIGURE_EXTRA_FLAGS := \
-	--enable-firewalld
+	--enable-firewalld --disable-gnfs
 
 %:
 	dh $@ --parallel --with python3 --with systemd --with autotools-dev
