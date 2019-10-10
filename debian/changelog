@@ -1,3 +1,9 @@
+glusterfs (5.10-1) bullseye; urgency=low
+
+  * glusterfs-5.10 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 9 Oct 2019 04:16:51 -0400
+
 glusterfs (5.9-1) bullseye; urgency=low
 
   * glusterfs-5.9 GA
