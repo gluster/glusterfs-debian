@@ -1,8 +1,8 @@
-glusterfs (6.5-ubuntu1~eoan1) eoan; urgency=medium
+glusterfs (6.5-ubuntu1~focal1) focal; urgency=medium
 
   * GlusterFS 6.5 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 8 Aug 2019 18:22:00 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 18 Oct 2019 18:22:00 -0400
 
 glusterfs (6.4-ubuntu1~eoan1) eoan; urgency=medium
 
