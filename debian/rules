@@ -51,4 +51,4 @@ override_dh_python3:
 	dh_python3
 
 override_dh_makeshlibs:
-	dh_makeshlibs --no-scripts
+	dh_makeshlibs --no-scripts -VUpstream-Version
