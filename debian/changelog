@@ -1,8 +1,14 @@
+glusterfs (7.0-ubuntu1~disco2) disco; urgency=medium
+
+  * GlusterFS 7.1 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 24 Dec 2019 10:40:00 -0400
+
 glusterfs (7.0-ubuntu1~disco1) disco; urgency=medium
 
   * GlusterFS 7.0 GA
 
--- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 15 Oct 2019 10:40:00 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 15 Oct 2019 10:40:00 -0400
 
 glusterfs (6.5-ubuntu1~disco1) disco; urgency=medium
 
