@@ -1,9 +1,17 @@
+glusterfs (7.1-1) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-7.1 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 23 Dec 2019 05:13:18 -0400
+
 glusterfs (7.0-1) bullseye; urgency=low
 
   [ Gluster Packager ]
   * glusterfs-7.0 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 15 Oct 2019 10:40:00 -0400
+
 glusterfs (7.0rc3-1) bullseye; urgency=low
 
   [ Gluster Packager ]
