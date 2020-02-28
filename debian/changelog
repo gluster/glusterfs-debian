@@ -1,3 +1,11 @@
+glusterfs (5.12-debian1~buster1) buster; urgency=low
+
+  [ Gluster Packager ]
+
+  * GlusterFS 5.12 GA
+
+  -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 28 Feb 2020 05:43:14 -0500
+
 glusterfs (5.11-1) buster; urgency=low
 
   * glusterfs-5.11 GA
