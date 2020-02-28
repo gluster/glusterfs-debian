@@ -1,3 +1,10 @@
+glusterfs (5.12-ubuntu1~disco1) disco; urgency=medium
+
+  * GlusterFS 5.12 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 28 Feb 2020 04:13:44 -0500
+
+
 glusterfs (5.11-ubuntu1~disco2) disco; urgency=medium
 
   * GlusterFS 5.11 GA
