@@ -1,3 +1,9 @@
+glusterfs (5.12-ubuntu1~eoan1) eoan; urgency=medium
+
+  * GlusterFS 5.12 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 28 Feb 2020 04:27:37 -0500
+
 glusterfs (5.11-ubuntu1~eoan2) eoan; urgency=medium
 
   * GlusterFS 5.11 GA
