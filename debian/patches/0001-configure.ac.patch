@@ -1,0 +1,15 @@
+diff --git a/configure.ac b/configure.ac
+index 70e395cd7..9b28ed163 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -651,6 +651,10 @@ else
+   PKG_CHECK_MODULES([PYTHON], "python-${PYTHON_VERSION}",,true)
+ fi
+ 
++PYTHON_LIBS="-lpython${PYTHON_VERSION}"
++
++echo "building with PYTHON_LIBS = ${PYTHON_LIBS}"
++
+ PYTHON_CFLAGS=$(echo ${PYTHON_CFLAGS} | sed -e 's|-I|-isystem |')
+ 
+ BUILD_PYTHON_SITE_PACKAGES=${pythondir}
