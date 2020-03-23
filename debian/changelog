@@ -1,3 +1,9 @@
+glusterfs (7.4-ubuntu1~eoan1) eoan; urgency=medium
+
+ * GlusterFS 7.4 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org> Mon, 23 Mar 2020 06:06:18 -0400
+
 glusterfs (7.3-ubuntu1~eoan1) eoan; urgency=medium
 
   * GlusterFS 7.3 GA
