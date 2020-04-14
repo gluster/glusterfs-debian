@@ -1,25 +1,34 @@
+glusterfs (5.13-1) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 5.13 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 13 Apr 2020 22:59:15 -0400
+
 glusterfs (5.12-debian1~buster1) buster; urgency=low
 
   [ Gluster Packager ]
-
   * GlusterFS 5.12 GA
 
   -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 28 Feb 2020 05:43:14 -0500
 
 glusterfs (5.11-1) buster; urgency=low
 
+  [ Gluster Packager ]
   * glusterfs-5.11 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 9 Dec 2019 12:14:26 -0400
 
 glusterfs (5.10-1) buster; urgency=low
 
+  [ Gluster Packager ]
   * glusterfs-5.10 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 9 Oct 2019 04:16:51 -0400
 
 glusterfs (5.9-1) buster; urgency=low
 
+  [ Gluster Packager ]
   * glusterfs-5.9 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 7 Aug 2019 04:16:51 -0400
