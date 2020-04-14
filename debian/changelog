@@ -1,14 +1,16 @@
 glusterfs (5.13-1) stretch; urgency=low
 
- * GlusterFS 5.13 GA
+  [ Gluster Packager ]
+  * GlusterFS 5.13 GA
 
- -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 13 Apr 2020 21:27:25 -0400
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 13 Apr 2020 22:12:49 -0400
 
 glusterfs (5.12-1) stretch; urgency=low
 
+  [ Gluster Packager ]
   * GlusterFS 5.12 GA
 
-  -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 28 Feb 2020 10:16:26 -0500
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 28 Feb 2020 10:16:26 -0500
 
 glusterfs (5.11-1) stretch; urgency=low
 
