@@ -1,3 +1,9 @@
+glusterfs (5.13-ubuntu1~bionic1) bionic; urgency=medium
+
+ * GlusterFS 5.13 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org> Fri, 17 Apr 2020 06:56:35 -0400
+
 glusterfs (5.12-ubuntu1~bionic1) ; urgency=medium
 
   * GlusterFS 5.12 GA
