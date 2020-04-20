@@ -1,3 +1,9 @@
+glusterfs (7.5-ubuntu1~disco1) disco; urgency=medium
+
+ * GlusterFS 7.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 20 Apr 2020 01:31:43 -0400
+
 glusterfs (7.4-ubuntu1~disco1) disco; urgency=medium
 
  * GlusterFS 7.4 GA
