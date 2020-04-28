@@ -1,4 +1,4 @@
-glusterfs (7.5-ubuntu1~focal1) focal; urgency=medium
+glusterfs (7.5-ubuntu1~groovy1) groovy; urgency=medium
 
  * GlusterFS 7.5 GA
 
