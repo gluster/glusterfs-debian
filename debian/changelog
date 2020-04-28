@@ -1,14 +1,14 @@
-glusterfs (7.5-ubuntu1~groovy1) groovy; urgency=medium
+glusterfs (7.5-ubuntu1~groovy2) groovy; urgency=medium
 
- * GlusterFS 7.5 GA
+  * GlusterFS 7.5 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 20 Apr 2020 01:34:42 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 28 Apr 2020 18:17:00 -0400
 
 glusterfs (7.4-ubuntu1~focal1) focal; urgency=medium
 
  * GlusterFS 7.4 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org> Mon, 23 Mar 2020 06:07:45 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 23 Mar 2020 06:07:45 -0400
 
 glusterfs (7.3-ubuntu1~focal1) focal; urgency=medium
 
