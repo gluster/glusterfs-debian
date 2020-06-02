@@ -1,3 +1,10 @@
+glusterfs (8.0rc0-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * glusterfs-8.0 RC0
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Sun, 31 May 2020 2:45:40 -0400
+
 glusterfs (7.6-1) stretch; urgency=low
 
   [ Gluster Packager ]

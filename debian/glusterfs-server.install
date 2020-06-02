@@ -4,10 +4,10 @@ lib/systemd/system/*
 usr/bin/glusterfind
 usr/sbin/gluster
 usr/sbin/glusterd
-usr/sbin/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/glfsheal
 usr/sbin/snap_scheduler
 usr/sbin/gcron
 usr/sbin/gfind_missing_files
-usr/share/glusterfs/scripts/*
+usr/lib/*-linux-gnu*/glusterfs/scripts/*
 var/lib/glusterd/*
 run/gluster/*
