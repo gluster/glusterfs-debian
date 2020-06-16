@@ -1,6 +1,7 @@
 usr/sbin/gluster
 usr/sbin/glusterd
-usr/sbin/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/scripts/gsync-sync-gfid
 usr/sbin/gluster-eventsapi
 usr/sbin/glustereventsd
 etc/glusterfs/glusterd.vol
