@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~bionic1) bionic; urgency=medium
+
+ * GlusterFS 8.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 07 Jul 2020 00:44:30 -0400
+
 glusterfs (7.6-ubuntu1~bionic1) bionic; urgency=medium
 
  * GlusterFS 7.6 GA
