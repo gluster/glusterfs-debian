@@ -8,7 +8,7 @@ DEB_CONFIGURE_EXTRA_FLAGS := \
 	--enable-firewalld --disable-gnfs
 
 %:
-	dh $@ --parallel --with python3 --with systemd --with autotools-dev
+	dh $@ --parallel --with python3 --with autotools-dev
 
 override_dh_install:
 	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/glusterfs-server.tmpfile
@@ -26,8 +26,6 @@ override_dh_install:
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/delay-gen.so
 	find debian/tmp/usr/lib -type f -name \*.la -exec sed 's/^dependency_libs/#dependency_libs/g' -i {} \;
 	dh_install --list-missing
-	mv $(CURDIR)/debian/glusterfs-common/usr/share/glusterfs/scripts/gsync-sync-gfid \
-		$(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gsync-sync-gfid
 	rm -f $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/README.md
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gfevents/__pycache__/
 

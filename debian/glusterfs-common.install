@@ -5,7 +5,7 @@ usr/sbin/gf_attach
 usr/sbin/gluster-setgfid2path
 usr/lib/firewalld
 usr/lib/ocf
-usr/lib/python3
+usr/lib/python3*
 usr/lib/*/glusterfs
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
 usr/share/doc/glusterfs/benchmarking/
