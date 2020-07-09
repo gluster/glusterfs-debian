@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~focal1) focal; urgency=medium
+
+ * GlusterFS 8.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 09 Jul 2020 02:23:44 -0400
+
 glusterfs (7.6-ubuntu1~focal1) focal; urgency=medium
 
  * GlusterFS 7.6 GA
