@@ -3,7 +3,7 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ --with python3,autotools-dev,systemd
+	dh $@ --parallel --with python3,autotools-dev,systemd
 
 override_dh_auto_configure:
 	mv configure configure.dist && ./autogen.sh
@@ -40,8 +40,6 @@ override_dh_install:
 	install -c -d -m 0755 debian/tmp/run/gluster/metrics
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
-	mv debian/glusterfs-server/usr/share/glusterfs/scripts/gsync-sync-gfid \
-		debian/glusterfs-common/usr/lib/glusterfs/gsync-sync-gfid
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_python3:

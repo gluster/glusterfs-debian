@@ -9,3 +9,4 @@ usr/sbin/gluster-mountbroker
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
 libglusterfs/src/*.h usr/include/glusterfs/
 api/src/*.h usr/include/glusterfs/api/
+usr/lib/python3*
