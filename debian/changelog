@@ -1,4 +1,4 @@
-glusterfs (8.0-ubuntu1~focal6) focal; urgency=medium
+glusterfs (8.0-ubuntu1~focal5) focal; urgency=medium
 
  * GlusterFS 8.0, glfsheal in glusterfs-common
 
