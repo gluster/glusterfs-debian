@@ -28,6 +28,8 @@ override_dh_install:
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/README.md
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gfevents/__pycache__/
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glfsheal
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gsync-sync-gfid
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)

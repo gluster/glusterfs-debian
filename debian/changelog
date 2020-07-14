@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~eoan3) eoan; urgency=medium
+
+ * GlusterFS 8.0, glfsheal in glusterfs-common
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 14 Jul 2020 02:21:24 -0400
+
 glusterfs (8.0-ubuntu1~eoan2) eoan; urgency=medium
 
  * GlusterFS 8.0 GA
@@ -8,7 +14,7 @@ glusterfs (7.6-ubuntu1~eoan1) eoan; urgency=medium
 
   * GlusterFS 7.6 GA
 
--- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 19 May 2020 05:10:27 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 19 May 2020 05:10:27 -0400
 
 glusterfs (7.5-ubuntu1~eoan1) eoan; urgency=medium
 
