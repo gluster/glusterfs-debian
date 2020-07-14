@@ -1,4 +1,4 @@
-glusterfs (8.0-ubuntu1~eoan3) eoan; urgency=medium
+glusterfs (8.0-ubuntu1~eoan4) eoan; urgency=medium
 
  * GlusterFS 8.0, glfsheal in glusterfs-common
 
