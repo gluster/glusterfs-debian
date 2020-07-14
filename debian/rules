@@ -41,6 +41,8 @@ override_dh_install:
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glfsheal
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/scripts/gsync-sync-gfid
 
 override_dh_python3:
 	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
