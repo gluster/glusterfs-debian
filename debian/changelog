@@ -1,4 +1,4 @@
-glusterfs (8.0-ubuntu1~groovy5) groovy; urgency=medium
+glusterfs (8.0-ubuntu1~groovy6) groovy; urgency=medium
 
  * GlusterFS 8.0, glfsheal in glusterfs-common
 
