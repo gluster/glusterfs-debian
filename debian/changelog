@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~focal4) focal; urgency=medium
+
+ * GlusterFS 8.0, glfsheal in glusterfs-common
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 14 Jul 2020 02:23:44 -0400
+
 glusterfs (8.0-ubuntu1~focal3) focal; urgency=medium
 
  * GlusterFS 8.0 GA
