@@ -5,10 +5,10 @@ include /usr/share/dpkg/pkg-info.mk
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 DEB_CONFIGURE_EXTRA_FLAGS := \
-	--enable-firewalld --disable-gnfs
+	--enable-firewalld --disable-gnfs --libexecdir=/usr/libexec
 
 %:
-	dh $@ --parallel --with python3 --with systemd --with autotools-dev
+	dh $@ --parallel --with python3 --with autotools-dev
 
 override_dh_install:
 	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/glusterfs-server.tmpfile
@@ -28,6 +28,8 @@ override_dh_install:
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/README.md
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gfevents/__pycache__/
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/glfsheal
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/scripts/gsync-sync-gfid
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)
@@ -39,14 +41,13 @@ override_dh_systemd_enable:
 override_dh_link:
 	dh_link
 	dh_link -pglusterfs-common \
-		"usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gsync-sync-gfid" \
+		"usr/libexec/glusterfs/gsync-sync-gfid" \
 		"usr/share/glusterfs/scripts/gsync-sync-gfid"
 
 override_dh_python3:
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_VERSION_UPSTREAM)/xlator/features/glupy/
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/events/
+	dh_python3 usr/libexec/glusterfs/python/syncdaemon/
+	dh_python3 usr/libexec/glusterfs/glusterfind/
+	dh_python3 usr/libexec/glusterfs/gfevents/
 	dh_python3
 
 override_dh_makeshlibs:
