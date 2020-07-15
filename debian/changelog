@@ -1,3 +1,10 @@
+glusterfs (8.0-2) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.0, libexec
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 14 Jul 2020 00:47:25 -0400
+
 glusterfs (8.0-1) buster; urgency=low
 
   [ Gluster Packager ]
