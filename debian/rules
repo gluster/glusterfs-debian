@@ -7,7 +7,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_configure:
 	mv configure configure.dist && ./autogen.sh
-	dh_auto_configure -- --disable-gnfs
+	dh_auto_configure -- --disable-gnfs --libexecdir=/usr/libexec
 
 override_dh_install:
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
@@ -22,7 +22,7 @@ override_dh_install:
 	install -D -p -m 0644 extras/glusterfs-georep-logrotate \
 		debian/tmp/etc/logrotate.d/glusterfs-georep
 	install -D -p -m 0755 extras/mount-shared-storage.sh \
-		debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/glusterfs/mount-shared-storage.sh
+		debian/tmp/usr/libexec/glusterfs/mount-shared-storage.sh
 	install -D -p -m 0644 extras/glusterd-sysconfig \
 		debian/tmp/etc/default/glusterd
 	install -c -d -m 755 debian/tmp/lib/systemd/system
@@ -41,14 +41,13 @@ override_dh_install:
 	dh_install --list-missing
 	mkdir -p $(CURDIR)/debian/glusterfs-common/usr/lib/glusterfs
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
-	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glfsheal
-	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/scripts/gsync-sync-gfid
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/glfsheal
+	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/scripts/gsync-sync-gfid
 
 override_dh_python3:
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/$(DEB_UPSTREAM_VERSION)/xlator/features/glupy/
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/python/syncdaemon/
-	dh_python3 usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/glusterfind/
-	dh_python3 usr/lib/python2.7/dist-packages/gluster/
+	dh_python3 usr/libexec/glusterfs/python/syncdaemon/
+	dh_python3 usr/libexec/glusterfs/glusterfind/
+	dh_python3 usr/libexec/glusterfs/gfevents/
 
 override_dh_installinit:
 	dh_installinit -p glusterfs-server --name=glusterd

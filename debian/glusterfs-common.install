@@ -1,6 +1,7 @@
 etc/logrotate.d/*
 etc/glusterfs/gsyncd.conf
 usr/lib/*
+usr/libexec/glusterfs/*
 usr/sbin/glusterfsd
 usr/sbin/gluster-eventsapi
 usr/sbin/glustereventsd
@@ -9,4 +10,3 @@ usr/sbin/gluster-mountbroker
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
 libglusterfs/src/*.h usr/include/glusterfs/
 api/src/*.h usr/include/glusterfs/api/
-usr/lib/python3*
