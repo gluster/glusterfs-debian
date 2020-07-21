@@ -1,3 +1,10 @@
+glusterfs (7.7-1) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 7.7 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 21 Jul 2020 01:56:48 -0400
+
 glusterfs (7.6-1) bullseye; urgency=low
 
   [ Gluster Packager ]
