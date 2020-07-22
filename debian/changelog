@@ -1,3 +1,9 @@
+glusterfs (7.7-ubuntu1~bionic2) bionic; urgency=medium
+
+ * GlusterFS 7.7, use libc's xdr_sizeof() (license)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:01:46 -0400
+
 glusterfs (7.7-ubuntu1~bionic1) bionic; urgency=medium
 
  * GlusterFS 7.7 GA
