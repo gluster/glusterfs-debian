@@ -1,3 +1,9 @@
+glusterfs (7.7-ubuntu1~groovy2) groovy; urgency=medium
+
+ * GlusterFS 7.7, use libtirpc's xdr_sizeof() (license)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:15:36 -0400
+
 glusterfs (7.7-ubuntu1~groovy1) groovy; urgency=medium
 
  * GlusterFS 7.7 GA
