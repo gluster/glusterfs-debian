@@ -1,4 +1,4 @@
-glusterfs (7.7-ubuntu1~groovy2) groovy; urgency=medium
+glusterfs (7.7-ubuntu1~groovy3) groovy; urgency=medium
 
  * GlusterFS 7.7, use libtirpc's xdr_sizeof() (license)
 
