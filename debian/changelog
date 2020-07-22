@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~focal7) focal; urgency=medium
+
+ * GlusterFS 8.0, use libtirpc xdr_sizeof() (license)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:23:44 -0400
+
 glusterfs (8.0-ubuntu1~focal6) focal; urgency=medium
 
  * GlusterFS 8.0, /usr/libexec
