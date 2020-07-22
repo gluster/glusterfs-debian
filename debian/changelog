@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~eoan6) eoan; urgency=medium
+
+ * GlusterFS 8.0, use libtirpc's xdr_sizeof() (license)
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:21:24 -0400
+
 glusterfs (8.0-ubuntu1~eoan5) eoan; urgency=medium
 
  * GlusterFS 8.0, /usr/libexec
