@@ -1,4 +1,4 @@
-glusterfs (7.7-ubuntu1~eoan2) eoan; urgency=medium
+glusterfs (7.7-ubuntu1~eoan3) eoan; urgency=medium
 
  * GlusterFS 7.7, use libtirpc's xdr_sizeof() (license)
 
