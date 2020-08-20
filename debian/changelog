@@ -1,36 +1,36 @@
 glusterfs (8.0-ubuntu1~groovy9) groovy; urgency=medium
 
- * GlusterFS 8.0
+  * GlusterFS 8.0
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 19 Aug 2020 02:25:07 -0400
 
 glusterfs (8.0-ubuntu1~groovy8) groovy; urgency=medium
 
- * GlusterFS 8.0, use tirpc xdr_sizeof() (license)
+  * GlusterFS 8.0, use tirpc xdr_sizeof() (license)
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:25:07 -0400
 
 glusterfs (8.0-ubuntu1~groovy7) groovy; urgency=medium
 
- * GlusterFS 8.0, /usr/libexec
+  * GlusterFS 8.0, /usr/libexec
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 16 Jul 2020 02:25:07 -0400
 
 glusterfs (8.0-ubuntu1~groovy6) groovy; urgency=medium
 
- * GlusterFS 8.0, glfsheal in glusterfs-common
+  * GlusterFS 8.0, glfsheal in glusterfs-common
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 14 Jul 2020 02:25:07 -0400
 
 glusterfs (8.0-ubuntu1~groovy4) groovy; urgency=medium
 
- * GlusterFS 8.0 GA
+  * GlusterFS 8.0 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 09 Jul 2020 02:25:07 -0400
 
 glusterfs (7.6-ubuntu1~groovy1) groovy; urgency=medium
 
- * GlusterFS 7.6 GA
+  * GlusterFS 7.6 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 22 May 2020 05:25:18 -0400
 
