@@ -1,54 +1,54 @@
 glusterfs (8.0-ubuntu1~focal12) focal; urgency=medium
 
- * GlusterFS 8.0, xlators
+  * GlusterFS 8.0, xlators
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 19 Aug 2020 02:23:44 -0400
 
 glusterfs (8.0-ubuntu1~focal11) focal; urgency=medium
 
- * GlusterFS 8.0, libglusterd
+  * GlusterFS 8.0, libglusterd
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 24 Jul 2020 02:23:44 -0400
 
 glusterfs (8.0-ubuntu1~focal7) focal; urgency=medium
 
- * GlusterFS 8.0, use libtirpc xdr_sizeof() (license)
+  * GlusterFS 8.0, use libtirpc xdr_sizeof() (license)
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Jul 2020 02:23:44 -0400
 
 glusterfs (8.0-ubuntu1~focal6) focal; urgency=medium
 
- * GlusterFS 8.0, /usr/libexec
+  * GlusterFS 8.0, /usr/libexec
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 16 Jul 2020 02:23:44 -0400
 
 glusterfs (8.0-ubuntu1~focal5) focal; urgency=medium
 
- * GlusterFS 8.0, glfsheal in glusterfs-common
+  * GlusterFS 8.0, glfsheal in glusterfs-common
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 14 Jul 2020 02:23:44 -0400
 
 glusterfs (8.0-ubuntu1~focal3) focal; urgency=medium
 
- * GlusterFS 8.0 GA
+  * GlusterFS 8.0 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 09 Jul 2020 02:23:44 -0400
 
 glusterfs (7.6-ubuntu1~focal1) focal; urgency=medium
 
- * GlusterFS 7.6 GA
+  * GlusterFS 7.6 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 22 May 2020 05:17:47 -0400
 
 glusterfs (7.5-ubuntu1~focal1) focal; urgency=medium
 
- * GlusterFS 7.5 GA
+  * GlusterFS 7.5 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 20 Apr 2020 01:34:42 -0400
 
 glusterfs (7.4-ubuntu1~focal1) focal; urgency=medium
 
- * GlusterFS 7.4 GA
+  * GlusterFS 7.4 GA
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org> Mon, 23 Mar 2020 06:07:45 -0400
 
