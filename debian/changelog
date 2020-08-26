@@ -1,3 +1,9 @@
+glusterfs (8.0-ubuntu1~xenial1) xenial; urgency=medium
+
+ * GlusterFS 8.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org> Thu, 09 Jul 2020 02:21:24 -0400
+
 glusterfs (7.7-ubuntu1~xenial2) xenial; urgency=medium
 
   * GlusterFS 7.7, use libc's xdr_sizeof() (license)
