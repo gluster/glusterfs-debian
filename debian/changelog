@@ -1,3 +1,10 @@
+glusterfs (8.1-2) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.1 glfsheal
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 2 Sep 2020 03:58:13 -0400
+
 glusterfs (8.1-1) stretch; urgency=low
 
   [ Gluster Packager ]

@@ -45,10 +45,8 @@ override_dh_install:
 	mv debian/tmp/usr/sbin/snap_scheduler.py debian/tmp/usr/sbin/snap_scheduler
 	install -c -d -m 0755 debian/tmp/run/gluster/metrics
 	dh_install
-	mkdir -p debian/glusterfs-common/usr/lib/glusterfs
-	mv debian/glusterfs-server/usr/lib/*-linux-gnu*/glusterfs/scripts \
-	debian/glusterfs-common/usr/lib/*-linux-gnu*/glusterfs/scripts
-
+	rm -f debian/glusterfs-common/usr/lib/*/glusterfs/glfsheal
+	rm -f debian/glusterfs-common/usr/lib/*/glusterfs/scripts/gsync-sync-gfid
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_builddeb:

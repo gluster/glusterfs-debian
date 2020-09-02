@@ -5,9 +5,9 @@ usr/bin/glusterfind
 usr/sbin/gluster
 usr/sbin/glusterd
 usr/lib/*-linux-gnu*/glusterfs/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/scripts/gsync-sync-gfid
 usr/sbin/snap_scheduler
 usr/sbin/gcron
 usr/sbin/gfind_missing_files
-usr/lib/*-linux-gnu*/glusterfs/scripts/*
 var/lib/glusterd/*
 run/gluster/*
