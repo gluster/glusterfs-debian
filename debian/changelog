@@ -1,3 +1,9 @@
+glusterfs (7.8-ubuntu1~focal1) focal; urgency=medium
+
+  * GlusterFS 7.8 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 29 Sep 2020 02:09:28 -0400
+
 glusterfs (7.7-ubuntu1~focal4) focal; urgency=medium
 
   * GlusterFS 7.7, use libtirpc's xdr_sizeof() (license)
