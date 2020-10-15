@@ -1,3 +1,5 @@
 debian/glusterfs-server.tmpfile
 debian/glusterfs-server.glusterd.service
 debian/glusterfs-server.glustereventsd.service
+debian/glusterfs-server.glusterfssharedstorage.service
+debian/glusterfs-server.gluster-ta-volume.service
