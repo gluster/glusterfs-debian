@@ -1,3 +1,9 @@
+glusterfs (8.2-ubuntu1~focal2) focal; urgency=medium
+
+  * GlusterFS 8.2, glusterfssharedstorage.service
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 15 Oct 2020 10:16:33 -0400
+
 glusterfs (8.2-ubuntu1~focal1) focal; urgency=medium
 
   * GlusterFS 8.2 GA
