@@ -6,7 +6,7 @@ usr/sbin/gluster-setgfid2path
 usr/lib/firewalld
 usr/lib/ocf
 usr/lib/python3*
-usr/lib/*/glusterfs
+usr/lib/*-linux-gnu*/glusterfs
 usr/share/doc/glusterfs/glusterfs-mode.el usr/share/emacs/site-lisp/
 usr/share/doc/glusterfs/benchmarking/
 usr/share/glusterfs/scripts/
