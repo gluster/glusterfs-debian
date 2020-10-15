@@ -1,3 +1,10 @@
+glusterfs (8.2-2) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.2 glustersharedstorage.service
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 15 Oct 2020 10:46:33 -0400
+
 glusterfs (8.2-1) buster; urgency=low
 
   [ Gluster Packager ]

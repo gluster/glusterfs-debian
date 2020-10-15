@@ -14,6 +14,8 @@ override_dh_install:
 	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/glusterfs-server.tmpfile
 	cp extras/systemd/glusterd.service $(CURDIR)/debian/glusterfs-server.glusterd.service
 	cp extras/systemd/glustereventsd.service $(CURDIR)/debian/glusterfs-server.glustereventsd.service
+	cp extras/systemd/glusterfssharedstorage.service $(CURDIR)/debian/glusterfs-server.glusterfssharedstorage.service
+	cp extras/systemd/gluster-ta-volume.service $(CURDIR)/debian/glusterfs-server.gluster-ta-volume.service
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/trace.so
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
@@ -37,6 +39,8 @@ override_dh_auto_configure:
 override_dh_systemd_enable:
 	dh_systemd_enable --no-enable --name=glusterd
 	dh_systemd_enable --no-enable --name=glustereventsd
+	dh_systemd_enable --no-enable --name=glusterfssharedstorage
+	dh_systemd_enable --no-enable --name=gluster-ta-volume
 
 override_dh_link:
 	dh_link
