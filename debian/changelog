@@ -1,3 +1,10 @@
+glusterfs (7.8-3) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 7.8 mount-shared-storage.sh
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 21 Oct 2020 00:01:21 -0400
+
 glusterfs (7.8-2) buster; urgency=low
 
   [ Gluster Packager ]
