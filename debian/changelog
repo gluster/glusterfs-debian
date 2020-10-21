@@ -1,3 +1,10 @@
+glusterfs (8.2-3) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.2, glustersharedstorage.service
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 20 Oct 2020 10:51:06 -0400
+
 glusterfs (8.2-2) bullseye; urgency=low
 
   [ Gluster Packager ]
