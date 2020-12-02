@@ -1,3 +1,9 @@
+glusterfs (7.9-ubuntu1~groovy1) groovy; urgency=medium
+
+  * GlusterFS 7.9 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 02 Dec 2020 03:24:38 -0500
+
 glusterfs (7.8-ubuntu1~groovy3) groovy; urgency=medium
 
   * GlusterFS 7.8, mount-shared-storage.sh
