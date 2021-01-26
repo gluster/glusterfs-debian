@@ -5,7 +5,7 @@ Maintainer: Patrick Matthäi <pmatthaei@debian.org>
 Build-Depends: debhelper (>= 10.1),
  autotools-dev,
  automake,
- libfuse-dev,
+ libfuse3-dev,
  libibverbs-dev,
  libdb-dev,
  librdmacm-dev,
@@ -36,7 +36,7 @@ Multi-Arch: foreign
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  ${python3:Depends},
- fuse,
+ fuse3,
  glusterfs-common (>= ${binary:Version})
 Description: clustered file-system (client package)
  GlusterFS is a clustered file-system capable of scaling to several
