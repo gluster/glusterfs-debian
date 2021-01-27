@@ -14,6 +14,7 @@ Build-Depends: debhelper (>= 10.1),
  libsqlite3-dev,
  libtirpc-dev,
  liburcu-dev,
+ liburing-dev,
  uuid-dev,
  attr,
  flex,
@@ -57,7 +58,8 @@ Depends: ${misc:Depends},
  ${python3:Depends},
  lsb-base (>= 3.0-6),
  glusterfs-common (>= ${binary:Version}),
- glusterfs-client (>= ${binary:Version})
+ glusterfs-client (>= ${binary:Version}),
+ liburing1
 Recommends: nfs-common
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
