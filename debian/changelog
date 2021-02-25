@@ -1,3 +1,10 @@
+glusterfs (8.4-1) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.4 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 25 Feb 2021 05:28:38 -0500
+
 glusterfs (8.3-1) buster; urgency=low
 
   [ Gluster Packager ]
