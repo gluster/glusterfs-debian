@@ -1,3 +1,10 @@
+glusterfs (9.1-1) stretch; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 9.1 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Fri, 16 Apr 2021 05:51:48 -0500
+
 glusterfs (9.0-1) stretch; urgency=low
 
   [ Gluster Packager ]
