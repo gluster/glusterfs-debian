@@ -7,7 +7,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_configure:
 	mv configure configure.dist && ./autogen.sh
-	dh_auto_configure -- --disable-gnfs disable-linux-io_uring --libexecdir=/usr/libexec
+	dh_auto_configure -- --disable-gnfs --disable-linux-io_uring --libexecdir=/usr/libexec
 
 override_dh_install:
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \

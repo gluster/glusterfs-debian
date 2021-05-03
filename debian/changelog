@@ -1,4 +1,4 @@
-glusterfs (9.1-ubuntu1~bionic3) bionic; urgency=medium
+glusterfs (9.1-ubuntu1~bionic4) bionic; urgency=medium
 
   * GlusterFS 9.1, fuse3 back to fuse
 
