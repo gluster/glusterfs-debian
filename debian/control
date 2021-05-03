@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Gluster Packager <glusterpackager@gluster.org>
 Build-Depends: debhelper (>= 9),
- libfuse3-dev,
+ libfuse-dev,
  libibverbs-dev,
  libdb-dev,
  librdmacm-dev,
@@ -36,7 +36,7 @@ Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  python3,
- fuse3,
+ fuse,
  glusterfs-common (>= ${binary:Version})
 Description: clustered file-system (client package)
  GlusterFS is a clustered file-system capable of scaling to several
