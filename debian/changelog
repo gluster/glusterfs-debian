@@ -1,3 +1,9 @@
+glusterfs (9.2-ubuntu1~bionic1) bionic; urgency=medium
+
+  * GlusterFS 9.2 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 10 May 2021 14:15:35 +0000
+
 glusterfs (9.1-ubuntu1~bionic4) bionic; urgency=medium
 
   * GlusterFS 9.1, fuse3 back to fuse
