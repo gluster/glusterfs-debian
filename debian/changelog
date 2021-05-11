@@ -1,3 +1,10 @@
+glusterfs (8.5-1) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.5 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 11 May 2021 01:34:38 -0400
+
 glusterfs (8.4-1) bullseye; urgency=low
 
   [ Gluster Packager ]
