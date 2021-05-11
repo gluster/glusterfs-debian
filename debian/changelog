@@ -1,3 +1,9 @@
+glusterfs (8.5-ubuntu1~hirsute1) hirsute; urgency=medium
+
+  * GlusterFS 8.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 11 May 2021 02:11:28 -0400
+
 glusterfs (8.4-ubuntu1~hirsute1) hirsute; urgency=medium
 
   * GlusterFS 8.4 GA
