@@ -1,3 +1,9 @@
+glusterfs (8.5-ubuntu1~groovy1) groovy; urgency=medium
+
+  * GlusterFS 8.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 11 May 2021 02:12:51 -0400
+
 glusterfs (8.4-ubuntu1~groovy1) groovy; urgency=medium
 
   * GlusterFS 8.4 GA
