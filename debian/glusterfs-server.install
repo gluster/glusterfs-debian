@@ -4,7 +4,8 @@ lib/systemd/system/*
 usr/bin/glusterfind
 usr/sbin/gluster
 usr/sbin/glusterd
-usr/sbin/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/glfsheal
+usr/lib/*-linux-gnu*/glusterfs/scripts/gsync-sync-gfid
 usr/sbin/snap_scheduler
 usr/sbin/gcron
 usr/sbin/gfind_missing_files
