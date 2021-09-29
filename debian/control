@@ -3,7 +3,6 @@ Section: admin
 Priority: optional
 Maintainer: Patrick Matthäi <pmatthaei@debian.org>
 Build-Depends: debhelper (>= 10.1),
- autotools-dev,
  libfuse3-dev,
  libibverbs-dev,
  libdb-dev,

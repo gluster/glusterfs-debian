@@ -8,7 +8,7 @@ DEB_CONFIGURE_EXTRA_FLAGS := \
 	--enable-firewalld --disable-gnfs --libexecdir=/usr/libexec
 
 %:
-	dh $@ --parallel --with python3 --with autotools-dev
+	dh $@ --parallel --with python3
 
 override_dh_install:
 	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/glusterfs-server.tmpfile
