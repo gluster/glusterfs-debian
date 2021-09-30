@@ -1,3 +1,10 @@
+glusterfs (9.3-2) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 9.3, glusterfs-ganesha
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 30 Sep 2021 09:31:14 -0400
+
 glusterfs (9.3-1) bullseye; urgency=low
 
   [ Gluster Packager ]

@@ -100,6 +100,30 @@ Description: GlusterFS common libraries and translator modules
  This package includes libglusterfs and glusterfs translator modules
  common to both GlusterFS server and client framework.
 
+Package: glusterfs-ganesha
+Architecture: any
+Multi-Arch: foreign
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+ ${shlibs:Depends},
+ ${python3:Depends},
+ pcs,
+ pacemaker,
+ corosync,
+ dbus,
+ resource-agents
+Description: GlusterFS NFS-Ganesha configuration
+ GlusterFS is a clustered file-system capable of scaling to several
+ petabytes. It aggregates various storage bricks over Infiniband RDMA
+ or TCP/IP interconnect into one large parallel network file
+ system. GlusterFS is one of the most sophisticated file system in
+ terms of features and extensibility. It borrows a powerful concept
+ called Translators from GNU Hurd kernel. Much of the code in GlusterFS
+ is in userspace and easily manageable.
+ .
+ This package provides the configuration and related files for using
+ NFS-Ganesha as the NFS server using GlusterFS
+
 Package: libglusterd0
 Architecture: any
 Multi-Arch: same
