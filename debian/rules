@@ -45,8 +45,9 @@ override_dh_install:
 	mv debian/tmp/usr/sbin/snap_scheduler.py debian/tmp/usr/sbin/snap_scheduler
 	install -c -d -m 0755 debian/tmp/run/gluster/metrics
 	dh_install
-	rm -f debian/glusterfs-common/usr/lib/*/glusterfs/glfsheal
-	rm -f debian/glusterfs-common/usr/lib/*/glusterfs/scripts/gsync-sync-gfid
+	rm -f $(CURDIR)/debian/glusterfs-common/usr/lib/*/glusterfs/glfsheal
+	rm -f $(CURDIR)/debian/glusterfs-common/usr/lib/*/glusterfs/scripts/gsync-sync-gfid
+	rm -f $(CURDIR)/debian/glusterfs-server/var/lib/glusterd/hooks/1/start/post/S31ganesha-start.sh
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 
 override_dh_builddeb:
