@@ -1,3 +1,10 @@
+glusterfs (9.3-2) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 9.3, glusterfs-ganesha
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 30 Sep 2021 01:45:19 -0400
+
 glusterfs (9.3-1) buster; urgency=low
 
   [ Gluster Packager ]
