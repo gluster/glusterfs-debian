@@ -4,7 +4,7 @@ usr/sbin/gluster-mountbroker
 usr/sbin/gf_attach
 usr/sbin/gluster-setgfid2path
 usr/lib/firewalld
-usr/lib/ocf
+usr/lib/ocf/resource.d/glusterfs/*
 usr/lib/python3*
 usr/lib/*/glusterfs
 usr/libexec/glusterfs/*
