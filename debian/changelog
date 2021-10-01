@@ -1,3 +1,15 @@
+glusterfs (8.6-ubuntu1~impish1) impish; urgency=medium
+
+  * GlusterFS 8.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 24 Aug 2021 03:13:09 -0400
+
+glusterfs (8.5-ubuntu1~impish1) impish; urgency=medium
+
+  * GlusterFS 8.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 11 May 2021 02:12:20 -0400
+
 glusterfs (8.4-ubuntu1~impish1) impish; urgency=medium
 
   * GlusterFS 8.4 GA
