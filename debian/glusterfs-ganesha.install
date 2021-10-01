@@ -1,0 +1,4 @@
+etc/ganesha/*
+usr/libexec/ganesha/*
+usr/lib/ocf/resource.d/heartbeat/*
+var/lib/glusterd/hooks/1/start/post/S31ganesha-start.sh
