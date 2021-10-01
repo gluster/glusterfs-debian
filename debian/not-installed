@@ -1,9 +1,4 @@
 etc/init.d/glusterd
 etc/init.d/glustereventsd
-etc/ganesha/ganesha-ha.conf.sample
-usr/libexec/ganesha/create-export-ganesha.sh
-usr/libexec/ganesha/ganesha-ha.sh
-usr/libexec/ganesha/dbus-send.sh
-usr/libexec/ganesha/generate-epoch.py
 var/lib/glusterd/groups/distributed-virt
 var/lib/glusterd/groups/samba
