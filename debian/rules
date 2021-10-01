@@ -43,6 +43,7 @@ override_dh_install:
 	sed -i 's|usr/local/sbin|usr/sbin|g' debian/glusterfs-common/etc/glusterfs/gsyncd.conf
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/glfsheal
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/scripts/gsync-sync-gfid
+	rm -f $(CURDIR)/debian/glusterfs-server/var/lib/glusterd/hooks/1/start/post/S31ganesha-start.sh
 
 override_dh_python3:
 	dh_python3 usr/libexec/glusterfs/python/syncdaemon/
