@@ -32,6 +32,7 @@ override_dh_install:
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/lib/$(DEB_HOST_MULTIARCH)/glusterfs/gfevents/__pycache__/
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/glfsheal
 	rm -rf $(CURDIR)/debian/glusterfs-common/usr/libexec/glusterfs/scripts/gsync-sync-gfid
+	rm -rf $(CURDIR)/debian/glusterfs-server/var/lib/glusterd/hooks/1/start/post/S31ganesha-start.sh
 
 override_dh_auto_configure:
 	./autogen.sh && dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)
