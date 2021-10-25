@@ -1,10 +1,9 @@
 glusterfs (10.0rc0-1) buster; urgency=low
 
-[ Gluster Packager ]
+  [ Gluster Packager ]
   * GlusterFS 10.0rc0 GA
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 25 Oct 2021 16:04:02 -0400
-
 
 glusterfs (9.4-1) buster; urgency=low
 
