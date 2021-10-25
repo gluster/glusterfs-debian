@@ -1,9 +1,9 @@
 glusterfs (10.0rc0-1) bullseye; urgency=low
 
- [ Gluster Packager ]
- * GlusterFS 10.0rc0 GA
+  [ Gluster Packager ]
+  * GlusterFS 10.0rc0 GA
 
--- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 25 Oct 2021 10:41:00 -0400
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Mon, 25 Oct 2021 10:41:00 -0400
 
 glusterfs (9.4-1) bullseye; urgency=low
 
