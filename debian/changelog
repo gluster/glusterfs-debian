@@ -1,3 +1,9 @@
+glusterfs (9.4-ubuntu1~jammy2) jammy; urgency=medium
+
+  * GlusterFS 9.4 samba
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 26 Oct 2021 06:04:11 +0000
+
 glusterfs (9.4-ubuntu1~jammy1) jammy; urgency=medium
 
   * GlusterFS 9.4 GA
