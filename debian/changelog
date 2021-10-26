@@ -1,8 +1,8 @@
-glusterfs (8.6-ubuntu1~impish2) impish; urgency=medium
+glusterfs (8.6-ubuntu1~impish3) impish; urgency=medium
 
-  * GlusterFS 8.6, glusterfs-ganesha
+  * GlusterFS 8.6, samba
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 30 Sep 2021 03:13:09 -0400
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 26 Oct 2021 03:13:09 -0400
 
 glusterfs (8.6-ubuntu1~impish1) impish; urgency=medium
 
