@@ -1,4 +1,3 @@
 etc/init.d/glusterd
 etc/init.d/glustereventsd
 var/lib/glusterd/groups/distributed-virt
-var/lib/glusterd/groups/samba
