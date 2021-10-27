@@ -1,3 +1,9 @@
+glusterfs (9.4-ubuntu1~hirsute3) hirsute; urgency=medium
+
+  * GlusterFS 9.4 samba again
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 27 Oct 2021 09:56:08 +0000
+
 glusterfs (9.4-ubuntu1~hirsute2) hirsute; urgency=medium
 
   * GlusterFS 9.4 samba
