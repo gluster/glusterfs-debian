@@ -26,3 +26,5 @@ var/lib/glusterd/groups/metadata-cache
 var/lib/glusterd/groups/gluster-block
 var/lib/glusterd/groups/nl-cache
 var/lib/glusterd/groups/db-workload
+var/lib/glusterd/groups/distributed-virt
+var/lib/glusterd/groups/samba
