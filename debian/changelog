@@ -1,3 +1,9 @@
+glusterfs (9.4-ubuntu1~focal3) focal; urgency=medium
+
+  * GlusterFS 9.4 samba again
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 27 Oct 2021 07:05:43 +0000
+
 glusterfs (9.4-ubuntu1~focal2) focal; urgency=medium
 
   * GlusterFS 9.4 samba
