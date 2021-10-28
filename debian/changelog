@@ -1,7 +1,14 @@
+glusterfs (8.6-3) buster; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 8.6 samba
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 28 Oct 2021 01:18:14 -0400
+
 glusterfs (8.6-2) buster; urgency=low
 
   [ Gluster Packager ]
-  * GlusterFS 8.6 GA
+  * GlusterFS 8.6
 
  -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 30 Sep 2021 01:18:14 -0400
 
