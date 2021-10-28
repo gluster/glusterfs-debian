@@ -1,3 +1,10 @@
+glusterfs (9.4-3) bookworm; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 9.4, samba again
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 28 Oct 2021 07:51:03 -0400
+
 glusterfs (9.4-2) bookworm; urgency=low
 
   [ Gluster Packager ]
