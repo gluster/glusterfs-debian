@@ -1,3 +1,10 @@
+glusterfs (9.4-3) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 9.4 samba again
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Thu, 28 Oct 2021 10:41:00 -0400
+
 glusterfs (9.4-2) bullseye; urgency=low
 
   [ Gluster Packager ]
