@@ -4,18 +4,6 @@ glusterfs (10.0-ubuntu1~xenial1) xenial; urgency=medium
 
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 09 Nov 2021 04:20:33 -0500
 
-glusterfs (10.0-ubuntu1~xenial1) xenial; urgency=medium
-
-  * GlusterFS 10.0 GA
-
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 09 Nov 2021 04:17:08 -0500
-
-glusterfs (10.0-ubuntu1~xenial1) xenial; urgency=medium
-
-  * GlusterFS 10.0 GA
-
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 09 Nov 2021 04:14:07 -0500
-
 glusterfs (9.4-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 9.4 GA
