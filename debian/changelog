@@ -1,3 +1,9 @@
+glusterfs (10.0-ubuntu1~bionic2) bionic; urgency=medium
+
+  * GlusterFS 10.0 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 11 Nov 2021 04:20:33 -0500
+
 glusterfs (10.0-ubuntu1~bionic1) bionic; urgency=medium
 
   * GlusterFS 10.0 GA
