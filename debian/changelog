@@ -1,3 +1,9 @@
+glusterfs (10.0-ubuntu1~jammy2) jammy; urgency=medium
+
+  * GlusterFS 10.0 GA tcmalloc
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 09 Nov 2021 04:34:39 -0500
+
 glusterfs (10.0-ubuntu1~jammy1) jammy; urgency=medium
 
   * GlusterFS 10.0 GA
