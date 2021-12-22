@@ -1,3 +1,9 @@
+glusterfs (9.4-ubuntu1~xenial2) xenial; urgency=medium
+
+  * GlusterFS 9.4, fix glfsheal, and others
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 22 Dec 2021 07:17:32 +0000
+
 glusterfs (9.4-ubuntu1~xenial1) xenial; urgency=medium
 
   * GlusterFS 9.4 GA
