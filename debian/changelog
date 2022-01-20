@@ -1,3 +1,9 @@
+glusterfs (9.5-ubuntu1~groovy1) groovy; urgency=medium
+
+  * GlusterFS 9.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 20 Jan 2022 07:42:29 -0500
+
 glusterfs (9.3-ubuntu1~groovy1) groovy; urgency=medium
 
   * GlusterFS 9.3 GA
