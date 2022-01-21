@@ -1,3 +1,9 @@
+glusterfs (10.1-ubuntu1~hirsute1) hirsute; urgency=medium
+
+  * GlusterFS 10.1 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Fri, 21 Jan 2022 13:01:39 +0000
+
 glusterfs (10.0-ubuntu1~hirsute2) hirsute; urgency=medium
 
   * GlusterFS 10.0 GA
