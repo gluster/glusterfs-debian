@@ -15,7 +15,6 @@ Build-Depends: debhelper (>= 10.1),
  libtirpc-dev,
  liburcu-dev,
  liburing-dev,
- google-perftools,
  uuid-dev,
  attr,
  flex,
@@ -39,8 +38,7 @@ Depends: ${misc:Depends},
  ${shlibs:Depends},
  ${python3:Depends},
  fuse3,
- glusterfs-common (>= ${binary:Version}),
- google-perftools
+ glusterfs-common (>= ${binary:Version})
 Description: clustered file-system (client package)
  GlusterFS is a clustered file-system capable of scaling to several
  peta-bytes. It aggregates various storage bricks over Infiniband RDMA
@@ -61,8 +59,7 @@ Depends: ${misc:Depends},
  lsb-base (>= 3.0-6),
  glusterfs-common (>= ${binary:Version}),
  glusterfs-client (>= ${binary:Version}),
- liburing1,
- google-perftools
+ liburing1
 Recommends: nfs-common
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
@@ -89,8 +86,7 @@ Depends: ${misc:Depends},
  attr,
  xfsprogs,
  e2fsprogs,
- psmisc,
- google-perftools
+ psmisc
 Breaks: glusterfs-server (<< 3.4.0~qa5)
 Replaces: glusterfs-server (<< 3.4.0~qa5)
 Description: GlusterFS common libraries and translator modules
