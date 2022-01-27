@@ -2,6 +2,12 @@ glusterfs (9.5-ubuntu1~hirsute1) hirsute; urgency=medium
 
   * GlusterFS 9.5 GA
 
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 27 Jan 2022 08:18:33 +0000
+
+glusterfs (9.5-ubuntu1~hirsute1) hirsute; urgency=medium
+
+  * GlusterFS 9.5 GA
+
  -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 20 Jan 2022 07:58:50 -0500
 
 glusterfs (9.4-ubuntu1~hirsute3) hirsute; urgency=medium
