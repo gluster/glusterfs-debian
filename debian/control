@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Gluster Packager <glusterpackager@gluster.org>
 Build-Depends: debhelper (>= 9),
- libfuse3-dev,
+ libfuse-dev,
  libibverbs-dev,
  libdb-dev,
  librdmacm-dev,
@@ -22,7 +22,6 @@ Build-Depends: debhelper (>= 9),
  libssl-dev,
  libxml2-dev,
  libfile-fcntllock-perl,
- liburing-dev,
  libgoogle-perftools-dev,
  pkg-config,
  autotools-dev,
@@ -38,8 +37,7 @@ Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  python3,
- fuse3,
- libgoogle-perftools-dev
+ fuse,
  glusterfs-common (>= ${binary:Version}),
 Description: clustered file-system (client package)
  GlusterFS is a clustered file-system capable of scaling to several
@@ -61,7 +59,6 @@ Depends: ${misc:Depends},
  nfs-common,
  glusterfs-common (>= ${binary:Version}),
  glusterfs-client (>= ${binary:Version}),
- liburing1,
  libgoogle-perftools-dev
 Description: clustered file-system (server package)
  GlusterFS is a clustered file-system capable of scaling to several
