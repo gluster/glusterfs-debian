@@ -61,7 +61,7 @@ Depends: ${misc:Depends},
  lsb-base (>= 3.0-6),
  glusterfs-common (>= ${binary:Version}),
  glusterfs-client (>= ${binary:Version}),
- liburing1,
+ liburing2,
  libgoogle-perftools-dev
 Recommends: nfs-common
 Description: clustered file-system (server package)
