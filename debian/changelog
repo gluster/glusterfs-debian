@@ -1,3 +1,9 @@
+glusterfs (9.5-ubuntu1~jammy2) jammy; urgency=medium
+
+  * GlusterFS 9.5 liburing2
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Mon, 25 Apr 2022 08:13:41 +0000
+
 glusterfs (9.5-ubuntu1~jammy1) jammy; urgency=medium
 
   * GlusterFS 9.5 GA
