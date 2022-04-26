@@ -1,3 +1,9 @@
+glusterfs (10.1-ubuntu1~kinetic1) kinetic; urgency=medium
+
+  * GlusterFS 10.1 kinetic
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 26 Apr 2022 13:26:10 +0000
+
 glusterfs (10.1-ubuntu1~jammy2) jammy; urgency=medium
 
   * GlusterFS 10.1 liburing2
