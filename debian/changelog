@@ -1,3 +1,9 @@
+glusterfs (9.6-ubuntu1~kinetic1) kinetic; urgency=medium
+
+  * GlusterFS 9.6 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Tue, 16 Aug 2022 07:50:15 +0000
+
 glusterfs (9.5-ubuntu1~kinetic1) kinetic; urgency=medium
 
   * GlusterFS 9.5 kinetic
