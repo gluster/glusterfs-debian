@@ -32,6 +32,17 @@ Build-Depends: debhelper (>= 10.1),
 Standards-Version: 4.4.0
 Homepage: https://www.gluster.org/
 
+Package: glusterfs-cli
+Architecture: any
+Multi-Arch: foreign
+Depends: glusterfs-server
+Description: clustered file-system (CLI compatibility hack)
+ Just because Fedora packages split the gluster CLI out of
+ glusterfs-server into a separate glusterfs-cli subpackage
+ (to support gdeploy) doesn't mean Debian/Ubuntu packages need
+ to also do it. If the Debian/Ubuntu packages had bothered to
+ communicate with Gluster we could have saved them the trouble.
+
 Package: glusterfs-client
 Architecture: any
 Multi-Arch: foreign
