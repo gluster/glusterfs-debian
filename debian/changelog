@@ -1,3 +1,10 @@
+glusterfs (11.0-1) bookworm; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 11.0 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 7 Feb 2023 09:29:46 -0400
+
 glusterfs (11.0rc0-1) bookworm; urgency=low
 
   [ Gluster Packager ]
