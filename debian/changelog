@@ -1,4 +1,4 @@
-glusterfs (11.0-ubuntu1~kinetic1) kinetic; urgency=medium
+glusterfs (11.0-ubuntu1~lunar1) lunar; urgency=medium
 
   * GlusterFS 11.0 GA
 
