@@ -1,3 +1,9 @@
+glusterfs (10.4-ubuntu1~focal1) focal; urgency=medium
+
+  * GlusterFS 10.4 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 06 Apr 2023 09:59:02 +0000
+
 glusterfs (10.2-ubuntu1~focal1) focal; urgency=medium
 
   * GlusterFS 10.2 GA
