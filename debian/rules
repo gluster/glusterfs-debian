@@ -11,11 +11,7 @@ DEB_CONFIGURE_EXTRA_FLAGS := \
 	dh $@ --parallel --with python3
 
 override_dh_install:
-	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/glusterfs-server.tmpfile
-	cp extras/systemd/glusterd.service $(CURDIR)/debian/glusterfs-server.glusterd.service
-	cp extras/systemd/glustereventsd.service $(CURDIR)/debian/glusterfs-server.glustereventsd.service
-	cp extras/systemd/glusterfssharedstorage.service $(CURDIR)/debian/glusterfs-server.glusterfssharedstorage.service
-	cp extras/systemd/gluster-ta-volume.service $(CURDIR)/debian/glusterfs-server.gluster-ta-volume.service
+	mv $(CURDIR)/debian/tmp/gluster.conf $(CURDIR)/debian/glusterfs-server.tmpfile
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/trace.so
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
