@@ -1,5 +1,10 @@
 usr/sbin/gluster
 usr/sbin/glusterd
+usr/lib/systemd/system/gluster-ta-volume.service
+usr/lib/systemd/system/glusterd.service
+usr/lib/systemd/system/glusterfssharedstorage.service
+usr/lib/systemd/system/glustereventsd.service
+usr/lib/tmpfiles.d/glusterfs-server.conf
 usr/libexec/glusterfs/glfsheal
 usr/libexec/glusterfs/scripts/gsync-sync-gfid
 usr/sbin/gluster-eventsapi
