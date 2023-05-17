@@ -35,7 +35,8 @@ Homepage: https://www.gluster.org/
 Package: glusterfs-cli
 Architecture: any
 Multi-Arch: foreign
-Depends: glusterfs-server
+Depends: ${misc:Depends},
+ glusterfs-server
 Description: clustered file-system (CLI compatibility hack)
  Just because Fedora packages split the gluster CLI out of
  glusterfs-server into a separate glusterfs-cli subpackage

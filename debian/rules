@@ -8,12 +8,11 @@ DEB_CONFIGURE_EXTRA_FLAGS := \
 	--enable-firewalld --disable-gnfs --libexecdir=/usr/libexec
 
 %:
-	dh $@ --parallel --with python3 --with autotools-dev
+	dh $@ --with python3
 
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/lib/tmpfiles.d
 	cp extras/run-gluster.tmpfiles $(CURDIR)/debian/tmp/usr/lib/tmpfiles.d/glusterfs-server.conf
-	cp extras/systemd/gluster-ta-volume.service $(CURDIR)/debian/glusterfs-server.gluster-ta-volume.service
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
 		debian/tmp/usr/lib/*/glusterfs/*/xlator/debug/trace.so
 	strip --remove-section=.comment --remove-section=.note --strip-unneeded \
