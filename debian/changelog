@@ -1,3 +1,10 @@
+glusterfs (10.4-1) trixie; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 10.4
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Tue, 22 Aug 2023 04:47:19 -0400
+
 glusterfs (10.4-2) bookworm; urgency=low
 
   [ Gluster Packager ]
