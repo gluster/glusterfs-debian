@@ -1,3 +1,10 @@
+glusterfs (11.1-1) bullseye; urgency=low
+
+  [ Gluster Packager ]
+  * GlusterFS 11.1 GA
+
+ -- Gluster Packager <glusterpackager@download.gluster.org>  Wed, 08 Nov 2023 01:45:14 -0500
+
 glusterfs (11.0-3) bullseye; urgency=low
 
   [ Gluster Packager ]
