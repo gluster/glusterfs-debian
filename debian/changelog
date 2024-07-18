@@ -1,14 +1,8 @@
-glusterfs (11.1-ubuntu1~noble2) noble; urgency=medium
-
-  * GlusterFS 11.1, rebuild w/ libaio1t64
-
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 18 Jul 2024 07:20:34 +0000
-
-glusterfs (11.1-ubuntu1~noble1) noble; urgency=medium
+glusterfs (11.1-ubuntu1~oracular1) oracular; urgency=medium
 
   * GlusterFS 11.1 GA
 
- -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Wed, 08 Nov 2023 07:20:34 +0000
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 18 Jul 2024 07:20:34 +0000
 
 glusterfs (11.0-ubuntu1~mantic1) mantic; urgency=medium
 
