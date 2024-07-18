@@ -1,3 +1,9 @@
+glusterfs (10.5-ubuntu1~noble1) noble; urgency=medium
+
+  * GlusterFS 10.5 GA
+
+ -- GlusterFS GlusterFS deb packages <deb.packages@gluster.org>  Thu, 18 Jul 2024 06:24:52 +0000
+
 glusterfs (10.5-ubuntu1~jammy1) jammy; urgency=medium
 
   * GlusterFS 10.5 GA
